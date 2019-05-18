@@ -15,6 +15,17 @@
 		543FF9EB228DB0F1000B2A44 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 543FF9E9228DB0F1000B2A44 /* LaunchScreen.storyboard */; };
 		543FF9F6228DB0F1000B2A44 /* Finance_2_GoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543FF9F5228DB0F1000B2A44 /* Finance_2_GoTests.swift */; };
 		543FFA01228DB0F1000B2A44 /* Finance_2_GoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543FFA00228DB0F1000B2A44 /* Finance_2_GoUITests.swift */; };
+		543FFA0F228DF8D6000B2A44 /* CreateProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543FFA0E228DF8D6000B2A44 /* CreateProfileVC.swift */; };
+		543FFA11228E0819000B2A44 /* OverviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543FFA10228E0819000B2A44 /* OverviewVC.swift */; };
+		543FFA13228E083F000B2A44 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543FFA12228E083F000B2A44 /* SettingsVC.swift */; };
+		54531BA9229092B9001B6243 /* Target+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54531BA1229092B9001B6243 /* Target+CoreDataClass.swift */; };
+		54531BAA229092B9001B6243 /* Target+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54531BA2229092B9001B6243 /* Target+CoreDataProperties.swift */; };
+		54531BAB229092B9001B6243 /* Profile+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54531BA3229092B9001B6243 /* Profile+CoreDataClass.swift */; };
+		54531BAC229092B9001B6243 /* Profile+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54531BA4229092B9001B6243 /* Profile+CoreDataProperties.swift */; };
+		54531BAD229092B9001B6243 /* Asset+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54531BA5229092B9001B6243 /* Asset+CoreDataClass.swift */; };
+		54531BAE229092B9001B6243 /* Asset+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54531BA6229092B9001B6243 /* Asset+CoreDataProperties.swift */; };
+		54531BAF229092B9001B6243 /* Transaction+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54531BA7229092B9001B6243 /* Transaction+CoreDataClass.swift */; };
+		54531BB0229092B9001B6243 /* Transaction+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54531BA8229092B9001B6243 /* Transaction+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +60,17 @@
 		543FF9FC228DB0F1000B2A44 /* Finance 2 GoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Finance 2 GoUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		543FFA00228DB0F1000B2A44 /* Finance_2_GoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Finance_2_GoUITests.swift; sourceTree = "<group>"; };
 		543FFA02228DB0F1000B2A44 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		543FFA0E228DF8D6000B2A44 /* CreateProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateProfileVC.swift; sourceTree = "<group>"; };
+		543FFA10228E0819000B2A44 /* OverviewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewVC.swift; sourceTree = "<group>"; };
+		543FFA12228E083F000B2A44 /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
+		54531BA1229092B9001B6243 /* Target+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Target+CoreDataClass.swift"; sourceTree = "<group>"; };
+		54531BA2229092B9001B6243 /* Target+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Target+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		54531BA3229092B9001B6243 /* Profile+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Profile+CoreDataClass.swift"; sourceTree = "<group>"; };
+		54531BA4229092B9001B6243 /* Profile+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Profile+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		54531BA5229092B9001B6243 /* Asset+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Asset+CoreDataClass.swift"; sourceTree = "<group>"; };
+		54531BA6229092B9001B6243 /* Asset+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Asset+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		54531BA7229092B9001B6243 /* Transaction+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Transaction+CoreDataClass.swift"; sourceTree = "<group>"; };
+		54531BA8229092B9001B6243 /* Transaction+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Transaction+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +102,8 @@
 			isa = PBXGroup;
 			children = (
 				543FF9DC228DB0EE000B2A44 /* Finance 2 Go */,
+				54531BB122909444001B6243 /* Ressources */,
+				543FF9EC228DB0F1000B2A44 /* Info.plist */,
 				543FF9F4228DB0F1000B2A44 /* Finance 2 GoTests */,
 				543FF9FF228DB0F1000B2A44 /* Finance 2 GoUITests */,
 				543FF9DB228DB0EE000B2A44 /* Products */,
@@ -99,13 +123,12 @@
 		543FF9DC228DB0EE000B2A44 /* Finance 2 Go */ = {
 			isa = PBXGroup;
 			children = (
+				54531BA022909277001B6243 /* Datamodel */,
 				543FF9DD228DB0EE000B2A44 /* AppDelegate.swift */,
 				543FF9DF228DB0EE000B2A44 /* ViewController.swift */,
-				543FF9E1228DB0EE000B2A44 /* Main.storyboard */,
-				543FF9E7228DB0F1000B2A44 /* Assets.xcassets */,
-				543FF9E9228DB0F1000B2A44 /* LaunchScreen.storyboard */,
-				543FF9EC228DB0F1000B2A44 /* Info.plist */,
-				543FF9E4228DB0EE000B2A44 /* Finance_2_Go.xcdatamodeld */,
+				543FFA10228E0819000B2A44 /* OverviewVC.swift */,
+				543FFA0E228DF8D6000B2A44 /* CreateProfileVC.swift */,
+				543FFA12228E083F000B2A44 /* SettingsVC.swift */,
 			);
 			path = "Finance 2 Go";
 			sourceTree = "<group>";
@@ -126,6 +149,32 @@
 				543FFA02228DB0F1000B2A44 /* Info.plist */,
 			);
 			path = "Finance 2 GoUITests";
+			sourceTree = "<group>";
+		};
+		54531BA022909277001B6243 /* Datamodel */ = {
+			isa = PBXGroup;
+			children = (
+				54531BA1229092B9001B6243 /* Target+CoreDataClass.swift */,
+				54531BA2229092B9001B6243 /* Target+CoreDataProperties.swift */,
+				54531BA3229092B9001B6243 /* Profile+CoreDataClass.swift */,
+				54531BA4229092B9001B6243 /* Profile+CoreDataProperties.swift */,
+				54531BA5229092B9001B6243 /* Asset+CoreDataClass.swift */,
+				54531BA6229092B9001B6243 /* Asset+CoreDataProperties.swift */,
+				54531BA7229092B9001B6243 /* Transaction+CoreDataClass.swift */,
+				54531BA8229092B9001B6243 /* Transaction+CoreDataProperties.swift */,
+			);
+			path = Datamodel;
+			sourceTree = "<group>";
+		};
+		54531BB122909444001B6243 /* Ressources */ = {
+			isa = PBXGroup;
+			children = (
+				543FF9E1228DB0EE000B2A44 /* Main.storyboard */,
+				543FF9E7228DB0F1000B2A44 /* Assets.xcassets */,
+				543FF9E9228DB0F1000B2A44 /* LaunchScreen.storyboard */,
+				543FF9E4228DB0EE000B2A44 /* Finance_2_Go.xcdatamodeld */,
+			);
+			path = Ressources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,9 +308,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				54531BAE229092B9001B6243 /* Asset+CoreDataProperties.swift in Sources */,
+				543FFA11228E0819000B2A44 /* OverviewVC.swift in Sources */,
 				543FF9E6228DB0EE000B2A44 /* Finance_2_Go.xcdatamodeld in Sources */,
+				54531BAC229092B9001B6243 /* Profile+CoreDataProperties.swift in Sources */,
 				543FF9E0228DB0EE000B2A44 /* ViewController.swift in Sources */,
+				54531BA9229092B9001B6243 /* Target+CoreDataClass.swift in Sources */,
+				54531BAA229092B9001B6243 /* Target+CoreDataProperties.swift in Sources */,
+				543FFA0F228DF8D6000B2A44 /* CreateProfileVC.swift in Sources */,
+				54531BB0229092B9001B6243 /* Transaction+CoreDataProperties.swift in Sources */,
+				54531BAD229092B9001B6243 /* Asset+CoreDataClass.swift in Sources */,
+				54531BAF229092B9001B6243 /* Transaction+CoreDataClass.swift in Sources */,
 				543FF9DE228DB0EE000B2A44 /* AppDelegate.swift in Sources */,
+				54531BAB229092B9001B6243 /* Profile+CoreDataClass.swift in Sources */,
+				543FFA13228E083F000B2A44 /* SettingsVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -439,6 +499,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = S6KJ7JN9XX;
 				INFOPLIST_FILE = "Finance 2 Go/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -457,6 +518,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = S6KJ7JN9XX;
 				INFOPLIST_FILE = "Finance 2 Go/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
