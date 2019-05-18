@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:Finance 2 Go.xcodeproj">
+      location = "self:../Finance 2 Go">
    </FileRef>
 </Workspace>

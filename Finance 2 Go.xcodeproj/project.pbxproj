@@ -26,6 +26,7 @@
 		54531BAE229092B9001B6243 /* Asset+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54531BA6229092B9001B6243 /* Asset+CoreDataProperties.swift */; };
 		54531BAF229092B9001B6243 /* Transaction+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54531BA7229092B9001B6243 /* Transaction+CoreDataClass.swift */; };
 		54531BB0229092B9001B6243 /* Transaction+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54531BA8229092B9001B6243 /* Transaction+CoreDataProperties.swift */; };
+		54531BB52290C831001B6243 /* money.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 54531BB42290C831001B6243 /* money.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,7 +54,7 @@
 		543FF9E5228DB0EE000B2A44 /* Finance_2_Go.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Finance_2_Go.xcdatamodel; sourceTree = "<group>"; };
 		543FF9E7228DB0F1000B2A44 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		543FF9EA228DB0F1000B2A44 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		543FF9EC228DB0F1000B2A44 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		543FF9EC228DB0F1000B2A44 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = "/Users/Maxi/Documents/Programmieren/XCode/Finance 2 Go/Finance 2 Go/Info.plist"; sourceTree = "<absolute>"; };
 		543FF9F1228DB0F1000B2A44 /* Finance 2 GoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Finance 2 GoTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		543FF9F5228DB0F1000B2A44 /* Finance_2_GoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Finance_2_GoTests.swift; sourceTree = "<group>"; };
 		543FF9F7228DB0F1000B2A44 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -71,6 +72,7 @@
 		54531BA6229092B9001B6243 /* Asset+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Asset+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		54531BA7229092B9001B6243 /* Transaction+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Transaction+CoreDataClass.swift"; sourceTree = "<group>"; };
 		54531BA8229092B9001B6243 /* Transaction+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Transaction+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		54531BB42290C831001B6243 /* money.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = money.jpg; path = ../money.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,8 +103,8 @@
 		543FF9D1228DB0ED000B2A44 = {
 			isa = PBXGroup;
 			children = (
-				543FF9DC228DB0EE000B2A44 /* Finance 2 Go */,
 				543FF9EC228DB0F1000B2A44 /* Info.plist */,
+				543FF9DC228DB0EE000B2A44 /* Finance 2 Go */,
 				543FF9F4228DB0F1000B2A44 /* Finance 2 GoTests */,
 				543FF9FF228DB0F1000B2A44 /* Finance 2 GoUITests */,
 				543FF9DB228DB0EE000B2A44 /* Products */,
@@ -169,12 +171,21 @@
 		54531BB122909444001B6243 /* Ressources */ = {
 			isa = PBXGroup;
 			children = (
+				54531BB62290C83D001B6243 /* New Group */,
 				543FF9E1228DB0EE000B2A44 /* Main.storyboard */,
 				543FF9E7228DB0F1000B2A44 /* Assets.xcassets */,
 				543FF9E9228DB0F1000B2A44 /* LaunchScreen.storyboard */,
 				543FF9E4228DB0EE000B2A44 /* Finance_2_Go.xcdatamodeld */,
 			);
 			path = Ressources;
+			sourceTree = "<group>";
+		};
+		54531BB62290C83D001B6243 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+				54531BB42290C831001B6243 /* money.jpg */,
+			);
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -281,6 +292,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				54531BB52290C831001B6243 /* money.jpg in Resources */,
 				543FF9EB228DB0F1000B2A44 /* LaunchScreen.storyboard in Resources */,
 				543FF9E8228DB0F1000B2A44 /* Assets.xcassets in Resources */,
 				543FF9E3228DB0EE000B2A44 /* Main.storyboard in Resources */,
@@ -498,7 +510,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = S6KJ7JN9XX;
-				INFOPLIST_FILE = "Finance 2 Go/Info.plist";
+				INFOPLIST_FILE = Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -517,7 +529,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = S6KJ7JN9XX;
-				INFOPLIST_FILE = "Finance 2 Go/Info.plist";
+				INFOPLIST_FILE = Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
