@@ -102,7 +102,6 @@
 			isa = PBXGroup;
 			children = (
 				543FF9DC228DB0EE000B2A44 /* Finance 2 Go */,
-				54531BB122909444001B6243 /* Ressources */,
 				543FF9EC228DB0F1000B2A44 /* Info.plist */,
 				543FF9F4228DB0F1000B2A44 /* Finance 2 GoTests */,
 				543FF9FF228DB0F1000B2A44 /* Finance 2 GoUITests */,
@@ -129,6 +128,7 @@
 				543FFA10228E0819000B2A44 /* OverviewVC.swift */,
 				543FFA0E228DF8D6000B2A44 /* CreateProfileVC.swift */,
 				543FFA12228E083F000B2A44 /* SettingsVC.swift */,
+				54531BB122909444001B6243 /* Ressources */,
 			);
 			path = "Finance 2 Go";
 			sourceTree = "<group>";
