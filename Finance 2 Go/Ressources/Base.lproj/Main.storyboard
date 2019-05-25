@@ -22,10 +22,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="83"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Einstellungen" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V0d-qW-OAy">
-                                        <rect key="frame" x="67" y="23" width="187" height="36"/>
+                                        <rect key="frame" x="43" y="23" width="235" height="36"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="36" id="FqC-dJ-Kaa"/>
-                                            <constraint firstAttribute="width" constant="187" id="l0w-iV-HYg"/>
+                                            <constraint firstAttribute="width" constant="235" id="l0w-iV-HYg"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -571,10 +571,10 @@
                             <constraint firstItem="oIh-tA-umL" firstAttribute="trailing" secondItem="8aL-QW-ytx" secondAttribute="trailing" id="2aY-bh-78O"/>
                             <constraint firstItem="vYw-Ku-n9X" firstAttribute="centerY" secondItem="mSq-lH-OvE" secondAttribute="centerY" constant="-6" id="9I9-WM-ub8"/>
                             <constraint firstItem="oIh-tA-umL" firstAttribute="leading" secondItem="8aL-QW-ytx" secondAttribute="leading" id="Bqk-3a-UB1"/>
+                            <constraint firstItem="8aL-QW-ytx" firstAttribute="bottom" secondItem="3Ye-rD-xbz" secondAttribute="bottom" constant="20" id="EJ3-Nd-eFP"/>
                             <constraint firstItem="vYw-Ku-n9X" firstAttribute="centerX" secondItem="mSq-lH-OvE" secondAttribute="centerX" id="hJq-EV-8Rz"/>
                             <constraint firstItem="3Ye-rD-xbz" firstAttribute="centerX" secondItem="mSq-lH-OvE" secondAttribute="centerX" id="ktl-Ua-BzQ"/>
                             <constraint firstItem="oIh-tA-umL" firstAttribute="top" secondItem="mSq-lH-OvE" secondAttribute="top" id="spe-zB-AgZ"/>
-                            <constraint firstItem="3Ye-rD-xbz" firstAttribute="top" secondItem="vYw-Ku-n9X" secondAttribute="bottom" constant="97" id="vBm-mD-R5e"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="8aL-QW-ytx"/>
                     </view>
@@ -593,6 +593,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Vyf-X8-i9N"/>
+        <segue reference="xs5-ar-3gB"/>
     </inferredMetricsTieBreakers>
 </document>
