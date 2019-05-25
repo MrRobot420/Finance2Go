@@ -13,6 +13,9 @@ class CreateProfileVC: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var mailField: UITextField!
     @IBOutlet weak var ageField: UITextField!
+    @IBOutlet weak var passwordField: UITextField!
+    @IBOutlet weak var conf_passwordField: UITextField!
+    
     
     
     func createProfile() {
@@ -27,6 +30,8 @@ class CreateProfileVC: UIViewController, UITextFieldDelegate {
         nameField.delegate = self
         mailField.delegate = self
         ageField.delegate = self
+        passwordField.delegate = self
+        conf_passwordField.delegate = self
         configureTextFields()
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange), name: UIResponder.keyboardWillShowNotification, object: nil)
@@ -35,9 +40,11 @@ class CreateProfileVC: UIViewController, UITextFieldDelegate {
     }
     
     func configureTextFields() {
-        nameField.placeholder = "name"
-        mailField.placeholder = "e-mail"
-        ageField.placeholder = "age"
+        nameField.placeholder = "Name"
+        mailField.placeholder = "E-Mail"
+        ageField.placeholder = "Alter"
+        passwordField.placeholder = "Passwort"
+        conf_passwordField.placeholder = "Passwort bestätigen"
         ageField.keyboardType = UIKeyboardType.numberPad
     }
     
@@ -46,11 +53,21 @@ class CreateProfileVC: UIViewController, UITextFieldDelegate {
         self.view.endEditing(true)
     }
     
+    // OBJ-C Code for moving the frame up, while typing:
     @objc func keyboardWillChange(notification: Notification) {
-        print("Keyboard will show: \(notification.name.rawValue)")
+        print("Keyboard will show: \(notification.name.rawValue)")      // Notification DEBUG
         
         guard let keyboardRect = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else {
             return
+        }
+        var editBlock = false
+        
+        if nameField.isEditing == true {
+            editBlock = true
+        } else if mailField.isEditing == true {
+            editBlock = true
+        } else {
+            editBlock = false
         }
         
         let nameNoti = Notification.Name("UIKeyboardWillShowNotification")
@@ -58,11 +75,16 @@ class CreateProfileVC: UIViewController, UITextFieldDelegate {
         
         let keyboardHeight: CGFloat
         keyboardHeight = keyboardRect.standardized.height - self.view.safeAreaInsets.bottom
-        if notification.name == nameNoti || notification.name == nameNoti2 {
-            view.frame.origin.y = -keyboardHeight
-        } else {
-            view.frame.origin.y = 0
+        
+        if editBlock == false {
+            if notification.name == nameNoti || notification.name == nameNoti2 {
+                view.frame.origin.y = -keyboardHeight
+            } else {
+                view.frame.origin.y = 0
+            }
         }
+        
+        
         
     }
     

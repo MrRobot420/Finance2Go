@@ -10,7 +10,8 @@ import UIKit
 
 class ViewController: UIViewController, UITextFieldDelegate {
     
-    @IBOutlet weak var profileField: UITextField!
+    @IBOutlet weak var nameField: UITextField!
+    @IBOutlet weak var passwordField: UITextField!
     
     
     @IBAction func goButton(_ sender: Any) {
@@ -20,7 +21,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "OverviewSegue" {
             if let overviewVC = segue.destination as? OverviewVC {
-                overviewVC.infoObject = profileField.text!
+                overviewVC.infoObject = nameField.text!
             }
         }
     }
@@ -38,13 +39,20 @@ class ViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "money.jpg")!)
-        self.profileField.delegate = self
+        self.nameField.delegate = self
+        self.passwordField.delegate = self
+        configureTextFields()
     }
     
     // User touched the display:
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
-
+    
+    // Sets PLACEHOLDER for text-fields:
+    func configureTextFields() {
+        nameField.placeholder = "Name"
+        passwordField.placeholder = "Passwort"
+    }
 }
 
