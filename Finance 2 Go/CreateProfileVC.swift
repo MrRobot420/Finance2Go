@@ -60,6 +60,25 @@ class CreateProfileVC: UIViewController, UITextFieldDelegate {
         guard let keyboardRect = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else {
             return
         }
+        
+        let nameNoti = Notification.Name("UIKeyboardWillShowNotification")
+        let nameNoti2 = Notification.Name("UIKeyboardWillChangeFrameNotification")
+        
+        let keyboardHeight: CGFloat
+        keyboardHeight = keyboardRect.standardized.height - self.view.safeAreaInsets.bottom
+        
+        let editBlock = checkIfEditing()    // Check which field is edited
+        
+        if editBlock == false {
+            if notification.name == nameNoti || notification.name == nameNoti2 {
+                view.frame.origin.y = -keyboardHeight
+            } else {
+                view.frame.origin.y = 0
+            }
+        }
+    }
+    
+    func checkIfEditing() -> Bool {
         var editBlock = false
         
         if nameField.isEditing == true {
@@ -70,22 +89,7 @@ class CreateProfileVC: UIViewController, UITextFieldDelegate {
             editBlock = false
         }
         
-        let nameNoti = Notification.Name("UIKeyboardWillShowNotification")
-        let nameNoti2 = Notification.Name("UIKeyboardWillChangeFrameNotification")
-        
-        let keyboardHeight: CGFloat
-        keyboardHeight = keyboardRect.standardized.height - self.view.safeAreaInsets.bottom
-        
-        if editBlock == false {
-            if notification.name == nameNoti || notification.name == nameNoti2 {
-                view.frame.origin.y = -keyboardHeight
-            } else {
-                view.frame.origin.y = 0
-            }
-        }
-        
-        
-        
+        return editBlock
     }
     
     deinit {
