@@ -10,9 +10,24 @@ import UIKit
 
 class OverviewVC: UIViewController {
     
+    var infoObject:String?
+    
+    
+    @IBOutlet weak var profileLabel: UILabel!
     @IBOutlet weak var accountLabel: UILabel!
     @IBOutlet weak var saldoLabel: UILabel!
     @IBOutlet weak var transxLabel: UILabel!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        // Do any additional setup after loading the view.
+        if infoObject == "" {
+            profileLabel.text = "DEBUG"
+        } else if infoObject != nil {
+            profileLabel.text = infoObject
+        } 
+    }
     
     @IBAction func accountBtn(_ sender: Any) {
         
@@ -26,10 +41,7 @@ class OverviewVC: UIViewController {
         
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
-    }
+    
     
     
 }
