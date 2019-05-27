@@ -35,11 +35,11 @@ class CreateProfileVC: UIViewController, UITextFieldDelegate {
     @IBAction func createProfile(_ sender: Any) {
         // C O R E - D A T A    <CONTEXT>
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-        //let profile = NSEntityDescription.entity(forEntityName: "Profile", in: context)
+        let profile = NSEntityDescription.entity(forEntityName: "Profile", in: context)
         
-        //let name = NSManagedObject(entity: profile!, insertInto: context)
-        //let email = NSManagedObject(entity: profile!, insertInto: context)
-        //let age = NSManagedObject(entity: profile!, insertInto: context)
+        let name = NSManagedObject(entity: profile!, insertInto: context)
+        let email = NSManagedObject(entity: profile!, insertInto: context)
+        let age = NSManagedObject(entity: profile!, insertInto: context)
         //let password = NSManagedObject(entity: profile!, insertInto: context)
         
         let name_value = nameField.text
@@ -51,9 +51,9 @@ class CreateProfileVC: UIViewController, UITextFieldDelegate {
         
         if state {
             print("[+] Setting Values...")
-            //name.setValue(name_value, forKey: "name")
-            //email.setValue(email_value, forKey: "email")
-            //age.setValue(age_value, forKey: "email")
+            name.setValue(name_value, forKey: Keys.name)
+            email.setValue(email_value, forKey: Keys.mail)
+            age.setValue(age_value, forKey: Keys.age)
             keychain.set(name_value!, forKey: Keys.name, withAccess: KeychainSwiftAccessOptions.accessibleAlways)
             keychain.set(email_value!, forKey: Keys.mail, withAccess: KeychainSwiftAccessOptions.accessibleAlways)
             keychain.set(age_value!, forKey: Keys.age, withAccess: KeychainSwiftAccessOptions.accessibleAlways)
@@ -79,6 +79,14 @@ class CreateProfileVC: UIViewController, UITextFieldDelegate {
         }
     }
     
+    // SHOW Info in selected color:
+    func showInfo(info:String!, color: UIColor!) {
+        print("[X] ERROR: \(info!) ")
+        infoLabel.text = info
+        infoLabel.textColor = color
+    }
+    
+    
     // VALIDATES INPUTS
     func checkInputs() -> Bool {
         let name_value = nameField.text
@@ -88,57 +96,46 @@ class CreateProfileVC: UIViewController, UITextFieldDelegate {
         
         // NAME:
         if name_value!.isEmpty || name_value == " " {
-            print("[X] ERROR Name leer")
-            infoLabel.text = "Name leer"
-            infoLabel.textColor = UIColor.red
+            showInfo(info: "Name leer", color: #colorLiteral(red: 0.7207441926, green: 0.02335692724, blue: 0.06600695687, alpha: 1))
             return false
-            // EMAIL:
         } else {
+            
+            // EMAIL:
             if email_value!.isEmpty || email_value == " " {
-                print("[X] ERROR E-Mail leer")
-                infoLabel.text = "E-Mail leer"
-                infoLabel.textColor = UIColor.red
+                showInfo(info: "E-Mail leer", color: #colorLiteral(red: 0.7207441926, green: 0.02335692724, blue: 0.06600695687, alpha: 1))
                 return false
             } else {
                 if isValidEmail(testStr: email_value!) {
+                    
                     // AGE:
                     if age_value!.isEmpty || age_value == " " {
-                        print("[X] ERROR Alter leer")
-                        infoLabel.text = "Alter leer"
-                        infoLabel.textColor = UIColor.red
+                        showInfo(info: "Alter leer", color: #colorLiteral(red: 0.7207441926, green: 0.02335692724, blue: 0.06600695687, alpha: 1))
                         return false
                     } else if isValidAge(testStr: age_value!) {
+                        
                         // PASSWORD:
                         if password_value!.isEmpty || password_value == " " {
-                            print("[X] ERROR Passwort leer")
-                            infoLabel.text = "Passwort leer"
-                            infoLabel.textColor = UIColor.red
+                            showInfo(info: "Passwort leer", color: #colorLiteral(red: 0.7207441926, green: 0.02335692724, blue: 0.06600695687, alpha: 1))
                             return false
                         } else if isValidPassword(testStr: password_value!) {
                             if password_value == conf_passwordField.text {
-                                print("[√] Profil erstellt!")                   // <--- DESIRED OUTCOME!
-                                infoLabel.text = "Profil erstellt!"
-                                infoLabel.textColor = UIColor.green
+                                
+                                // LAST CHECK PASSED:
+                                showInfo(info: "Profil erstellt", color: #colorLiteral(red: 0.3735761046, green: 0.7207441926, blue: 0.09675113112, alpha: 1))                // <--- DESIRED OUTCOME!
                                 return true
                             } else {
-                                infoLabel.text = "untersch. Passwörter!"
-                                infoLabel.textColor = UIColor.red
-                                print("[X] ERROR Passwörter unterschiedlich!")
+                                showInfo(info: "untersch. Passwörter!", color: #colorLiteral(red: 0.7207441926, green: 0.02335692724, blue: 0.06600695687, alpha: 1))
                                 return false
                             }
                         } else {
-                            infoLabel.text = "Ungültig: (8)"
-                            infoLabel.textColor = UIColor.red
-                            print("[X] ERROR Ungültiges Passwort: (8)!")
+                            showInfo(info: "Ungültig: (8)", color: #colorLiteral(red: 0.7207441926, green: 0.02335692724, blue: 0.06600695687, alpha: 1))
                             return false
                         }
                     } else {
                         return false
                     }
                 } else {
-                    infoLabel.text = "Email ungültig!"
-                    infoLabel.textColor = UIColor.red
-                    print("[X] ERROR Email ungültig!")
+                    showInfo(info: "E-Mail ungültig!", color: #colorLiteral(red: 0.7207441926, green: 0.02335692724, blue: 0.06600695687, alpha: 1))
                     return false
                 }
             }
