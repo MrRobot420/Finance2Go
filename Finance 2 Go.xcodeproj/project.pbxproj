@@ -20,13 +20,16 @@
 		543FFA13228E083F000B2A44 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543FFA12228E083F000B2A44 /* SettingsVC.swift */; };
 		54531BA9229092B9001B6243 /* Target+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54531BA1229092B9001B6243 /* Target+CoreDataClass.swift */; };
 		54531BAA229092B9001B6243 /* Target+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54531BA2229092B9001B6243 /* Target+CoreDataProperties.swift */; };
-		54531BAB229092B9001B6243 /* Profile+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54531BA3229092B9001B6243 /* Profile+CoreDataClass.swift */; };
-		54531BAC229092B9001B6243 /* Profile+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54531BA4229092B9001B6243 /* Profile+CoreDataProperties.swift */; };
 		54531BAD229092B9001B6243 /* Asset+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54531BA5229092B9001B6243 /* Asset+CoreDataClass.swift */; };
 		54531BAE229092B9001B6243 /* Asset+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54531BA6229092B9001B6243 /* Asset+CoreDataProperties.swift */; };
 		54531BAF229092B9001B6243 /* Transaction+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54531BA7229092B9001B6243 /* Transaction+CoreDataClass.swift */; };
 		54531BB0229092B9001B6243 /* Transaction+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54531BA8229092B9001B6243 /* Transaction+CoreDataProperties.swift */; };
 		54531BB52290C831001B6243 /* money.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 54531BB42290C831001B6243 /* money.jpg */; };
+		54AC8446229AECDD002FFAB1 /* Profile+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54AC8444229AECDD002FFAB1 /* Profile+CoreDataClass.swift */; };
+		54AC8447229AECDD002FFAB1 /* Profile+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54AC8445229AECDD002FFAB1 /* Profile+CoreDataProperties.swift */; };
+		D0484D1B50CFC820A7208A74 /* Pods_Finance_2_Go.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 975BD8F591509268B7778917 /* Pods_Finance_2_Go.framework */; };
+		E97D34D954E379B694D388F2 /* Pods_Finance_2_GoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E8FD000D082AB122F1AF416 /* Pods_Finance_2_GoUITests.framework */; };
+		ECC6345FF49129ED0493FEBC /* Pods_Finance_2_GoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D16D3C7F59C5C8C9F35FFF19 /* Pods_Finance_2_GoTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +50,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2E8FD000D082AB122F1AF416 /* Pods_Finance_2_GoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Finance_2_GoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		34D86E0A41BAF61262BEF4B7 /* Pods-Finance 2 Go.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Finance 2 Go.release.xcconfig"; path = "Target Support Files/Pods-Finance 2 Go/Pods-Finance 2 Go.release.xcconfig"; sourceTree = "<group>"; };
+		3623E6D193D51DF21125C1F6 /* Pods-Finance 2 GoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Finance 2 GoTests.release.xcconfig"; path = "Target Support Files/Pods-Finance 2 GoTests/Pods-Finance 2 GoTests.release.xcconfig"; sourceTree = "<group>"; };
 		543FF9DA228DB0EE000B2A44 /* Finance 2 Go.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Finance 2 Go.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		543FF9DD228DB0EE000B2A44 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		543FF9DF228DB0EE000B2A44 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -66,13 +72,19 @@
 		543FFA12228E083F000B2A44 /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 		54531BA1229092B9001B6243 /* Target+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Target+CoreDataClass.swift"; sourceTree = "<group>"; };
 		54531BA2229092B9001B6243 /* Target+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Target+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		54531BA3229092B9001B6243 /* Profile+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Profile+CoreDataClass.swift"; sourceTree = "<group>"; };
-		54531BA4229092B9001B6243 /* Profile+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Profile+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		54531BA5229092B9001B6243 /* Asset+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Asset+CoreDataClass.swift"; sourceTree = "<group>"; };
 		54531BA6229092B9001B6243 /* Asset+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Asset+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		54531BA7229092B9001B6243 /* Transaction+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Transaction+CoreDataClass.swift"; sourceTree = "<group>"; };
 		54531BA8229092B9001B6243 /* Transaction+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Transaction+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		54531BB42290C831001B6243 /* money.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = money.jpg; path = ../money.jpg; sourceTree = "<group>"; };
+		54AC8444229AECDD002FFAB1 /* Profile+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Profile+CoreDataClass.swift"; sourceTree = "<group>"; };
+		54AC8445229AECDD002FFAB1 /* Profile+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Profile+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		975BD8F591509268B7778917 /* Pods_Finance_2_Go.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Finance_2_Go.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B9B8FAED0EDAC44B0EED0F42 /* Pods-Finance 2 GoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Finance 2 GoUITests.debug.xcconfig"; path = "Target Support Files/Pods-Finance 2 GoUITests/Pods-Finance 2 GoUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		BD2CD0FF93AA72C3074210B6 /* Pods-Finance 2 GoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Finance 2 GoTests.debug.xcconfig"; path = "Target Support Files/Pods-Finance 2 GoTests/Pods-Finance 2 GoTests.debug.xcconfig"; sourceTree = "<group>"; };
+		BEC3AB5270C0209FEC0534E7 /* Pods-Finance 2 Go.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Finance 2 Go.debug.xcconfig"; path = "Target Support Files/Pods-Finance 2 Go/Pods-Finance 2 Go.debug.xcconfig"; sourceTree = "<group>"; };
+		D16D3C7F59C5C8C9F35FFF19 /* Pods_Finance_2_GoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Finance_2_GoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D7FDEDE2EBF4458C721A1EF6 /* Pods-Finance 2 GoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Finance 2 GoUITests.release.xcconfig"; path = "Target Support Files/Pods-Finance 2 GoUITests/Pods-Finance 2 GoUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0484D1B50CFC820A7208A74 /* Pods_Finance_2_Go.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,6 +100,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ECC6345FF49129ED0493FEBC /* Pods_Finance_2_GoTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,6 +108,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E97D34D954E379B694D388F2 /* Pods_Finance_2_GoUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -108,6 +123,8 @@
 				543FF9F4228DB0F1000B2A44 /* Finance 2 GoTests */,
 				543FF9FF228DB0F1000B2A44 /* Finance 2 GoUITests */,
 				543FF9DB228DB0EE000B2A44 /* Products */,
+				AE9562EA563B992E924084D3 /* Pods */,
+				9DF8D4E16C107E151FA7CF5E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -158,8 +175,8 @@
 			children = (
 				54531BA1229092B9001B6243 /* Target+CoreDataClass.swift */,
 				54531BA2229092B9001B6243 /* Target+CoreDataProperties.swift */,
-				54531BA3229092B9001B6243 /* Profile+CoreDataClass.swift */,
-				54531BA4229092B9001B6243 /* Profile+CoreDataProperties.swift */,
+				54AC8444229AECDD002FFAB1 /* Profile+CoreDataClass.swift */,
+				54AC8445229AECDD002FFAB1 /* Profile+CoreDataProperties.swift */,
 				54531BA5229092B9001B6243 /* Asset+CoreDataClass.swift */,
 				54531BA6229092B9001B6243 /* Asset+CoreDataProperties.swift */,
 				54531BA7229092B9001B6243 /* Transaction+CoreDataClass.swift */,
@@ -188,6 +205,30 @@
 			path = "New Group";
 			sourceTree = "<group>";
 		};
+		9DF8D4E16C107E151FA7CF5E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				975BD8F591509268B7778917 /* Pods_Finance_2_Go.framework */,
+				D16D3C7F59C5C8C9F35FFF19 /* Pods_Finance_2_GoTests.framework */,
+				2E8FD000D082AB122F1AF416 /* Pods_Finance_2_GoUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AE9562EA563B992E924084D3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BEC3AB5270C0209FEC0534E7 /* Pods-Finance 2 Go.debug.xcconfig */,
+				34D86E0A41BAF61262BEF4B7 /* Pods-Finance 2 Go.release.xcconfig */,
+				BD2CD0FF93AA72C3074210B6 /* Pods-Finance 2 GoTests.debug.xcconfig */,
+				3623E6D193D51DF21125C1F6 /* Pods-Finance 2 GoTests.release.xcconfig */,
+				B9B8FAED0EDAC44B0EED0F42 /* Pods-Finance 2 GoUITests.debug.xcconfig */,
+				D7FDEDE2EBF4458C721A1EF6 /* Pods-Finance 2 GoUITests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -195,9 +236,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 543FFA05228DB0F1000B2A44 /* Build configuration list for PBXNativeTarget "Finance 2 Go" */;
 			buildPhases = (
+				8A2B2905756FBDF3CAA34492 /* [CP] Check Pods Manifest.lock */,
 				543FF9D6228DB0ED000B2A44 /* Sources */,
 				543FF9D7228DB0ED000B2A44 /* Frameworks */,
 				543FF9D8228DB0ED000B2A44 /* Resources */,
+				34DB7F25764F9C2C71B0D764 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -212,6 +255,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 543FFA08228DB0F1000B2A44 /* Build configuration list for PBXNativeTarget "Finance 2 GoTests" */;
 			buildPhases = (
+				7B05F0A4B2930DD7784A52F5 /* [CP] Check Pods Manifest.lock */,
 				543FF9ED228DB0F1000B2A44 /* Sources */,
 				543FF9EE228DB0F1000B2A44 /* Frameworks */,
 				543FF9EF228DB0F1000B2A44 /* Resources */,
@@ -230,6 +274,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 543FFA0B228DB0F1000B2A44 /* Build configuration list for PBXNativeTarget "Finance 2 GoUITests" */;
 			buildPhases = (
+				2550ECB649D025F396F02F7D /* [CP] Check Pods Manifest.lock */,
 				543FF9F8228DB0F1000B2A44 /* Sources */,
 				543FF9F9228DB0F1000B2A44 /* Frameworks */,
 				543FF9FA228DB0F1000B2A44 /* Resources */,
@@ -315,15 +360,101 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2550ECB649D025F396F02F7D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Finance 2 GoUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		34DB7F25764F9C2C71B0D764 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Finance 2 Go/Pods-Finance 2 Go-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Finance 2 Go/Pods-Finance 2 Go-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Finance 2 Go/Pods-Finance 2 Go-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7B05F0A4B2930DD7784A52F5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Finance 2 GoTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8A2B2905756FBDF3CAA34492 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Finance 2 Go-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		543FF9D6228DB0ED000B2A44 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				54531BAE229092B9001B6243 /* Asset+CoreDataProperties.swift in Sources */,
+				54AC8446229AECDD002FFAB1 /* Profile+CoreDataClass.swift in Sources */,
 				543FFA11228E0819000B2A44 /* OverviewVC.swift in Sources */,
 				543FF9E6228DB0EE000B2A44 /* Finance_2_Go.xcdatamodeld in Sources */,
-				54531BAC229092B9001B6243 /* Profile+CoreDataProperties.swift in Sources */,
 				543FF9E0228DB0EE000B2A44 /* ViewController.swift in Sources */,
 				54531BA9229092B9001B6243 /* Target+CoreDataClass.swift in Sources */,
 				54531BAA229092B9001B6243 /* Target+CoreDataProperties.swift in Sources */,
@@ -332,7 +463,7 @@
 				54531BAD229092B9001B6243 /* Asset+CoreDataClass.swift in Sources */,
 				54531BAF229092B9001B6243 /* Transaction+CoreDataClass.swift in Sources */,
 				543FF9DE228DB0EE000B2A44 /* AppDelegate.swift in Sources */,
-				54531BAB229092B9001B6243 /* Profile+CoreDataClass.swift in Sources */,
+				54AC8447229AECDD002FFAB1 /* Profile+CoreDataProperties.swift in Sources */,
 				543FFA13228E083F000B2A44 /* SettingsVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -506,6 +637,7 @@
 		};
 		543FFA06228DB0F1000B2A44 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BEC3AB5270C0209FEC0534E7 /* Pods-Finance 2 Go.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -525,6 +657,7 @@
 		};
 		543FFA07228DB0F1000B2A44 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 34D86E0A41BAF61262BEF4B7 /* Pods-Finance 2 Go.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -544,6 +677,7 @@
 		};
 		543FFA09228DB0F1000B2A44 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BD2CD0FF93AA72C3074210B6 /* Pods-Finance 2 GoTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -565,6 +699,7 @@
 		};
 		543FFA0A228DB0F1000B2A44 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3623E6D193D51DF21125C1F6 /* Pods-Finance 2 GoTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -586,6 +721,7 @@
 		};
 		543FFA0C228DB0F1000B2A44 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B9B8FAED0EDAC44B0EED0F42 /* Pods-Finance 2 GoUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -606,6 +742,7 @@
 		};
 		543FFA0D228DB0F1000B2A44 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D7FDEDE2EBF4458C721A1EF6 /* Pods-Finance 2 GoUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

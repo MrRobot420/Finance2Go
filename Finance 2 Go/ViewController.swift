@@ -7,11 +7,28 @@
 //
 
 import UIKit
+import CoreData
+import KeychainSwift
 
 class ViewController: UIViewController, UITextFieldDelegate {
     
+    let keychain = KeychainSwift(keyPrefix: Keys.keyPrefix)
+    
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        if textField == nameField {
+            print("Getting data from Keychain")
+            nameField.text = keychain.get(Keys.name)
+            passwordField.text = keychain.get(Keys.password)
+            print(keychain.get(Keys.password)!)
+            
+            if keychain.lastResultCode != noErr {
+                print(keychain.lastResultCode)
+            }
+        }
+    }
     
     
     @IBAction func goButton(_ sender: Any) {

@@ -1,0 +1,6 @@
+framework module Pods_Finance_2_GoTests {
+  umbrella header "Pods-Finance 2 GoTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

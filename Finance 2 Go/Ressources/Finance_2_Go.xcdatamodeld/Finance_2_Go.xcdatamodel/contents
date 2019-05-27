@@ -15,6 +15,7 @@
         <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="password" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="isOwnerOf" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Asset" inverseName="belongsTo" inverseEntity="Asset" syncable="YES"/>
     </entity>
     <entity name="Target" representedClassName=".Target" syncable="YES">
@@ -37,9 +38,9 @@
         <relationship name="isPartOf" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Asset" inverseName="has" inverseEntity="Asset" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Profile" positionX="-63" positionY="-18" width="128" height="120"/>
         <element name="Asset" positionX="-54" positionY="18" width="128" height="165"/>
-        <element name="Transaction" positionX="-36" positionY="54" width="128" height="180"/>
+        <element name="Profile" positionX="-63" positionY="-18" width="128" height="135"/>
         <element name="Target" positionX="-18" positionY="108" width="128" height="135"/>
+        <element name="Transaction" positionX="-36" positionY="54" width="128" height="180"/>
     </elements>
 </model>
