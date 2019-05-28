@@ -12,7 +12,10 @@ import KeychainSwift
 
 class ViewController: UIViewController, UITextFieldDelegate {
     
+    var profiles: [Profile] = []
     let keychain = KeychainSwift(keyPrefix: Keys.keyPrefix)
+    //let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    //let entity = NSEntityDescription.entity(forEntityName: "Profile", in: context)
     
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
@@ -61,6 +64,38 @@ class ViewController: UIViewController, UITextFieldDelegate {
         configureTextFields()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        //1
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+                return
+        }
+        
+        let context = appDelegate.persistentContainer.viewContext
+        
+        //2
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Profile")
+        
+        //3
+        do {
+            //deleteAllData("Profile")
+            profiles = try context.fetch(fetchRequest) as! [Profile]
+            print("PROFILES: ")
+            for profile in profiles {
+                print("PROFILE - \(profile.name!):")
+                print(profile.email!)
+                print(Int16(profile.age))
+                print(profile.password!)
+                print("###########################")
+            }
+            
+        } catch let error as NSError {
+            print("Could not fetch. \(error), \(error.userInfo)")
+        }
+    }
+
+    
     // User touched the display:
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
@@ -70,6 +105,25 @@ class ViewController: UIViewController, UITextFieldDelegate {
     func configureTextFields() {
         nameField.placeholder = "Name"
         passwordField.placeholder = "Passwort"
+    }
+    
+    // I NEED TO DELETE ALL DATA FIRST! (copied from net)
+    func deleteAllData(_ entity:String) {
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+            return
+        }
+        let context = appDelegate.persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: entity)
+        fetchRequest.returnsObjectsAsFaults = false
+        do {
+            let results = try context.fetch(fetchRequest)
+            for object in results {
+                guard let objectData = object as? NSManagedObject else {continue}
+                context.delete(objectData)
+            }
+        } catch let error {
+            print("Detele all data in \(entity) error :", error)
+        }
     }
 }
 

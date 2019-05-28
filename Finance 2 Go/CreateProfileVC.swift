@@ -12,7 +12,7 @@ import KeychainSwift
 
 struct Keys {
     static let name = "name"
-    static let mail = "mail"
+    static let mail = "email"
     static let age = "age"
     static let password = "password"
     static let keyPrefix = "finance_"
@@ -35,34 +35,34 @@ class CreateProfileVC: UIViewController, UITextFieldDelegate {
     @IBAction func createProfile(_ sender: Any) {
         // C O R E - D A T A    <CONTEXT>
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-        let profile = NSEntityDescription.entity(forEntityName: "Profile", in: context)
+        let entity = NSEntityDescription.entity(forEntityName: "Profile", in: context)!
+        let profile = NSManagedObject(entity: entity, insertInto: context)
+        //let profile = NSEntityDescription.insertNewObject(forEntityName: "Profile", into: context) as! Profile
         
-        let name = NSManagedObject(entity: profile!, insertInto: context)
-        let email = NSManagedObject(entity: profile!, insertInto: context)
-        let age = NSManagedObject(entity: profile!, insertInto: context)
-        //let password = NSManagedObject(entity: profile!, insertInto: context)
         
         let name_value = nameField.text
         let email_value = mailField.text
-        let age_value = ageField.text
+        let age_value = Int16(ageField.text!)!
         let password_value = passwordField.text
         
         let state = checkInputs()
         
         if state {
             print("[+] Setting Values...")
-            name.setValue(name_value, forKey: Keys.name)
-            email.setValue(email_value, forKey: Keys.mail)
-            age.setValue(age_value, forKey: Keys.age)
-            keychain.set(name_value!, forKey: Keys.name, withAccess: KeychainSwiftAccessOptions.accessibleAlways)
-            keychain.set(email_value!, forKey: Keys.mail, withAccess: KeychainSwiftAccessOptions.accessibleAlways)
-            keychain.set(age_value!, forKey: Keys.age, withAccess: KeychainSwiftAccessOptions.accessibleAlways)
+            profile.setValue(name_value, forKey: Keys.name)
+            profile.setValue(email_value, forKey: Keys.mail)
+            profile.setValue(age_value, forKey: Keys.age)
+            profile.setValue(password_value, forKey: Keys.password)
+            //keychain.set(profile.name!, forKey: Keys.name, withAccess: .accessibleAlways)
+            //keychain.set(name_value!, forKey: Keys.name, withAccess: KeychainSwiftAccessOptions.accessibleAlways)
+            //keychain.set(email_value!, forKey: Keys.mail, withAccess: KeychainSwiftAccessOptions.accessibleAlways)
+            //keychain.set(age_value!, forKey: Keys.age, withAccess: KeychainSwiftAccessOptions.accessibleAlways)
             
-            if keychain.set(password_value!, forKey: Keys.password, withAccess: KeychainSwiftAccessOptions.accessibleAlways) {  // -> KeychainSwift
-                print("[+ ] Keychain Set!")
-                infoLabel.text = "Keychain set!"
-                infoLabel.textColor = UIColor.green
-            }
+//            if keychain.set(password_value!, forKey: Keys.password, withAccess: KeychainSwiftAccessOptions.accessibleAlways) {  // -> KeychainSwift
+//                print("[+ ] Keychain Set!")
+//                infoLabel.text = "Keychain set!"
+//                infoLabel.textColor = UIColor.green
+//            }
             //password.setValue(password_value, forKey: "password")        -> CoreData
         } else {
             print("[X] Values were not set!")
