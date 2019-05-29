@@ -577,13 +577,30 @@
                                     <action selector="createProfile:" destination="sjN-Gj-cSc" eventType="touchUpInside" id="2BV-qj-euf"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5yW-Vb-Kra">
+                                <rect key="frame" x="70" y="409" width="180" height="35"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="517-dh-i64"/>
+                                    <constraint firstAttribute="width" constant="180" id="MEJ-vi-PCW"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="ℹ️ Passwort">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="passwordInfo:" destination="sjN-Gj-cSc" eventType="touchUpInside" id="9S2-RF-d9B"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="oIh-tA-umL" firstAttribute="trailing" secondItem="8aL-QW-ytx" secondAttribute="trailing" id="2aY-bh-78O"/>
+                            <constraint firstItem="5yW-Vb-Kra" firstAttribute="centerX" secondItem="mSq-lH-OvE" secondAttribute="centerX" id="8z7-3P-xVJ"/>
                             <constraint firstItem="vYw-Ku-n9X" firstAttribute="centerY" secondItem="mSq-lH-OvE" secondAttribute="centerY" constant="-12" id="9I9-WM-ub8"/>
                             <constraint firstItem="oIh-tA-umL" firstAttribute="leading" secondItem="8aL-QW-ytx" secondAttribute="leading" id="Bqk-3a-UB1"/>
                             <constraint firstItem="8aL-QW-ytx" firstAttribute="bottom" secondItem="3Ye-rD-xbz" secondAttribute="bottom" constant="20" id="EJ3-Nd-eFP"/>
+                            <constraint firstItem="5yW-Vb-Kra" firstAttribute="top" secondItem="vYw-Ku-n9X" secondAttribute="bottom" constant="8" id="Gal-sY-IjJ"/>
                             <constraint firstItem="vYw-Ku-n9X" firstAttribute="centerX" secondItem="mSq-lH-OvE" secondAttribute="centerX" id="hJq-EV-8Rz"/>
                             <constraint firstItem="3Ye-rD-xbz" firstAttribute="centerX" secondItem="mSq-lH-OvE" secondAttribute="centerX" id="ktl-Ua-BzQ"/>
                             <constraint firstItem="oIh-tA-umL" firstAttribute="top" secondItem="mSq-lH-OvE" secondAttribute="top" id="spe-zB-AgZ"/>

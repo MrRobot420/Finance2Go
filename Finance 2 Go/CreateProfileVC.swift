@@ -19,7 +19,20 @@ struct Keys {
     static let keyPrefix = "finance_"
 }
 
+// Screen width.
+public var screenWidth: CGFloat {
+    return UIScreen.main.bounds.width
+}
+
+// Screen height.
+public var screenHeight: CGFloat {
+    return UIScreen.main.bounds.height
+}
+
+
 class CreateProfileVC: UIViewController, UITextFieldDelegate {
+    
+    // Shortcuts:   cmd + ctr + space = emojis
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Profile")       // What to fetch
@@ -35,6 +48,15 @@ class CreateProfileVC: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var conf_passwordField: UITextField!
     
     @IBOutlet weak var infoLabel: UILabel!
+    
+    // Shows info to password guidelines / criteria (alert)
+    @IBAction func passwordInfo(_ sender: Any) {
+        let message = "8 Zeichen\n2 Großbuchstaben\n3 Buchstaben\n2 Zahlen\n1 Sonderzeichen"
+        let alert = UIAlertController(title: "Passwort Kriterien:", message: message, preferredStyle: .alert)
+        print("[i] Showing password-info alert")
+        alert.addAction(UIAlertAction(title: "✅ VERSTANDEN 😎", style: .default, handler: nil))
+        self.present(alert, animated: true)
+    }
     
     
     // "Bestätigen" Button CREATES new profile
@@ -103,11 +125,17 @@ class CreateProfileVC: UIViewController, UITextFieldDelegate {
         let age_value = ageField.text
         let password_value = passwordField.text
         
+        
         // NAME:
         if name_value!.isEmpty || name_value == " " {
             showInfo(info: "Name leer", color: #colorLiteral(red: 0.7207441926, green: 0.02335692724, blue: 0.06600695687, alpha: 1))
             return false
         } else {
+            let taken = checkIfTaken(name: name_value!)
+            if taken {
+                showInfo(info: "Name vergeben!", color: #colorLiteral(red: 0.7207441926, green: 0.02335692724, blue: 0.06600695687, alpha: 1))
+                return false
+            }
             
             // EMAIL:
             if email_value!.isEmpty || email_value == " " {
@@ -149,6 +177,19 @@ class CreateProfileVC: UIViewController, UITextFieldDelegate {
                 }
             }
         }
+    }
+    
+    // Check if name already taken:
+    func checkIfTaken(name: String!) -> Bool {
+        
+        for profile in profiles {
+            if profile.name != nil {
+                if name!.lowercased() == profile.name!.lowercased() {
+                    return true
+                }
+            }
+        }
+        return false
     }
     
     // VALIDATES EMAIL
