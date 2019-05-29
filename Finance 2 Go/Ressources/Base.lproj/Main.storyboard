@@ -97,6 +97,30 @@
                                     <constraint firstItem="Pf5-eF-aHJ" firstAttribute="leading" secondItem="tRw-Pu-SzX" secondAttribute="leading" constant="12" id="uSF-Ef-FXe"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mND-fi-5UV">
+                                <rect key="frame" x="70" y="431" width="180" height="35"/>
+                                <color key="backgroundColor" red="0.67337900399999995" green="0.17415651679999999" blue="0.18073764440000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="qaL-2h-M8h"/>
+                                    <constraint firstAttribute="width" constant="180" id="tw3-aF-Rqq"/>
+                                </constraints>
+                                <state key="normal" title="Delete All Data">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="showAlert" destination="3OR-mm-xMM" eventType="touchUpInside" id="tXj-ax-50a"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Od0-eN-PfI">
+                                <rect key="frame" x="70" y="393" width="180" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="6ji-rH-OrM"/>
+                                    <constraint firstAttribute="width" constant="180" id="Akh-wS-TTu"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -104,12 +128,19 @@
                             <constraint firstItem="tRw-Pu-SzX" firstAttribute="centerY" secondItem="dEa-2J-Xwo" secondAttribute="centerY" id="N7L-LN-qme"/>
                             <constraint firstItem="yV9-Y8-Fqk" firstAttribute="trailing" secondItem="yXi-0p-eqS" secondAttribute="trailing" id="OAH-c6-KUC"/>
                             <constraint firstItem="tRw-Pu-SzX" firstAttribute="centerX" secondItem="dEa-2J-Xwo" secondAttribute="centerX" id="Ofw-7v-gMR"/>
+                            <constraint firstItem="mND-fi-5UV" firstAttribute="centerX" secondItem="dEa-2J-Xwo" secondAttribute="centerX" id="OlF-k5-C8y"/>
+                            <constraint firstItem="mND-fi-5UV" firstAttribute="top" secondItem="Od0-eN-PfI" secondAttribute="bottom" constant="8" id="Rid-Ze-GEE"/>
                             <constraint firstItem="yV9-Y8-Fqk" firstAttribute="leading" secondItem="yXi-0p-eqS" secondAttribute="leading" id="VEH-Y7-hxi"/>
+                            <constraint firstItem="mx3-po-u5N" firstAttribute="top" secondItem="mND-fi-5UV" secondAttribute="bottom" constant="37" id="g3E-9U-erF"/>
                             <constraint firstItem="yXi-0p-eqS" firstAttribute="bottom" secondItem="mx3-po-u5N" secondAttribute="bottom" constant="15" id="hbF-YM-tVT"/>
+                            <constraint firstItem="Od0-eN-PfI" firstAttribute="centerX" secondItem="dEa-2J-Xwo" secondAttribute="centerX" id="qJG-XB-kiK"/>
                             <constraint firstItem="yV9-Y8-Fqk" firstAttribute="top" secondItem="dEa-2J-Xwo" secondAttribute="top" id="qX4-2t-FKu"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="yXi-0p-eqS"/>
                     </view>
+                    <connections>
+                        <outlet property="deleteInfo" destination="Od0-eN-PfI" id="Swf-pB-nE4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RFg-iZ-QeT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -624,6 +655,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="68r-YY-0bZ"/>
+        <segue reference="xs5-ar-3gB"/>
     </inferredMetricsTieBreakers>
 </document>
