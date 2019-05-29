@@ -51,7 +51,7 @@
                                     <color key="titleShadowColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" identifier="SettingsBackSegue" id="xs5-ar-3gB"/>
+                                    <segue destination="BYZ-38-t0r" kind="presentation" identifier="SettingsBackSegue" modalTransitionStyle="flipHorizontal" id="xs5-ar-3gB"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tRw-Pu-SzX">
@@ -156,12 +156,13 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qxc-zy-Yr0">
                                 <rect key="frame" x="50" y="503" width="220" height="50"/>
-                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="37s-V6-ukJ"/>
                                     <constraint firstAttribute="width" constant="220" id="FDd-uS-qWV"/>
                                 </constraints>
-                                <state key="normal" title="Einstellungen">
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Einstellungen ⚙️">
                                     <color key="titleColor" red="0.99539974620000005" green="0.98406157189999999" blue="0.98464428989999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
@@ -169,13 +170,13 @@
                                     <segue destination="3OR-mm-xMM" kind="show" identifier="SettingsSegue" id="tEA-Iy-AkB"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.90000000000000002" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Finance 2 Go" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lf8-7d-BeK">
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.90000000000000002" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="💰Finance 2 Go🚶🏻‍♂️" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lf8-7d-BeK">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="83"/>
                                 <color key="backgroundColor" red="0.37357610460000001" green="0.7207441926" blue="0.09675113112" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="83" id="8md-qv-5U4"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -186,23 +187,24 @@
                                     <constraint firstAttribute="height" constant="50" id="BfM-il-sra"/>
                                     <constraint firstAttribute="width" constant="220" id="ViJ-9y-DNv"/>
                                 </constraints>
-                                <state key="normal" title="+ Profil">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                <state key="normal" title="➕ Profil">
                                     <color key="titleColor" red="0.99539974620000005" green="0.98406157189999999" blue="0.98464428989999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="titleShadowColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
                                     <action selector="addProfile:" destination="BYZ-38-t0r" eventType="touchUpInside" id="G2l-XX-pCI"/>
-                                    <segue destination="sjN-Gj-cSc" kind="show" identifier="CreateProfileSegue" id="nYT-k0-fSV"/>
+                                    <segue destination="sjN-Gj-cSc" kind="presentation" identifier="CreateProfileSegue" modalTransitionStyle="crossDissolve" id="nYT-k0-fSV"/>
                                 </connections>
                             </button>
                             <view alpha="0.94999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oJi-30-Qbl">
                                 <rect key="frame" x="50" y="191" width="220" height="178"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F30-a8-1eA">
-                                        <rect key="frame" x="44" y="134" width="132" height="36"/>
+                                        <rect key="frame" x="78" y="134" width="122" height="36"/>
                                         <color key="backgroundColor" red="0.37357610460000001" green="0.7207441926" blue="0.09675113112" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="132" id="3KX-P6-Kwc"/>
+                                            <constraint firstAttribute="width" constant="122" id="3KX-P6-Kwc"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                         <state key="normal" title="GO!">
@@ -243,19 +245,35 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Dw-pI-Gdt">
+                                        <rect key="frame" x="20" y="132" width="40" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="40" id="Atc-ld-USZ"/>
+                                            <constraint firstAttribute="height" constant="40" id="ms7-XP-A5w"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                        <state key="normal" title="ℹ️">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="profileInfos:" destination="BYZ-38-t0r" eventType="touchUpInside" id="khb-En-H4j"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstItem="5Dw-pI-Gdt" firstAttribute="centerX" secondItem="oJi-30-Qbl" secondAttribute="centerX" constant="-70" id="2sv-7q-bKi"/>
                                     <constraint firstItem="mRW-95-2iJ" firstAttribute="top" secondItem="jMK-4a-sRD" secondAttribute="bottom" constant="14" id="6r8-A5-GMO"/>
                                     <constraint firstItem="mRW-95-2iJ" firstAttribute="centerX" secondItem="oJi-30-Qbl" secondAttribute="centerX" id="CqV-aH-xxe"/>
                                     <constraint firstItem="jMK-4a-sRD" firstAttribute="top" secondItem="oJi-30-Qbl" secondAttribute="top" constant="38" id="LYZ-nU-JcL"/>
-                                    <constraint firstItem="F30-a8-1eA" firstAttribute="centerX" secondItem="oJi-30-Qbl" secondAttribute="centerX" id="Lvs-G7-J9L"/>
+                                    <constraint firstItem="F30-a8-1eA" firstAttribute="centerX" secondItem="oJi-30-Qbl" secondAttribute="centerX" constant="29" id="Lvs-G7-J9L"/>
                                     <constraint firstAttribute="width" constant="220" id="NbS-HQ-VxY"/>
                                     <constraint firstItem="ckY-BB-op1" firstAttribute="top" secondItem="oJi-30-Qbl" secondAttribute="top" constant="8" id="OMw-J1-qGb"/>
                                     <constraint firstItem="jMK-4a-sRD" firstAttribute="centerX" secondItem="oJi-30-Qbl" secondAttribute="centerX" id="Vgp-e2-Tfo"/>
                                     <constraint firstItem="ckY-BB-op1" firstAttribute="centerX" secondItem="oJi-30-Qbl" secondAttribute="centerX" id="hQJ-HI-DPB"/>
                                     <constraint firstItem="F30-a8-1eA" firstAttribute="top" secondItem="mRW-95-2iJ" secondAttribute="bottom" constant="22" id="lCM-iI-edW"/>
                                     <constraint firstAttribute="height" constant="178" id="w5z-eL-OuU"/>
+                                    <constraint firstItem="5Dw-pI-Gdt" firstAttribute="top" secondItem="mRW-95-2iJ" secondAttribute="bottom" constant="20" id="wMF-jZ-3A9"/>
                                     <constraint firstItem="mRW-95-2iJ" firstAttribute="centerX" secondItem="oJi-30-Qbl" secondAttribute="centerX" id="yev-Q4-SYd"/>
                                 </constraints>
                             </view>
@@ -278,7 +296,7 @@
                         <outlet property="infoLabel" destination="ckY-BB-op1" id="idp-fk-AVm"/>
                         <outlet property="nameField" destination="jMK-4a-sRD" id="p13-FB-E14"/>
                         <outlet property="passwordField" destination="mRW-95-2iJ" id="ObZ-sN-rjt"/>
-                        <segue destination="X4w-fE-o2i" kind="show" identifier="OverviewSegue" id="hiL-5e-PvT"/>
+                        <segue destination="X4w-fE-o2i" kind="presentation" identifier="OverviewSegue" modalTransitionStyle="crossDissolve" id="hiL-5e-PvT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -307,7 +325,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <segue destination="BYZ-38-t0r" kind="show" id="kH3-RN-OPs"/>
+                                            <segue destination="BYZ-38-t0r" kind="presentation" modalTransitionStyle="flipHorizontal" id="kH3-RN-OPs"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Übersicht" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Nq-3G-XP3">
@@ -509,7 +527,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <segue destination="BYZ-38-t0r" kind="show" id="ant-bw-xDf"/>
+                                            <segue destination="BYZ-38-t0r" kind="presentation" modalTransitionStyle="flipHorizontal" id="ant-bw-xDf"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -659,7 +677,7 @@
                         <outlet property="mailField" destination="gc6-fH-Zo8" id="uFO-tZ-UQ2"/>
                         <outlet property="nameField" destination="x70-li-Kvc" id="8Jo-XO-vim"/>
                         <outlet property="passwordField" destination="c6s-qb-Gjw" id="F5h-YJ-BTv"/>
-                        <segue destination="BYZ-38-t0r" kind="show" identifier="profileCreated" id="68r-YY-0bZ"/>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="profileCreated" modalTransitionStyle="flipHorizontal" id="68r-YY-0bZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xRf-49-c1C" userLabel="First Responder" sceneMemberID="firstResponder"/>

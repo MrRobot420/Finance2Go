@@ -105,6 +105,30 @@ class ViewController: UIViewController, UITextFieldDelegate {
         //prepare(for: CreateProfileSegue, sender: ViewController)
     }
     
+    // Show Info about existing Profiles
+    @IBAction func profileInfos(_ sender: Any) {
+        print("[i] Showing profile-info alert ℹ️: \n")
+        print("###########   PROFILES:   ###########\n")
+        var message = ""
+        
+        for profile in profiles {
+            if profile.name != nil {
+                message += "\(Int32(profile.id)) - \(profile.name!) \n"
+                print("[ ID ]:\t\t\t \(Int32(profile.id))")
+                print("[ NAME ]:\t\t \(profile.name!)")
+                print("[ MAIL ]:\t\t \(profile.email!)")
+                print("[ AGE ]:\t\t \(Int16(profile.age))")
+                print("[ PASSWORD ]:\t \(profile.password!)")
+                print("\n#####################################\n")
+            }
+        }
+        
+        let alert = UIAlertController(title: "Profile 👤", message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "✅ VERSTANDEN 😎", style: .default, handler: nil))
+        self.present(alert, animated: true)
+    }
+    
+    
     @IBAction func settingsButton(_ sender: Any) {
         //prepare(for: SettingsSegue, sender: ViewController)
     }
@@ -126,17 +150,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         do {
             //deleteAllData("Profile")
             profiles = try context.fetch(fetchRequest) as! [Profile]
-            print("###########   PROFILES:   ###########\n")
-            for profile in profiles {
-                if profile.name != nil {
-                    print("[ ID ]:\t\t\t \(Int32(profile.id))")
-                    print("[ NAME ]:\t\t \(profile.name!)")
-                    print("[ MAIL ]:\t\t \(profile.email!)")
-                    print("[ AGE ]:\t\t \(Int16(profile.age))")
-                    print("[ PASSWORD ]:\t \(profile.password!)")
-                    print("\n#####################################\n")
-                }
-            }
+            profiles = profiles.sorted(by: { $0.id < $1.id })
         } catch let error as NSError {
             print("Could not fetch. \(error), \(error.userInfo)")
         }

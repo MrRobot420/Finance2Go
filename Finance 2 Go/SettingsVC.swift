@@ -23,8 +23,8 @@ class SettingsVC: UIViewController, UITextFieldDelegate {
     // Shows ALERT for "2-factor auth"
     @IBAction func showAlert() {
         let message = "Dies löscht ALLE Profile ‼️"
-        let alert = UIAlertController(title: "Profile löschen?", message: message, preferredStyle: .alert)
-        print("[i] Showing profile-deletion alert")
+        let alert = UIAlertController(title: "⚠️ Profile löschen?", message: message, preferredStyle: .alert)
+        print("[i] Showing profile-deletion alert ❌")
         alert.addAction(UIAlertAction(title: "NEIN ❌", style: .cancel, handler: nil))
         alert.addAction(UIAlertAction(title: "Ja ✅", style: .default, handler: deleteAllData(_:)))
         self.present(alert, animated: true)
