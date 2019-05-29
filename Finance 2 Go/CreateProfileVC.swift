@@ -12,6 +12,7 @@ import KeychainSwift
 
 struct Keys {
     static let name = "name"
+    static let id = "id"
     static let mail = "email"
     static let age = "age"
     static let password = "password"
@@ -20,7 +21,12 @@ struct Keys {
 
 class CreateProfileVC: UIViewController, UITextFieldDelegate {
     
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Profile")       // What to fetch
     let keychain = KeychainSwift(keyPrefix: Keys.keyPrefix)
+    var profiles: [Profile] = []
+    var profileCount: Int32 = 0
+    
     
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var mailField: UITextField!
@@ -50,19 +56,17 @@ class CreateProfileVC: UIViewController, UITextFieldDelegate {
             
             print("[+] Setting Values...")
             profile.setValue(name_value, forKey: Keys.name)
+            profile.setValue(profileCount+1, forKey: Keys.id)
             profile.setValue(email_value, forKey: Keys.mail)
             profile.setValue(age_value, forKey: Keys.age)
             profile.setValue(password_value, forKey: Keys.password)
-            //keychain.set(profile.name!, forKey: Keys.name, withAccess: .accessibleAlways)
-            //keychain.set(name_value!, forKey: Keys.name, withAccess: KeychainSwiftAccessOptions.accessibleAlways)
-            //keychain.set(email_value!, forKey: Keys.mail, withAccess: KeychainSwiftAccessOptions.accessibleAlways)
-            //keychain.set(age_value!, forKey: Keys.age, withAccess: KeychainSwiftAccessOptions.accessibleAlways)
+            keychain.set(name_value!, forKey: Keys.name, withAccess: .accessibleAlways)
             
-//            if keychain.set(password_value!, forKey: Keys.password, withAccess: KeychainSwiftAccessOptions.accessibleAlways) {  // -> KeychainSwift
-//                print("[+ ] Keychain Set!")
-//                infoLabel.text = "Keychain set!"
-//                infoLabel.textColor = UIColor.green
-//            }
+            if keychain.set(password_value!, forKey: Keys.password, withAccess: KeychainSwiftAccessOptions.accessibleAlways) {  // -> KeychainSwift
+                print("[+] Keychain Set!")
+                infoLabel.text = "Keychain set!"
+                infoLabel.textColor = #colorLiteral(red: 0.3735761046, green: 0.7207441926, blue: 0.09675113112, alpha: 1)
+            }
             //password.setValue(password_value, forKey: "password")        -> CoreData
         } else {
             print("[X] Values were not set!")
@@ -91,7 +95,6 @@ class CreateProfileVC: UIViewController, UITextFieldDelegate {
             infoLabel.textColor = color
         }
     }
-    
     
     // VALIDATES INPUTS
     func checkInputs() -> Bool {
@@ -156,6 +159,7 @@ class CreateProfileVC: UIViewController, UITextFieldDelegate {
         return emailTest.evaluate(with: testStr)
     }
     
+    // VALIDATES AGE
     func isValidAge(testStr:String) -> Bool {
         let ageRegEx = "[0-9]{1,3}"
         
@@ -165,19 +169,16 @@ class CreateProfileVC: UIViewController, UITextFieldDelegate {
             if Int(testStr)! >= 14 {
                 return true
             }
-            print("[X] ERROR Must be >14")
-            infoLabel.text = "Must be >14"
-            infoLabel.textColor = UIColor.red
+            showInfo(info: "Must be >14", color: #colorLiteral(red: 0.7207441926, green: 0.02335692724, blue: 0.06600695687, alpha: 1))
             return false
         } else {
-            print("[X] ERROR Must be numeric")
-            infoLabel.text = "Must be numeric"
-            infoLabel.textColor = UIColor.red
+            showInfo(info: "Must be numeric", color: #colorLiteral(red: 0.7207441926, green: 0.02335692724, blue: 0.06600695687, alpha: 1))
             return false
         }
         
     }
     
+    // VALIDATES PASSWORD
     func isValidPassword(testStr:String) -> Bool {
         //    start-anchor  2 Uppercase let.  1 special ch.  2 digits        3 lowercase let.     end-anchor
         let passRegEx = "^(?=.*[A-Z].*[A-Z])(?=.*[!@#$&*])(?=.*[0-9].*[0-9])(?=.*[a-z].*[a-z].*[a-z]).{8,64}$"
@@ -215,6 +216,35 @@ class CreateProfileVC: UIViewController, UITextFieldDelegate {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange), name: UIResponder.keyboardWillChangeFrameNotification , object: nil)
     }
     
+    // Load before view appers:
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        // LOAD PROFILES INTO (global) LIST:
+        do {
+            print("\n###########   CREATE PROFILE:   ###########\n")
+            profiles = try context.fetch(fetchRequest) as! [Profile]
+            
+        } catch let error as NSError {
+            print("Could not fetch. \(error), \(error.userInfo)")
+        }
+        
+        profileCount = countList(list: profiles)
+        print("<\(profileCount)> PROFILES ARE ALREADY EXISTING!\n")
+        
+    }
+    
+    // Counts the elements of the list
+    func countList(list: [Profile]) -> Int32 {
+        var counter: Int32 = 0
+        for profile in profiles {
+            if profile.name != nil {
+                counter += 1
+            }
+        }
+        return counter
+    }
+    
+    // Sets the PLACEHOLDER for the textfields
     func configureTextFields() {
         nameField.placeholder = "Name"
         mailField.placeholder = "E-Mail"
@@ -231,7 +261,8 @@ class CreateProfileVC: UIViewController, UITextFieldDelegate {
     
     // OBJ-C Code for moving the frame up, while typing:
     @objc func keyboardWillChange(notification: Notification) {
-        print("Keyboard will show: \(notification.name.rawValue)")      // Notification DEBUG
+        // FOR   D E B U G :
+        //print("Keyboard will show: \(notification.name.rawValue)")      // Notification DEBUG
         
         guard let keyboardRect = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else {
             return
@@ -254,7 +285,6 @@ class CreateProfileVC: UIViewController, UITextFieldDelegate {
         }
     }
     
-    
     // Checks if there is critical editing done
     func checkIfEditing() -> Bool {
         var editBlock = false
@@ -268,7 +298,6 @@ class CreateProfileVC: UIViewController, UITextFieldDelegate {
         }
         return editBlock
     }
-    
     
     // DEINIT of notification.observer
     deinit {

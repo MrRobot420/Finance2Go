@@ -62,6 +62,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         self.nameField.delegate = self
         self.passwordField.delegate = self
         configureTextFields()
+        print("\n###########   LOGIN SCREEN:   ###########\n")
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -84,6 +85,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
             print("###########   PROFILES:   ###########\n")
             for profile in profiles {
                 if profile.name != nil {
+                    print("[ ID ]:\t\t\t \(Int32(profile.id))")
                     print("[ NAME ]:\t\t \(profile.name!)")
                     print("[ MAIL ]:\t\t \(profile.email!)")
                     print("[ AGE ]:\t\t \(Int16(profile.age))")
@@ -123,6 +125,13 @@ class ViewController: UIViewController, UITextFieldDelegate {
             for object in results {
                 guard let objectData = object as? NSManagedObject else {continue}
                 context.delete(objectData)
+                print("[√] Deleted all profiles!")
+                do {
+                    try context.save()
+                    print("[√] Saved!")
+                } catch {
+                    print("[X] Failed Saving!")
+                }
             }
         } catch let error {
             print("Detele all data in \(entity) error :", error)
