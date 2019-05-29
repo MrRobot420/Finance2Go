@@ -81,13 +81,16 @@ class ViewController: UIViewController, UITextFieldDelegate {
         do {
             //deleteAllData("Profile")
             profiles = try context.fetch(fetchRequest) as! [Profile]
-            print("PROFILES: ")
+            print("###########   PROFILES:   ###########\n")
             for profile in profiles {
-                print("PROFILE - \(profile.name!):")
-                print(profile.email!)
-                print(Int16(profile.age))
-                print(profile.password!)
-                print("###########################")
+                if profile.name != nil {
+                    print("[ NAME ]:\t\t \(profile.name!)")
+                    print("[ MAIL ]:\t\t \(profile.email!)")
+                    print("[ AGE ]:\t\t \(Int16(profile.age))")
+                    print("[ PASSWORD ]:\t \(profile.password!)")
+                    print("\n#####################################\n")
+                }
+               
             }
             
         } catch let error as NSError {

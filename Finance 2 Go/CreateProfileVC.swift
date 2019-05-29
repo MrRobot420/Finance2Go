@@ -40,14 +40,14 @@ class CreateProfileVC: UIViewController, UITextFieldDelegate {
         //let profile = NSEntityDescription.insertNewObject(forEntityName: "Profile", into: context) as! Profile
         
         
-        let name_value = nameField.text
-        let email_value = mailField.text
-        let age_value = Int16(ageField.text!)!
-        let password_value = passwordField.text
-        
         let state = checkInputs()
         
         if state {
+            let name_value = nameField.text
+            let email_value = mailField.text
+            let age_value = Int16(ageField.text!)!
+            let password_value = passwordField.text
+            
             print("[+] Setting Values...")
             profile.setValue(name_value, forKey: Keys.name)
             profile.setValue(email_value, forKey: Keys.mail)
@@ -81,9 +81,15 @@ class CreateProfileVC: UIViewController, UITextFieldDelegate {
     
     // SHOW Info in selected color:
     func showInfo(info:String!, color: UIColor!) {
-        print("[X] ERROR: \(info!) ")
-        infoLabel.text = info
-        infoLabel.textColor = color
+        if color == #colorLiteral(red: 0.3735761046, green: 0.7207441926, blue: 0.09675113112, alpha: 1) {
+            print("[√] SUCCESS: \(info!) ")
+            infoLabel.text = info
+            infoLabel.textColor = color
+        } else {
+            print("[X] ERROR: \(info!) ")
+            infoLabel.text = info
+            infoLabel.textColor = color
+        }
     }
     
     
