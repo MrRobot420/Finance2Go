@@ -17,8 +17,10 @@ class SettingsVC: UIViewController, UITextFieldDelegate {
     // Deletes all profiles:
     func deleteAllData(_ sender: Any) {
         deleteData("Profile")
+        //deleteData("Account") ...
     }
     
+    // Shows ALERT for "2-factor auth"
     @IBAction func showAlert() {
         let message = "Dies löscht ALLE Profile ‼️"
         let alert = UIAlertController(title: "Profile löschen?", message: message, preferredStyle: .alert)
@@ -28,14 +30,12 @@ class SettingsVC: UIViewController, UITextFieldDelegate {
         self.present(alert, animated: true)
     }
     
-    
-    
+    // STANDARD
     override func viewDidLoad() {
         super.viewDidLoad()
         print("\n###########   SETTINGS:   ###########\n")
         // Do any additional setup after loading the view.
     }
-    
     
     //TO DELETE ALL DATA! (copied from net)
     func deleteData(_ entity: String) {

@@ -49,7 +49,7 @@ class CreateProfileVC: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var infoLabel: UILabel!
     
-    // Shows info to password guidelines / criteria (alert)
+    // Shows ALERT to password guidelines / criteria (alert)
     @IBAction func passwordInfo(_ sender: Any) {
         let message = "8 Zeichen\n2 Großbuchstaben\n3 Buchstaben\n2 Zahlen\n1 Sonderzeichen"
         let alert = UIAlertController(title: "Passwort Kriterien:", message: message, preferredStyle: .alert)

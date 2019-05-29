@@ -14,8 +14,11 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     var profiles: [Profile] = []
     let keychain = KeychainSwift(keyPrefix: Keys.keyPrefix)
-    //let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-    //let entity = NSEntityDescription.entity(forEntityName: "Profile", in: context)
+    let context = (UIApplication.shared.delegate as? AppDelegate)!.persistentContainer.viewContext
+    let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Profile")
+    
+    
+    @IBOutlet weak var infoLabel: UILabel!
     
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
@@ -33,16 +36,67 @@ class ViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
-    
+    // Called when GO - Button is pressed!
     @IBAction func goButton(_ sender: Any) {
-        //profileField
+        let name_value = nameField.text
+        let password_value = passwordField.text
+        
+        if shouldPerformSegueWithIdentifier(identifier: "OverviewSegue", sender: nil) {
+            showInfo(info: "Korrekte Daten 😎", color: #colorLiteral(red: 0.3735761046, green: 0.7207441926, blue: 0.09675113112, alpha: 1))
+            self.performSegue(withIdentifier: "OverviewSegue", sender: nil)
+        } else if name_value!.isEmpty || name_value == " " {
+            showInfo(info: "Name eingeben", color: #colorLiteral(red: 0.7207441926, green: 0.02335692724, blue: 0.06600695687, alpha: 1))
+        } else if password_value!.isEmpty || password_value == " " {
+            showInfo(info: "Passwort eingeben", color: #colorLiteral(red: 0.7207441926, green: 0.02335692724, blue: 0.06600695687, alpha: 1))
+        } else {
+            showInfo(info: "Falsche Daten!", color: #colorLiteral(red: 0.7207441926, green: 0.02335692724, blue: 0.06600695687, alpha: 1))
+        }
     }
     
+    // Check if segue should be called
+    func shouldPerformSegueWithIdentifier(identifier: String?, sender: AnyObject?) -> Bool {
+        if checkIfValidPassword() {
+            return true
+        }
+        return false
+    }
+    
+    // PREPARES the segue:
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "OverviewSegue" {
             if let overviewVC = segue.destination as? OverviewVC {
                 overviewVC.infoObject = nameField.text!
             }
+        }
+    }
+    
+    // Checks if the password is valid:         (In future with hashing!)
+    func checkIfValidPassword() -> Bool {
+        let currentName = nameField.text
+        let currentPw = passwordField.text
+        
+        for profile in profiles {
+            if profile.name != nil {
+                if profile.name == currentName {
+                    if profile.password == currentPw {
+                        return true
+                    }
+                }
+            }
+        }
+        return false
+    }
+    
+    // SHOW Info in selected color:
+    func showInfo(info:String!, color: UIColor!) {
+        if color == #colorLiteral(red: 0.3735761046, green: 0.7207441926, blue: 0.09675113112, alpha: 1) {
+            print("[√] SUCCESS: \(info!) ")
+            infoLabel.text = info
+            infoLabel.textColor = color
+        } else {
+            print("[X] ERROR: \(info!) ")
+            infoLabel.text = info
+            infoLabel.textColor = color
         }
     }
     
@@ -65,20 +119,10 @@ class ViewController: UIViewController, UITextFieldDelegate {
         print("\n###########   LOGIN SCREEN:   ###########\n")
     }
     
+    // DO BEFORE View will appear
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        //1
-        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
-                return
-        }
-        
-        let context = appDelegate.persistentContainer.viewContext
-        
-        //2
-        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Profile")
-        
-        //3
         do {
             //deleteAllData("Profile")
             profiles = try context.fetch(fetchRequest) as! [Profile]
@@ -92,15 +136,12 @@ class ViewController: UIViewController, UITextFieldDelegate {
                     print("[ PASSWORD ]:\t \(profile.password!)")
                     print("\n#####################################\n")
                 }
-               
             }
-            
         } catch let error as NSError {
             print("Could not fetch. \(error), \(error.userInfo)")
         }
     }
 
-    
     // User touched the display:
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
@@ -112,30 +153,5 @@ class ViewController: UIViewController, UITextFieldDelegate {
         passwordField.placeholder = "Passwort"
     }
     
-    // I NEED TO DELETE ALL DATA FIRST! (copied from net)
-    func deleteAllData(_ entity:String) {
-        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
-            return
-        }
-        let context = appDelegate.persistentContainer.viewContext
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: entity)
-        fetchRequest.returnsObjectsAsFaults = false
-        do {
-            let results = try context.fetch(fetchRequest)
-            for object in results {
-                guard let objectData = object as? NSManagedObject else {continue}
-                context.delete(objectData)
-                print("[√] Deleted all profiles!")
-                do {
-                    try context.save()
-                    print("[√] Saved!")
-                } catch {
-                    print("[X] Failed Saving!")
-                }
-            }
-        } catch let error {
-            print("Detele all data in \(entity) error :", error)
-        }
-    }
 }
 
