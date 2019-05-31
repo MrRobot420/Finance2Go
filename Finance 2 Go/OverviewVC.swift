@@ -46,13 +46,13 @@ class OverviewVC: UIViewController, UITextFieldDelegate {
             print("\n###########   PROFILE OVERVIEW:   ###########\n")
             profiles = try context.fetch(profileFetchRequest) as! [Profile]
             if infoObject != nil {
-                print("[LOG] Logged in \(infoObject!)")
+                print("[LOG] Logged in \(infoObject!) 🔓")
                 findProfile(name: infoObject!)
                 UserDefaults.standard.set(profile.name!, forKey: "logged_in_profile")
             } else {
                 let username = UserDefaults.standard.string(forKey: "logged_in_profile")
                 findProfile(name: username!)
-                print("[LOG] User already logged in: \(username!)")
+                print("[LOG] User already logged in: \(username!) 🔓")
             }
             
             assets = try context.fetch(assetFetchRequest) as! [Asset]
@@ -79,31 +79,6 @@ class OverviewVC: UIViewController, UITextFieldDelegate {
     // Load before view appers:
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        // LOAD PROFILES INTO (global) LIST:
-        do {
-            print("\n###########   PROFILE OVERVIEW:   ###########\n")
-            profiles = try context.fetch(profileFetchRequest) as! [Profile]
-            if infoObject != nil {
-                print("[LOG] Logged in \(infoObject!)")
-                findProfile(name: infoObject!)
-                UserDefaults.standard.set(profile.name!, forKey: "logged_in_profile")
-            } else {
-                let username = UserDefaults.standard.string(forKey: "logged_in_profile")
-                findProfile(name: username!)
-                print("[LOG] User already logged in: \(username!)")
-            }
-            
-            assets = try context.fetch(assetFetchRequest) as! [Asset]
-            transactions = try context.fetch(transactionFetchRequest) as! [Transaction]
-            
-            if profile != nil {
-                assets = getAssetsFrom(name: profile.name!)
-                transactions = getTransactionsFrom(name: profile.name!)
-            }
-            
-        } catch let error as NSError {
-            print("Could not fetch. \(error), \(error.userInfo)")
-        }
     }
     
     @IBAction func accountBtn(_ sender: Any) {

@@ -145,7 +145,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
         if (loggedIn != nil) {
             UserDefaults.standard.removeObject(forKey: "logged_in_profile")
-            print("[√] Logged out profile: \(loggedIn!)")
+            print("[√] Logged out profile: \(loggedIn!) 🔒")
             loggedIn = ""
         }
         
