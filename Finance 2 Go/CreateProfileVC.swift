@@ -277,7 +277,7 @@ class CreateProfileVC: UIViewController, UITextFieldDelegate {
     // Counts the elements of the list
     func countList(list: [Profile]) -> Int32 {
         var counter: Int32 = 0
-        for profile in profiles {
+        for profile in list {
             if profile.name != nil {
                 counter += 1
             }

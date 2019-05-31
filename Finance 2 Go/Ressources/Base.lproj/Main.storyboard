@@ -51,7 +51,7 @@
                                     <color key="titleShadowColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="presentation" identifier="SettingsBackSegue" modalTransitionStyle="flipHorizontal" id="xs5-ar-3gB"/>
+                                    <segue destination="BYZ-38-t0r" kind="presentation" identifier="SettingsBackSegue" modalTransitionStyle="crossDissolve" id="xs5-ar-3gB"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tRw-Pu-SzX">
@@ -322,7 +322,7 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                         <state key="normal" title="&lt;">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="titleColor" red="0.2727355957" green="0.27297034860000002" blue="0.27277198429999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
                                             <segue destination="BYZ-38-t0r" kind="presentation" modalTransitionStyle="flipHorizontal" id="kH3-RN-OPs"/>
@@ -371,12 +371,13 @@
                                                     <constraint firstAttribute="width" constant="110" id="zqa-ku-Bm0"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                                <state key="normal" title="Account">
+                                                <state key="normal" title="Accounts">
                                                     <color key="titleColor" red="0.99539974620000005" green="0.98406157189999999" blue="0.98464428989999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <color key="titleShadowColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="accountBtn:" destination="X4w-fE-o2i" eventType="touchUpInside" id="68h-Hy-5te"/>
+                                                    <segue destination="pJ4-Qi-IAp" kind="presentation" modalTransitionStyle="crossDissolve" id="5jn-KV-D90"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bVX-kx-nAY">
@@ -494,7 +495,79 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7VZ-UX-15p" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-558.75" y="75"/>
+            <point key="canvasLocation" x="-744" y="75"/>
+        </scene>
+        <!--AssetsVC-->
+        <scene sceneID="9Ke-3T-nww">
+            <objects>
+                <viewController id="pJ4-Qi-IAp" customClass="AssetsVC" customModule="Finance_2_Go" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="NNA-Gp-Upa">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kx5-Aa-Zn8">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="83"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Accounts" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aeV-RA-NJp">
+                                        <rect key="frame" x="65" y="28" width="190" height="27"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="27" id="fF5-5A-y8a"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d7K-zD-gtm">
+                                        <rect key="frame" x="274" y="18" width="30" height="47"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="30" id="SKE-CI-BgN"/>
+                                            <constraint firstAttribute="height" constant="47" id="szJ-K3-aFX"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                        <state key="normal" title="➕">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dPO-VG-vzP">
+                                        <rect key="frame" x="0.0" y="18" width="45" height="47"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="45" id="Gba-xD-5vk"/>
+                                            <constraint firstAttribute="height" constant="47" id="tCA-x8-Sxt"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                        <state key="normal" title="&lt;">
+                                            <color key="titleColor" red="0.272735595703125" green="0.27297034859657288" blue="0.27277198433876038" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="X4w-fE-o2i" kind="presentation" identifier="Acc2OverviewSegue" modalTransitionStyle="crossDissolve" id="yKZ-aU-fvm"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.37357610460000001" green="0.7207441926" blue="0.09675113112" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="d7K-zD-gtm" firstAttribute="top" secondItem="kx5-Aa-Zn8" secondAttribute="top" constant="18" id="3nf-uP-EBm"/>
+                                    <constraint firstItem="dPO-VG-vzP" firstAttribute="leading" secondItem="kx5-Aa-Zn8" secondAttribute="leading" id="509-qa-kpQ"/>
+                                    <constraint firstAttribute="trailing" secondItem="d7K-zD-gtm" secondAttribute="trailing" constant="16" id="AMd-5t-6ll"/>
+                                    <constraint firstItem="aeV-RA-NJp" firstAttribute="centerX" secondItem="kx5-Aa-Zn8" secondAttribute="centerX" id="F2P-m6-XvT"/>
+                                    <constraint firstItem="aeV-RA-NJp" firstAttribute="centerY" secondItem="kx5-Aa-Zn8" secondAttribute="centerY" id="aZN-aw-Whj"/>
+                                    <constraint firstAttribute="height" constant="83" id="hsf-dv-Te5"/>
+                                    <constraint firstItem="d7K-zD-gtm" firstAttribute="leading" secondItem="aeV-RA-NJp" secondAttribute="trailing" constant="19" id="who-J3-WpZ"/>
+                                    <constraint firstItem="d7K-zD-gtm" firstAttribute="baseline" secondItem="dPO-VG-vzP" secondAttribute="baseline" id="y3h-sh-Qfi"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="kx5-Aa-Zn8" firstAttribute="leading" secondItem="NNA-Gp-Upa" secondAttribute="leading" id="Git-jY-iW7"/>
+                            <constraint firstItem="vbS-1v-oy3" firstAttribute="trailing" secondItem="kx5-Aa-Zn8" secondAttribute="trailing" id="Hoy-on-9Ai"/>
+                            <constraint firstItem="kx5-Aa-Zn8" firstAttribute="top" secondItem="NNA-Gp-Upa" secondAttribute="top" id="mJT-am-ok4"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="vbS-1v-oy3"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oqA-yh-q4I" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-744" y="-662"/>
         </scene>
         <!--Create ProfileVC-->
         <scene sceneID="B6t-p7-VPC">
@@ -524,10 +597,10 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                         <state key="normal" title="&gt;">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="titleColor" red="0.2727355957" green="0.27297034860000002" blue="0.27277198429999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
-                                            <segue destination="BYZ-38-t0r" kind="presentation" modalTransitionStyle="flipHorizontal" id="ant-bw-xDf"/>
+                                            <segue destination="BYZ-38-t0r" kind="presentation" modalTransitionStyle="crossDissolve" id="ant-bw-xDf"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -677,7 +750,7 @@
                         <outlet property="mailField" destination="gc6-fH-Zo8" id="uFO-tZ-UQ2"/>
                         <outlet property="nameField" destination="x70-li-Kvc" id="8Jo-XO-vim"/>
                         <outlet property="passwordField" destination="c6s-qb-Gjw" id="F5h-YJ-BTv"/>
-                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="profileCreated" modalTransitionStyle="flipHorizontal" id="68r-YY-0bZ"/>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="profileCreated" modalTransitionStyle="crossDissolve" id="68r-YY-0bZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xRf-49-c1C" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -686,6 +759,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="xs5-ar-3gB"/>
+        <segue reference="yKZ-aU-fvm"/>
+        <segue reference="68r-YY-0bZ"/>
     </inferredMetricsTieBreakers>
 </document>

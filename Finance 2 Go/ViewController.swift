@@ -141,6 +141,14 @@ class ViewController: UIViewController, UITextFieldDelegate {
         self.passwordField.delegate = self
         configureTextFields()
         print("\n###########   LOGIN SCREEN:   ###########\n")
+        var loggedIn = UserDefaults.standard.string(forKey: "logged_in_profile")
+        
+        if (loggedIn != nil) {
+            UserDefaults.standard.removeObject(forKey: "logged_in_profile")
+            print("[√] Logged out profile: \(loggedIn!)")
+            loggedIn = ""
+        }
+        
     }
     
     // DO BEFORE View will appear

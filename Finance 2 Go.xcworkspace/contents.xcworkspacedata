@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:/Users/Maxi/Documents/Programmieren/XCode/Finance 2 Go/Finance 2 Go/Finance 2 Go/AssetsVC.swift">
+   </FileRef>
+   <FileRef
       location = "group:Finance 2 Go.xcodeproj">
    </FileRef>
    <FileRef

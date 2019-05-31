@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -27,6 +27,7 @@
 		54531BB52290C831001B6243 /* money.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 54531BB42290C831001B6243 /* money.jpg */; };
 		54AC8446229AECDD002FFAB1 /* Profile+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54AC8444229AECDD002FFAB1 /* Profile+CoreDataClass.swift */; };
 		54AC8447229AECDD002FFAB1 /* Profile+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54AC8445229AECDD002FFAB1 /* Profile+CoreDataProperties.swift */; };
+		54FA40E022A1414F0090F37E /* AssetsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54FA40DF22A1414F0090F37E /* AssetsVC.swift */; };
 		D0484D1B50CFC820A7208A74 /* Pods_Finance_2_Go.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 975BD8F591509268B7778917 /* Pods_Finance_2_Go.framework */; };
 		E97D34D954E379B694D388F2 /* Pods_Finance_2_GoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E8FD000D082AB122F1AF416 /* Pods_Finance_2_GoUITests.framework */; };
 		ECC6345FF49129ED0493FEBC /* Pods_Finance_2_GoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D16D3C7F59C5C8C9F35FFF19 /* Pods_Finance_2_GoTests.framework */; };
@@ -79,6 +80,7 @@
 		54531BB42290C831001B6243 /* money.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = money.jpg; path = ../money.jpg; sourceTree = "<group>"; };
 		54AC8444229AECDD002FFAB1 /* Profile+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Profile+CoreDataClass.swift"; sourceTree = "<group>"; };
 		54AC8445229AECDD002FFAB1 /* Profile+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Profile+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		54FA40DF22A1414F0090F37E /* AssetsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AssetsVC.swift; path = "/Users/Maxi/Documents/Programmieren/XCode/Finance 2 Go/Finance 2 Go/Finance 2 Go/AssetsVC.swift"; sourceTree = "<absolute>"; };
 		975BD8F591509268B7778917 /* Pods_Finance_2_Go.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Finance_2_Go.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9B8FAED0EDAC44B0EED0F42 /* Pods-Finance 2 GoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Finance 2 GoUITests.debug.xcconfig"; path = "Target Support Files/Pods-Finance 2 GoUITests/Pods-Finance 2 GoUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		BD2CD0FF93AA72C3074210B6 /* Pods-Finance 2 GoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Finance 2 GoTests.debug.xcconfig"; path = "Target Support Files/Pods-Finance 2 GoTests/Pods-Finance 2 GoTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 				543FF9DD228DB0EE000B2A44 /* AppDelegate.swift */,
 				543FF9DF228DB0EE000B2A44 /* ViewController.swift */,
 				543FFA10228E0819000B2A44 /* OverviewVC.swift */,
+				54FA40DF22A1414F0090F37E /* AssetsVC.swift */,
 				543FFA0E228DF8D6000B2A44 /* CreateProfileVC.swift */,
 				543FFA12228E083F000B2A44 /* SettingsVC.swift */,
 				54531BB122909444001B6243 /* Ressources */,
@@ -225,7 +228,6 @@
 				B9B8FAED0EDAC44B0EED0F42 /* Pods-Finance 2 GoUITests.debug.xcconfig */,
 				D7FDEDE2EBF4458C721A1EF6 /* Pods-Finance 2 GoUITests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -459,6 +461,7 @@
 				54531BA9229092B9001B6243 /* Target+CoreDataClass.swift in Sources */,
 				54531BAA229092B9001B6243 /* Target+CoreDataProperties.swift in Sources */,
 				543FFA0F228DF8D6000B2A44 /* CreateProfileVC.swift in Sources */,
+				54FA40E022A1414F0090F37E /* AssetsVC.swift in Sources */,
 				54531BB0229092B9001B6243 /* Transaction+CoreDataProperties.swift in Sources */,
 				54531BAD229092B9001B6243 /* Asset+CoreDataClass.swift in Sources */,
 				54531BAF229092B9001B6243 /* Transaction+CoreDataClass.swift in Sources */,
