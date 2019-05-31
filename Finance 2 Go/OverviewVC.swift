@@ -101,6 +101,7 @@ class OverviewVC: UIViewController, UITextFieldDelegate {
                 if _profile.name == name {
                     print("[√] FOUND profile: \(_profile.name!)")
                     profile = _profile
+                    break
                 }
             } else {
                 
