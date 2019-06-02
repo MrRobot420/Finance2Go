@@ -36,12 +36,6 @@ class OverviewVC: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-//        if infoObject == "" {
-//            profileLabel.text = "DEBUG"
-//        } else if infoObject != nil {
-//
-//        }
-        
         do {
             print("\n###########   PROFILE OVERVIEW:   ###########\n")
             profiles = try context.fetch(profileFetchRequest) as! [Profile]

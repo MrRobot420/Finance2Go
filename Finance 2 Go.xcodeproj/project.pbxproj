@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5428DEAF22A3FAA100D449DB /* AddAssetVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5428DEAE22A3FAA100D449DB /* AddAssetVC.swift */; };
 		543FF9DE228DB0EE000B2A44 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543FF9DD228DB0EE000B2A44 /* AppDelegate.swift */; };
 		543FF9E0228DB0EE000B2A44 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543FF9DF228DB0EE000B2A44 /* ViewController.swift */; };
 		543FF9E3228DB0EE000B2A44 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 543FF9E1228DB0EE000B2A44 /* Main.storyboard */; };
@@ -54,6 +55,7 @@
 		2E8FD000D082AB122F1AF416 /* Pods_Finance_2_GoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Finance_2_GoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		34D86E0A41BAF61262BEF4B7 /* Pods-Finance 2 Go.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Finance 2 Go.release.xcconfig"; path = "Target Support Files/Pods-Finance 2 Go/Pods-Finance 2 Go.release.xcconfig"; sourceTree = "<group>"; };
 		3623E6D193D51DF21125C1F6 /* Pods-Finance 2 GoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Finance 2 GoTests.release.xcconfig"; path = "Target Support Files/Pods-Finance 2 GoTests/Pods-Finance 2 GoTests.release.xcconfig"; sourceTree = "<group>"; };
+		5428DEAE22A3FAA100D449DB /* AddAssetVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AddAssetVC.swift; path = Datamodel/AddAssetVC.swift; sourceTree = "<group>"; };
 		543FF9DA228DB0EE000B2A44 /* Finance 2 Go.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Finance 2 Go.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		543FF9DD228DB0EE000B2A44 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		543FF9DF228DB0EE000B2A44 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 				543FF9DF228DB0EE000B2A44 /* ViewController.swift */,
 				543FFA10228E0819000B2A44 /* OverviewVC.swift */,
 				54FA40DF22A1414F0090F37E /* AssetsVC.swift */,
+				5428DEAE22A3FAA100D449DB /* AddAssetVC.swift */,
 				543FFA0E228DF8D6000B2A44 /* CreateProfileVC.swift */,
 				543FFA12228E083F000B2A44 /* SettingsVC.swift */,
 				54531BB122909444001B6243 /* Ressources */,
@@ -466,6 +469,7 @@
 				54531BAD229092B9001B6243 /* Asset+CoreDataClass.swift in Sources */,
 				54531BAF229092B9001B6243 /* Transaction+CoreDataClass.swift in Sources */,
 				543FF9DE228DB0EE000B2A44 /* AppDelegate.swift in Sources */,
+				5428DEAF22A3FAA100D449DB /* AddAssetVC.swift in Sources */,
 				54AC8447229AECDD002FFAB1 /* Profile+CoreDataProperties.swift in Sources */,
 				543FFA13228E083F000B2A44 /* SettingsVC.swift in Sources */,
 			);
