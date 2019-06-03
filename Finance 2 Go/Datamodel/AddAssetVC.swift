@@ -137,25 +137,13 @@ class AddAssetsVC: UIViewController, UITextFieldDelegate {
     // ## ## ## ## ##   STANDARD   ## ## ## ## ##
     override func viewDidLoad() {
         super.viewDidLoad()
+        setNeedsStatusBarAppearanceUpdate()
         nameField.delegate = self
         typeField.delegate = self
         valueField.delegate = self
         configureTextFields()
         
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "money.jpg")!)
-        
-        username = UserDefaults.standard.string(forKey: "logged_in_profile")
-        assets = getAssetsFrom(name: username!)
-        print("[->] Logged in User: \(username!)")
-        
-        //assets = getDummyData()
-        
-        print("[*] Loading Assets...")
-        for asset in assets {
-            if asset.profilename != nil {
-                print("Existing Asset: \(asset.assetname!)")
-            }
-        }
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange), name: UIResponder.keyboardWillHideNotification, object: nil)
@@ -173,7 +161,24 @@ class AddAssetsVC: UIViewController, UITextFieldDelegate {
         }
         
         assetCount = countList(list: assets)
-        print("<\(assetCount!)> ASSETS ARE ALREADY EXISTING!\n")
+        print("<\(assetCount!)> ASSETS ARE ALREADY EXISTING! (globally)\n")
+        username = UserDefaults.standard.string(forKey: "logged_in_profile")
+        assets = getAssetsFrom(name: username!)
+        print("[->] Logged in User: \(username!)")
+        
+        //assets = getDummyData()
+        
+        print("[*] Loading all Assets...")
+        for asset in assets {
+            if asset.profilename != nil {
+                print("\n##########   ASSET   ############")
+                print("Name:\t\t \(asset.assetname!)")
+                print("Profile:\t \(asset.profilename!)")
+                print("ID:\t\t\t \(asset.id)")
+                print(String(format: "Value:\t\t %.2f €", asset.value))
+                print("#################################\n")
+            }
+        }
     }
     
     // Sets the PLACEHOLDER for the textfields
@@ -318,5 +323,10 @@ class AddAssetsVC: UIViewController, UITextFieldDelegate {
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
+    }
+    
+    // FOR STATUS BAR "STATUS"
+    override var prefersStatusBarHidden: Bool {
+        return true
     }
 }

@@ -34,6 +34,7 @@ class OverviewVC: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setNeedsStatusBarAppearanceUpdate()
         
         // Do any additional setup after loading the view.
         do {
@@ -162,6 +163,11 @@ class OverviewVC: UIViewController, UITextFieldDelegate {
             }
         }
         return corresponding_transactions
+    }
+    
+    // FOR STATUS BAR "STATUS"
+    override var prefersStatusBarHidden: Bool {
+        return true
     }
     
 }

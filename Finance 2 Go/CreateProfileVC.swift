@@ -243,6 +243,7 @@ class CreateProfileVC: UIViewController, UITextFieldDelegate {
     // S T A N D A R D   V I E W   D I D   L O A D
     override func viewDidLoad() {
         super.viewDidLoad()
+        setNeedsStatusBarAppearanceUpdate()
         // Do any additional setup after loading the view.
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "money.jpg")!)
         nameField.delegate = self
@@ -346,5 +347,10 @@ class CreateProfileVC: UIViewController, UITextFieldDelegate {
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
+    }
+    
+    // FOR STATUS BAR "STATUS"
+    override var prefersStatusBarHidden: Bool {
+        return true
     }
 }

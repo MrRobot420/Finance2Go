@@ -136,6 +136,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     // VIEW DID LOAD
     override func viewDidLoad() {
         super.viewDidLoad()
+        setNeedsStatusBarAppearanceUpdate()
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "money.jpg")!)
         self.nameField.delegate = self
         self.passwordField.delegate = self
@@ -174,6 +175,13 @@ class ViewController: UIViewController, UITextFieldDelegate {
         nameField.placeholder = "Name"
         passwordField.placeholder = "Passwort"
     }
+    
+    
+    // FOR STATUS BAR "STATUS"
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
+    
     
 }
 
