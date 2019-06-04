@@ -249,7 +249,7 @@ class AddAssetsVC: UIViewController, UITextFieldDelegate {
         
         let editBlock = checkIfEditing()    // Check which field is edited
         
-        if editBlock == false {
+        if editBlock == true {
             if notification.name == nameNoti || notification.name == nameNoti2 {
                 view.frame.origin.y = -keyboardHeight
             } else {
@@ -263,7 +263,7 @@ class AddAssetsVC: UIViewController, UITextFieldDelegate {
         var editBlock = false
         
         if nameField.isEditing == true {
-            editBlock = true
+            editBlock = false
         } else if typeField.isEditing == true {
             editBlock = true
         } else if valueField.isEditing == true {
