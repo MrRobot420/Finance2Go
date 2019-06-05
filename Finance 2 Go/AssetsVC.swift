@@ -26,6 +26,8 @@ class AssetsVC: UIViewController, UITextFieldDelegate {
     let keychain = KeychainSwift(keyPrefix: Keys.keyPrefix)
     var profiles: [Profile] = []
     var assets: [Asset] = []
+    var button_keys: [String?] = []
+    var asset_keys: [String?] = []
     
     @IBOutlet weak var scrollView: UIScrollView!
     
@@ -79,7 +81,7 @@ class AssetsVC: UIViewController, UITextFieldDelegate {
     func fillScrollView(scroll_data: [assetViewDataStruct]) {
         // How big the scroll view has to be in order to show all elements (and have place for them)
         let subViewHeight = 80
-        let spacing = 10
+        let spacing = 20
         let subViewWidth = Int(self.scrollView.frame.width)
         scrollView.contentSize.height = CGFloat(subViewHeight + spacing) * CGFloat(scroll_data.count)
         scrollView.contentSize.width = self.scrollView.frame.width
@@ -111,13 +113,64 @@ class AssetsVC: UIViewController, UITextFieldDelegate {
             valueView.textAlignment = .right
             valueView.font = UIFont.boldSystemFont(ofSize: font_size)
             
+            let deleteButton = UIButton(frame: CGRect(x: 0, y: ((subViewHeight + spacing) * i) + 40, width: label_length / 2 - 10, height: 30))
+            deleteButton.tintColor = UIColor.black
+            deleteButton.backgroundColor = UIColor.red
+            deleteButton.setTitle("X", for: UIControl.State.normal)
+            deleteButton.isEnabled = true
+//            let font = UIFont.systemFont(ofSize: 20)
+//            let attributes = [NSAttributedString.Key.font: font]
+//            let attributeString = NSAttributedString(string: data.assetname!, attributes: attributes)
+//            deleteButton.setAttributedTitle(attributeString, for: .normal)
+//            deleteButton.state =
+//            deleteButton.set
+            deleteButton.addTarget(self, action: #selector(deleteAction), for: .touchUpInside)
+            button_keys.insert(deleteButton.description, at: i)
+            asset_keys.insert(data.assetname, at: i)
+            
             // Add the views:
             self.scrollView.addSubview(view)
             self.scrollView.addSubview(nameView)
             self.scrollView.addSubview(valueView)
+            self.scrollView.addSubview(deleteButton)
             
             i += 1
         }
+    }
+    
+    // Deletes a object
+    @objc func deleteAction(_ sender: UIButton) {
+        
+        print("Delete-Button [\(sender.description)] was pressed!")
+        var toDelete = ""
+        
+        for i in 0...button_keys.count-1 {
+            if sender.description == button_keys[i] {
+                print("Everything has been deleted!!!!! \n\n")
+                toDelete = asset_keys[i]!
+                break
+            }
+        }
+        
+        // Try deleting!
+        if let result = try? context.fetch(fetchRequest) as! [Asset] {
+            for object in result {
+                if object.assetname == toDelete {
+                    print("[X] Found Asset to delete!")
+                    context.delete(object)
+                    print("[X] DELETED: \(object.assetname!)")
+                }
+            }
+        }
+        
+        do {
+            try context.save()
+            print("[√] Saved!")
+            self.performSegue(withIdentifier: "addAssetSegue", sender: nil)
+        } catch {
+            print("[X] Failed Saving!")
+        }
+        
     }
     
     
