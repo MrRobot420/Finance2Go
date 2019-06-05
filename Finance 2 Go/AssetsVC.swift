@@ -166,7 +166,6 @@ class AssetsVC: UIViewController, UITextFieldDelegate {
         do {
             try context.save()
             print("[√] Saved!")
-            self.performSegue(withIdentifier: "addAssetSegue", sender: nil)
         } catch {
             print("[X] Failed Saving!")
         }
