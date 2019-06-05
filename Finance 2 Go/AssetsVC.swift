@@ -14,7 +14,7 @@ struct assetViewDataStruct {
     let assetname: String?
     let profilename: String?
     let value: Double?
-    
+    let type: String?
 }
 
 class AssetsVC: UIViewController, UITextFieldDelegate {
@@ -57,7 +57,7 @@ class AssetsVC: UIViewController, UITextFieldDelegate {
         for asset in assets {
             if asset.assetname != nil {
                 print("Asset: \(asset.assetname!)")
-                scrollViewData.append(assetViewDataStruct.init(assetname: asset.assetname, profilename: asset.profilename, value: asset.value))
+                scrollViewData.append(assetViewDataStruct.init(assetname: asset.assetname, profilename: asset.profilename, value: asset.value, type: asset.type))
             }
         }
         
@@ -89,7 +89,6 @@ class AssetsVC: UIViewController, UITextFieldDelegate {
         let label_length = 210
         let font_size: CGFloat! = 20
         let font_spacing: Int! = Int(CGFloat(subViewWidth / 2) - CGFloat(Double(label_length) / 3))
-//        let font_spacing = 0
         
         
         var i = 0
@@ -100,13 +99,21 @@ class AssetsVC: UIViewController, UITextFieldDelegate {
                                                width: subViewWidth,
                                                height: subViewHeight))
             view.backgroundColor = #colorLiteral(red: 0.3735761046, green: 0.7207441926, blue: 0.09675113112, alpha: 1)
-            // CREATE new Label:
-            let nameView = UILabel(frame: CGRect(x: 0 + label_length / 7, y: ((subViewHeight + spacing) * i) + 10, width: label_length, height: 30))
+            // CREATE new Label ASSETNAME:
+            let nameView = UILabel(frame: CGRect(x: 0, y: ((subViewHeight + spacing) * i) + 10, width: label_length, height: 30))
             nameView.text = " 🏦 \(data.assetname!)"
             nameView.textColor = UIColor.darkGray
-            nameView.textAlignment = .center
+            nameView.textAlignment = .left
             nameView.font = UIFont.boldSystemFont(ofSize: font_size)
-            // CREATE new Label:
+            
+            // CREATE new Label TYPE:
+            let typeView = UILabel(frame: CGRect(x: label_length / 2 + 33, y: ((subViewHeight + spacing) * i) + 10, width: 150, height: 30))
+            typeView.text = "\(data.type!) 💎"
+            typeView.font = UIFont.boldSystemFont(ofSize: 12)
+            typeView.textColor = UIColor.white
+            typeView.textAlignment = .right
+            
+            // CREATE new Label VALUE:
             let valueView = UILabel(frame: CGRect(x: font_spacing, y: ((subViewHeight + spacing) * i) + 40, width: label_length, height: 30))
             valueView.text = String(format: "%.2f € 💰" , data.value!)
 //            valueView.text = String(format: "%.2f € 💰" , formatValue(value: data.value!))
@@ -114,7 +121,8 @@ class AssetsVC: UIViewController, UITextFieldDelegate {
             valueView.textAlignment = .right
             valueView.font = UIFont.boldSystemFont(ofSize: font_size)
             
-            let deleteButton = UIButton(frame: CGRect(x: 0, y: ((subViewHeight + spacing) * i) + 40, width: label_length / 2 - 40, height: 30))
+            // CREATE new Button DELETE:
+            let deleteButton = UIButton(frame: CGRect(x: 0, y: ((subViewHeight + spacing) * i) + 50, width: label_length / 2 - 40, height: 30))
             deleteButton.tintColor = UIColor.black
             deleteButton.backgroundColor = UIColor.red
             deleteButton.setTitle("X", for: UIControl.State.normal)
@@ -126,6 +134,7 @@ class AssetsVC: UIViewController, UITextFieldDelegate {
             // Add the views:
             self.scrollView.addSubview(view)
             self.scrollView.addSubview(nameView)
+            self.scrollView.addSubview(typeView)
             self.scrollView.addSubview(valueView)
             self.scrollView.addSubview(deleteButton)
             
@@ -133,11 +142,11 @@ class AssetsVC: UIViewController, UITextFieldDelegate {
         }
     }
     
-    // Deletes a object
+    // Checks if an object should be deleted or not
     @objc func deleteAction(_ sender: UIButton) {
         var toDelete = ""
+        tapped_button = sender.description              // SEHR WICHTIG!
         
-        tapped_button = sender.description
         for i in 0...button_keys.count-1 {
             if tapped_button == button_keys[i] {
                 print("Everything has been deleted!!!!! \n\n")
@@ -145,7 +154,6 @@ class AssetsVC: UIViewController, UITextFieldDelegate {
                 break
             }
         }
-        
         let message = "Asset '\(toDelete)' wirklich löschen?"
         let alert = UIAlertController(title: "⚠️ Asset löschen?", message: message, preferredStyle: .alert)
         print("[i] Showing delete-asset alert ⚠️:")
@@ -154,14 +162,12 @@ class AssetsVC: UIViewController, UITextFieldDelegate {
         self.present(alert, animated: true)
     }
     
-    
+    // Takes care of DELETING the last clicked asset:
     func deleteData(_ entity: UIAlertAction) {
-        print("Delete-Button [\(tapped_button!)] was pressed!")
         var toDelete = ""
         
         for i in 0...button_keys.count-1 {
             if tapped_button == button_keys[i] {
-                print("Everything has been deleted!!!!! \n\n")
                 toDelete = asset_keys[i]!
                 break
             }
@@ -171,7 +177,6 @@ class AssetsVC: UIViewController, UITextFieldDelegate {
         if let result = try? context.fetch(fetchRequest) as? [Asset] {
             for object in result {
                 if object.assetname == toDelete {
-                    print("[X] Found Asset to delete!")
                     context.delete(object)
                     print("[X] DELETED: \(object.assetname!)")
                 }
@@ -185,6 +190,7 @@ class AssetsVC: UIViewController, UITextFieldDelegate {
             print("[X] Failed Saving!")
         }
         
+        // RESETS THE VIEW:
         assets = []
         scrollViewData = []
         let allSubViews = self.scrollView.subviews
@@ -194,25 +200,12 @@ class AssetsVC: UIViewController, UITextFieldDelegate {
         self.viewDidLoad()
     }
     
-    
-    func formatValue(value: Double!) -> String! {
-        let result = String(value)
-        
-//        let formatter = NumberFormatter()
-//        formatter.numberStyle = .currency
-//        formatter.currencyCode = "USD"
-//        formatter.currencySymbol = "€"
-//        result = formatter.string(from: NSNumber(value: value))!
-        
-        return result
-    }
-    
-    
     // FOR STATUS BAR "STATUS"
     override var prefersStatusBarHidden: Bool {
         return true
     }
 }
+// CLASS END #################################################################
 
 
 // The VIEW for the assets:
@@ -221,8 +214,6 @@ class AssetView: UIView {
     // INIT:
     override init(frame: CGRect) {
         super.init(frame: frame)
-//        self.addSubview(nameView)
-//        self.addSubview(valueView)
     }
     
     required init?(coder aDecoder: NSCoder) {
