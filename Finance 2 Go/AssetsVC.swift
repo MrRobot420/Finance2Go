@@ -28,6 +28,7 @@ class AssetsVC: UIViewController, UITextFieldDelegate {
     var assets: [Asset] = []
     var button_keys: [String?] = []
     var asset_keys: [String?] = []
+    var tapped_button: String! = ""
     
     @IBOutlet weak var scrollView: UIScrollView!
     
@@ -113,17 +114,11 @@ class AssetsVC: UIViewController, UITextFieldDelegate {
             valueView.textAlignment = .right
             valueView.font = UIFont.boldSystemFont(ofSize: font_size)
             
-            let deleteButton = UIButton(frame: CGRect(x: 0, y: ((subViewHeight + spacing) * i) + 40, width: label_length / 2 - 10, height: 30))
+            let deleteButton = UIButton(frame: CGRect(x: 0, y: ((subViewHeight + spacing) * i) + 40, width: label_length / 2 - 40, height: 30))
             deleteButton.tintColor = UIColor.black
             deleteButton.backgroundColor = UIColor.red
             deleteButton.setTitle("X", for: UIControl.State.normal)
             deleteButton.isEnabled = true
-//            let font = UIFont.systemFont(ofSize: 20)
-//            let attributes = [NSAttributedString.Key.font: font]
-//            let attributeString = NSAttributedString(string: data.assetname!, attributes: attributes)
-//            deleteButton.setAttributedTitle(attributeString, for: .normal)
-//            deleteButton.state =
-//            deleteButton.set
             deleteButton.addTarget(self, action: #selector(deleteAction), for: .touchUpInside)
             button_keys.insert(deleteButton.description, at: i)
             asset_keys.insert(data.assetname, at: i)
@@ -140,12 +135,32 @@ class AssetsVC: UIViewController, UITextFieldDelegate {
     
     // Deletes a object
     @objc func deleteAction(_ sender: UIButton) {
+        var toDelete = ""
         
-        print("Delete-Button [\(sender.description)] was pressed!")
+        tapped_button = sender.description
+        for i in 0...button_keys.count-1 {
+            if tapped_button == button_keys[i] {
+                print("Everything has been deleted!!!!! \n\n")
+                toDelete = asset_keys[i]!
+                break
+            }
+        }
+        
+        let message = "Asset '\(toDelete)' wirklich löschen?"
+        let alert = UIAlertController(title: "⚠️ Asset löschen?", message: message, preferredStyle: .alert)
+        print("[i] Showing delete-asset alert ⚠️:")
+        alert.addAction(UIAlertAction(title: "NEIN ❌", style: .cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "Ja ✅", style: .default, handler: deleteData(_:)))
+        self.present(alert, animated: true)
+    }
+    
+    
+    func deleteData(_ entity: UIAlertAction) {
+        print("Delete-Button [\(tapped_button!)] was pressed!")
         var toDelete = ""
         
         for i in 0...button_keys.count-1 {
-            if sender.description == button_keys[i] {
+            if tapped_button == button_keys[i] {
                 print("Everything has been deleted!!!!! \n\n")
                 toDelete = asset_keys[i]!
                 break
@@ -153,7 +168,7 @@ class AssetsVC: UIViewController, UITextFieldDelegate {
         }
         
         // Try deleting!
-        if let result = try? context.fetch(fetchRequest) as! [Asset] {
+        if let result = try? context.fetch(fetchRequest) as? [Asset] {
             for object in result {
                 if object.assetname == toDelete {
                     print("[X] Found Asset to delete!")
@@ -170,6 +185,13 @@ class AssetsVC: UIViewController, UITextFieldDelegate {
             print("[X] Failed Saving!")
         }
         
+        assets = []
+        scrollViewData = []
+        let allSubViews = self.scrollView.subviews
+        for subView in allSubViews {
+            subView.removeFromSuperview()
+        }
+        self.viewDidLoad()
     }
     
     
