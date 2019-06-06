@@ -36,9 +36,8 @@ class AddAssetsVC: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var typeField: UITextField!
     @IBOutlet weak var valueField: UITextField!
-    
-    let greenColor = #colorLiteral(red: 0.3735761046, green: 0.7207441926, blue: 0.09675113112, alpha: 1)
-    let redColor = #colorLiteral(red: 0.7207441926, green: 0.02335692724, blue: 0.06600695687, alpha: 1)
+    @IBOutlet weak var topView: UIView!
+    @IBOutlet weak var addButton: UIButton!
     
     //let addSegue = UIStoryboardSegue.
     
@@ -83,23 +82,23 @@ class AddAssetsVC: UIViewController, UITextFieldDelegate {
         let value = valueField.text
         
         if name!.isEmpty || name == " " {
-            showInfo(info: "Name erforderlich!", color: #colorLiteral(red: 0.7207441926, green: 0.02335692724, blue: 0.06600695687, alpha: 1))
+            showInfo(info: "Name erforderlich!", color: globalColorSettings.errorColor)
             return false
         } else {
             let taken = checkIfTaken(name: name!)
             if taken {
-                showInfo(info: "Name vergeben!", color: #colorLiteral(red: 0.7207441926, green: 0.02335692724, blue: 0.06600695687, alpha: 1))
+                showInfo(info: "Name vergeben!", color: globalColorSettings.errorColor)
                 return false
             }
             if type!.isEmpty || type == " " {
-                showInfo(info: "Typ erforderlich!", color: #colorLiteral(red: 0.7207441926, green: 0.02335692724, blue: 0.06600695687, alpha: 1))
+                showInfo(info: "Typ erforderlich!", color: globalColorSettings.errorColor)
                 return false
             } else {
                 if value!.isEmpty || value == " " {
-                    showInfo(info: "Wert erforderlich!", color: #colorLiteral(red: 0.7207441926, green: 0.02335692724, blue: 0.06600695687, alpha: 1))
+                    showInfo(info: "Wert erforderlich!", color: globalColorSettings.errorColor)
                     return false
                 } else if isValidValue(testStr: value!) {
-                    showInfo(info: "Asset hinzufügen...", color: #colorLiteral(red: 0.3735761046, green: 0.7207441926, blue: 0.09675113112, alpha: 1))
+                    showInfo(info: "Asset hinzufügen...", color: globalColorSettings.successColor)
                     return true
                 } else {
                     return false
@@ -142,6 +141,8 @@ class AddAssetsVC: UIViewController, UITextFieldDelegate {
         typeField.delegate = self
         valueField.delegate = self
         configureTextFields()
+        topView.backgroundColor = globalColorSettings.mainColor    // Set Colors
+        addButton.backgroundColor = globalColorSettings.mainColor    // Set Colors
         
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "money.jpg")!)
         
@@ -205,7 +206,7 @@ class AddAssetsVC: UIViewController, UITextFieldDelegate {
     
     // SHOW Info in selected color:
     func showInfo(info:String!, color: UIColor!) {
-        if color == #colorLiteral(red: 0.3735761046, green: 0.7207441926, blue: 0.09675113112, alpha: 1) {
+        if color == globalColorSettings.successColor {
             print("[√] SUCCESS: \(info!) ")
             infoLabel.text = info
             infoLabel.textColor = color
@@ -284,10 +285,10 @@ class AddAssetsVC: UIViewController, UITextFieldDelegate {
             if Double(testStr)! >= 0 {
                 return true
             }
-            showInfo(info: "Must be >= 0.00", color: #colorLiteral(red: 0.7207441926, green: 0.02335692724, blue: 0.06600695687, alpha: 1))
+            showInfo(info: "Must be >= 0.00", color: globalColorSettings.errorColor)
             return false
         } else {
-            showInfo(info: "Must be floating point number!", color: #colorLiteral(red: 0.7207441926, green: 0.02335692724, blue: 0.06600695687, alpha: 1))
+            showInfo(info: "Must be floating point number!", color: globalColorSettings.errorColor)
             return false
         }
         

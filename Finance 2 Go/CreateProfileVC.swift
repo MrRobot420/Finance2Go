@@ -41,6 +41,7 @@ class CreateProfileVC: UIViewController, UITextFieldDelegate {
     var profileCount: Int32 = 0
     
     
+    @IBOutlet weak var topView: UIView!
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var mailField: UITextField!
     @IBOutlet weak var ageField: UITextField!
@@ -48,6 +49,7 @@ class CreateProfileVC: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var conf_passwordField: UITextField!
     
     @IBOutlet weak var infoLabel: UILabel!
+    @IBOutlet weak var okButton: UIButton!
     
     // Shows ALERT to password guidelines / criteria (alert)
     @IBAction func passwordInfo(_ sender: Any) {
@@ -87,7 +89,7 @@ class CreateProfileVC: UIViewController, UITextFieldDelegate {
             if keychain.set(password_value!, forKey: Keys.password, withAccess: KeychainSwiftAccessOptions.accessibleAlways) {  // -> KeychainSwift
                 print("[+] Keychain Set!")
                 infoLabel.text = "Keychain set!"
-                infoLabel.textColor = #colorLiteral(red: 0.3735761046, green: 0.7207441926, blue: 0.09675113112, alpha: 1)
+                infoLabel.textColor = globalColorSettings.successColor
             }
             //password.setValue(password_value, forKey: "password")        -> CoreData
         } else {
@@ -128,51 +130,51 @@ class CreateProfileVC: UIViewController, UITextFieldDelegate {
         
         // NAME:
         if name_value!.isEmpty || name_value == " " {
-            showInfo(info: "Name leer", color: #colorLiteral(red: 0.3737342954, green: 0.7212594151, blue: 0.09610875696, alpha: 1))
+            showInfo(info: "Name leer", color: globalColorSettings.errorColor)
             return false
         } else {
             let taken = checkIfTaken(name: name_value!)
             if taken {
-                showInfo(info: "Name vergeben!", color: #colorLiteral(red: 0.7207441926, green: 0.02335692724, blue: 0.06600695687, alpha: 1))
+                showInfo(info: "Name vergeben!", color: globalColorSettings.errorColor)
                 return false
             }
             
             // EMAIL:
             if email_value!.isEmpty || email_value == " " {
-                showInfo(info: "E-Mail leer", color: #colorLiteral(red: 0.7207441926, green: 0.02335692724, blue: 0.06600695687, alpha: 1))
+                showInfo(info: "E-Mail leer", color: globalColorSettings.errorColor)
                 return false
             } else {
                 if isValidEmail(testStr: email_value!) {
                     
                     // AGE:
                     if age_value!.isEmpty || age_value == " " {
-                        showInfo(info: "Alter leer", color: #colorLiteral(red: 0.7207441926, green: 0.02335692724, blue: 0.06600695687, alpha: 1))
+                        showInfo(info: "Alter leer", color: globalColorSettings.errorColor)
                         return false
                     } else if isValidAge(testStr: age_value!) {
                         
                         // PASSWORD:
                         if password_value!.isEmpty || password_value == " " {
-                            showInfo(info: "Passwort leer", color: #colorLiteral(red: 0.7207441926, green: 0.02335692724, blue: 0.06600695687, alpha: 1))
+                            showInfo(info: "Passwort leer", color: globalColorSettings.errorColor)
                             return false
                         } else if isValidPassword(testStr: password_value!) {
                             if password_value == conf_passwordField.text {
                                 
                                 // LAST CHECK PASSED:
-                                showInfo(info: "Profil erstellt", color: #colorLiteral(red: 0.3735761046, green: 0.7207441926, blue: 0.09675113112, alpha: 1))                // <--- DESIRED OUTCOME!
+                                showInfo(info: "Profil erstellt", color: globalColorSettings.successColor)                // <--- DESIRED OUTCOME!
                                 return true
                             } else {
-                                showInfo(info: "untersch. Passwörter!", color: #colorLiteral(red: 0.7207441926, green: 0.02335692724, blue: 0.06600695687, alpha: 1))
+                                showInfo(info: "untersch. Passwörter!", color: globalColorSettings.errorColor)
                                 return false
                             }
                         } else {
-                            showInfo(info: "Ungültig: (8)", color: #colorLiteral(red: 0.7207441926, green: 0.02335692724, blue: 0.06600695687, alpha: 1))
+                            showInfo(info: "Ungültig: (8)", color: globalColorSettings.errorColor)
                             return false
                         }
                     } else {
                         return false
                     }
                 } else {
-                    showInfo(info: "E-Mail ungültig!", color: #colorLiteral(red: 0.7207441926, green: 0.02335692724, blue: 0.06600695687, alpha: 1))
+                    showInfo(info: "E-Mail ungültig!", color: globalColorSettings.errorColor)
                     return false
                 }
             }
@@ -246,6 +248,9 @@ class CreateProfileVC: UIViewController, UITextFieldDelegate {
         setNeedsStatusBarAppearanceUpdate()
         // Do any additional setup after loading the view.
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "money.jpg")!)
+        topView.backgroundColor = globalColorSettings.mainColor    // Set Colors
+        okButton.backgroundColor = globalColorSettings.mainColor    // Set Colors
+        
         nameField.delegate = self
         mailField.delegate = self
         ageField.delegate = self

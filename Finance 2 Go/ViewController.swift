@@ -10,6 +10,17 @@ import UIKit
 import CoreData
 import KeychainSwift
 
+struct globalColorSettings {
+    //     static var mainColor = #colorLiteral(red: 0.3735761046, green: 0.7207441926, blue: 0.09675113112, alpha: 1)          // ORIGINAL!
+    //    static var mainColor = #colorLiteral(red: 0.08819091485, green: 0.5358502538, blue: 0.05361597117, alpha: 1)              // Light
+//        static var mainColor = #colorLiteral(red: 0.3009182322, green: 0.8358695099, blue: 0.8002899455, alpha: 1)             // Light blue
+//    static var mainColor = #colorLiteral(red: 0.1921295051, green: 0.3386588719, blue: 1, alpha: 1)             // Dark Blue
+    static var mainColor = #colorLiteral(red: 0.914617703, green: 0.6187350153, blue: 0.1710565974, alpha: 1)              // Light Orange
+    static var secondaryColor = #colorLiteral(red: 0.3330089152, green: 0.333286792, blue: 0.3330519199, alpha: 1)         // Dark
+    static var errorColor = #colorLiteral(red: 0.7207441926, green: 0.02335692724, blue: 0.06600695687, alpha: 1)
+    static var successColor = #colorLiteral(red: 0.3735761046, green: 0.7207441926, blue: 0.09675113112, alpha: 1)
+}
+
 class ViewController: UIViewController, UITextFieldDelegate {
     
     var profiles: [Profile] = []
@@ -18,10 +29,13 @@ class ViewController: UIViewController, UITextFieldDelegate {
     let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Profile")
     
     
+    @IBOutlet weak var topView: UILabel!
     @IBOutlet weak var infoLabel: UILabel!
     
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
+    @IBOutlet weak var goButton: UIButton!
+    @IBOutlet weak var addButton: UIButton!
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
         if textField == nameField {
@@ -33,6 +47,31 @@ class ViewController: UIViewController, UITextFieldDelegate {
             if keychain.lastResultCode != noErr {
                 print(keychain.lastResultCode)
             }
+        }
+    }
+    
+    func setGlobalColors(color: String) {
+        if color.lowercased() == "green" {
+            globalColorSettings.mainColor = #colorLiteral(red: 0.3735761046, green: 0.7207441926, blue: 0.09675113112, alpha: 1)
+            UserDefaults.standard.set(color, forKey: "mainColor")
+        } else if color.lowercased() == "orange" {
+            globalColorSettings.mainColor = #colorLiteral(red: 0.914617703, green: 0.6187350153, blue: 0.1710565974, alpha: 1)
+            UserDefaults.standard.set(color, forKey: "mainColor")
+        } else if color.lowercased() == "light blue" {
+            globalColorSettings.mainColor = #colorLiteral(red: 0.3009182322, green: 0.8358695099, blue: 0.8002899455, alpha: 1)
+            UserDefaults.standard.set(color, forKey: "mainColor")
+        } else if color.lowercased() == "dark blue" {
+            globalColorSettings.mainColor = #colorLiteral(red: 0.1921295051, green: 0.3386588719, blue: 1, alpha: 1)
+            UserDefaults.standard.set(color, forKey: "mainColor")
+        } else if color.lowercased() == "yellow" {
+            globalColorSettings.mainColor = #colorLiteral(red: 0.914617703, green: 0.860400427, blue: 0.1053048009, alpha: 1)
+            UserDefaults.standard.set(color, forKey: "mainColor")
+        } else if color.lowercased() == "purple" {
+            globalColorSettings.mainColor = #colorLiteral(red: 0.6207566624, green: 0.2043031161, blue: 0.6195764682, alpha: 1)
+            UserDefaults.standard.set(color, forKey: "mainColor")
+        } else if color.lowercased() == "red" {
+            globalColorSettings.mainColor = #colorLiteral(red: 0.8239609772, green: 0.07829545355, blue: 0.1074117443, alpha: 1)
+            UserDefaults.standard.set(color, forKey: "mainColor")
         }
     }
     
@@ -137,7 +176,21 @@ class ViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         setNeedsStatusBarAppearanceUpdate()
+        let currentColor = UserDefaults.standard.string(forKey: "mainColor")
+        
+        if currentColor != nil {
+            setGlobalColors(color: currentColor!)
+        } else {
+            setGlobalColors(color: "green")
+        }
+        
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "money.jpg")!)
+        topView.backgroundColor = globalColorSettings.mainColor    // Set Colors
+        goButton.backgroundColor = globalColorSettings.mainColor    // Set Colors
+        addButton.backgroundColor = globalColorSettings.mainColor    // Set Colors
+        
+        
+        
         self.nameField.delegate = self
         self.passwordField.delegate = self
         configureTextFields()

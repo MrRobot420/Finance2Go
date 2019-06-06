@@ -27,14 +27,25 @@ class OverviewVC: UIViewController, UITextFieldDelegate {
     let transactionFetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Transaction")            // What to fetch
     
     
+    @IBOutlet weak var topView: UIView!
+    @IBOutlet weak var assetsButton: UIButton!
     @IBOutlet weak var profileLabel: UILabel!
     @IBOutlet weak var accountLabel: UILabel!
+    @IBOutlet weak var saldoButton: UIButton!
     @IBOutlet weak var saldoLabel: UILabel!
     @IBOutlet weak var transxLabel: UILabel!
+    @IBOutlet weak var transxButton: UIButton!
+    @IBOutlet weak var timeshiftButton: UIButton!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setNeedsStatusBarAppearanceUpdate()
+        topView.backgroundColor = globalColorSettings.mainColor    // Set Colors
+        assetsButton.backgroundColor = globalColorSettings.mainColor    // Set Colors
+        saldoButton.backgroundColor = globalColorSettings.mainColor    // Set Colors
+        transxButton.backgroundColor = globalColorSettings.mainColor    // Set Colors
+        timeshiftButton.backgroundColor = globalColorSettings.mainColor    // Set Colors
         
         // Do any additional setup after loading the view.
         do {
@@ -66,7 +77,7 @@ class OverviewVC: UIViewController, UITextFieldDelegate {
         transactionAmount = countList(list: transactions)
         profileAmount = countList(list: profiles)
         
-        profileLabel.text = profile.name
+        profileLabel.text = profile.name! + " 👤"
         accountLabel.text = String(assetAmount)
         transxLabel.text = String(transactionAmount)
     }

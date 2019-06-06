@@ -33,6 +33,7 @@ class AssetsVC: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var scrollView: UIScrollView!
     
     var scrollViewData = [assetViewDataStruct]()
+    @IBOutlet weak var topView: UIView!
     
     
     // S T A N D A R D   V I E W   D I D   L O A D
@@ -41,6 +42,8 @@ class AssetsVC: UIViewController, UITextFieldDelegate {
         setNeedsStatusBarAppearanceUpdate()
         // Do any additional setup after loading the view.
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "money.jpg")!)
+        
+        topView.backgroundColor = globalColorSettings.mainColor    // Set Colors
         
         do {
             print("\n###########   ASSETS SCREEN:   ###########\n")
@@ -98,13 +101,14 @@ class AssetsVC: UIViewController, UITextFieldDelegate {
                                                y: ((subViewHeight + spacing) * i),
                                                width: subViewWidth,
                                                height: subViewHeight))
-            view.backgroundColor = #colorLiteral(red: 0.3735761046, green: 0.7207441926, blue: 0.09675113112, alpha: 1)
+//            view.backgroundColor = #colorLiteral(red: 0.3735761046, green: 0.7207441926, blue: 0.09675113112, alpha: 1)
+            view.backgroundColor = globalColorSettings.mainColor
             // CREATE new Label ASSETNAME:
             let nameView = UILabel(frame: CGRect(x: 0, y: ((subViewHeight + spacing) * i) + 10, width: label_length, height: 30))
             nameView.text = " 🏦 \(data.assetname!)"
             nameView.textColor = UIColor.darkGray
             nameView.textAlignment = .left
-            nameView.font = UIFont.boldSystemFont(ofSize: font_size)
+            nameView.font = UIFont.boldSystemFont(ofSize: 16)
             
             // CREATE new Label TYPE:
             let typeView = UILabel(frame: CGRect(x: label_length / 2 + 33, y: ((subViewHeight + spacing) * i) + 10, width: 150, height: 30))
