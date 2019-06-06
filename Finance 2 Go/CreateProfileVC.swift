@@ -128,7 +128,7 @@ class CreateProfileVC: UIViewController, UITextFieldDelegate {
         
         // NAME:
         if name_value!.isEmpty || name_value == " " {
-            showInfo(info: "Name leer", color: #colorLiteral(red: 0.7207441926, green: 0.02335692724, blue: 0.06600695687, alpha: 1))
+            showInfo(info: "Name leer", color: #colorLiteral(red: 0.3737342954, green: 0.7212594151, blue: 0.09610875696, alpha: 1))
             return false
         } else {
             let taken = checkIfTaken(name: name_value!)

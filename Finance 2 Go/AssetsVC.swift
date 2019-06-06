@@ -110,23 +110,25 @@ class AssetsVC: UIViewController, UITextFieldDelegate {
             let typeView = UILabel(frame: CGRect(x: label_length / 2 + 33, y: ((subViewHeight + spacing) * i) + 10, width: 150, height: 30))
             typeView.text = "\(data.type!) 💎"
             typeView.font = UIFont.boldSystemFont(ofSize: 12)
-            typeView.textColor = UIColor.white
+            typeView.textColor = #colorLiteral(red: 0.9967552883, green: 0.9521791773, blue: 1, alpha: 1)
             typeView.textAlignment = .right
             
             // CREATE new Label VALUE:
             let valueView = UILabel(frame: CGRect(x: font_spacing, y: ((subViewHeight + spacing) * i) + 40, width: label_length, height: 30))
             valueView.text = String(format: "%.2f € 💰" , data.value!)
 //            valueView.text = String(format: "%.2f € 💰" , formatValue(value: data.value!))
-            valueView.textColor = UIColor.white
+            valueView.textColor = #colorLiteral(red: 0.9967552883, green: 0.9521791773, blue: 1, alpha: 1)
             valueView.textAlignment = .right
             valueView.font = UIFont.boldSystemFont(ofSize: font_size)
             
             // CREATE new Button DELETE:
-            let deleteButton = UIButton(frame: CGRect(x: 0, y: ((subViewHeight + spacing) * i) + 50, width: label_length / 2 - 40, height: 30))
+            let deleteButton = UIButton(frame: CGRect(x: 0, y: ((subViewHeight + spacing) * i) + 50, width: label_length / 2 - 50, height: 30))
             deleteButton.tintColor = UIColor.black
-            deleteButton.backgroundColor = UIColor.red
+            deleteButton.backgroundColor = #colorLiteral(red: 0.7207441926, green: 0.02335692724, blue: 0.06600695687, alpha: 1)
             deleteButton.setTitle("X", for: UIControl.State.normal)
             deleteButton.isEnabled = true
+//            deleteButton.isHighlighted = true
+            deleteButton.showsTouchWhenHighlighted = true
             deleteButton.addTarget(self, action: #selector(deleteAction), for: .touchUpInside)
             button_keys.insert(deleteButton.description, at: i)
             asset_keys.insert(data.assetname, at: i)
@@ -149,7 +151,6 @@ class AssetsVC: UIViewController, UITextFieldDelegate {
         
         for i in 0...button_keys.count-1 {
             if tapped_button == button_keys[i] {
-                print("Everything has been deleted!!!!! \n\n")
                 toDelete = asset_keys[i]!
                 break
             }
