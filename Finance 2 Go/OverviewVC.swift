@@ -41,11 +41,11 @@ class OverviewVC: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         setNeedsStatusBarAppearanceUpdate()
-        topView.backgroundColor = globalColorSettings.mainColor    // Set Colors
-        assetsButton.backgroundColor = globalColorSettings.mainColor    // Set Colors
-        saldoButton.backgroundColor = globalColorSettings.mainColor    // Set Colors
-        transxButton.backgroundColor = globalColorSettings.mainColor    // Set Colors
-        timeshiftButton.backgroundColor = globalColorSettings.mainColor    // Set Colors
+        topView.backgroundColor = globColor.mainColor    // Set Colors
+        assetsButton.backgroundColor = globColor.mainColor    // Set Colors
+        saldoButton.backgroundColor = globColor.mainColor    // Set Colors
+        transxButton.backgroundColor = globColor.mainColor    // Set Colors
+        timeshiftButton.backgroundColor = globColor.mainColor    // Set Colors
         
         // Do any additional setup after loading the view.
         do {

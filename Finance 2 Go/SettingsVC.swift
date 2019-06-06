@@ -50,21 +50,19 @@ class SettingsVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource
         self.colorPicker.delegate = self
         self.colorPicker.dataSource = self
         pickerData = ["red", "orange", "yellow", "green", "light blue", "dark blue", "purple"]
-//        pickerData = ["green", "light blue", "dark blue", "yellow", "purple", "red", "orange"]
         
-        // PRESELECT THE PICKER-VIEW:
-        let currentDesignColor = UserDefaults.standard.string(forKey: "mainColor")
-        for i in 0...pickerData.count-1 {
-            if currentDesignColor == pickerData[i] {
-                colorPicker.selectRow(i, inComponent: 0, animated: true)
-            }
-        }
-        
-
-        topView.backgroundColor = globalColorSettings.mainColor    // Set Colors
-        okButton.backgroundColor = globalColorSettings.mainColor    // Set Colors
+        setUserInterface()
         print("\n###########   SETTINGS:   ###########\n")
         // Do any additional setup after loading the view.
+        
+        let leftSwipe = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipes(_:)))
+        let rightSwipe = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipes(_:)))
+        
+        leftSwipe.direction = .left
+        rightSwipe.direction = .right
+        
+        view.addGestureRecognizer(leftSwipe)
+        view.addGestureRecognizer(rightSwipe)
     }
     
     //TO DELETE ALL DATA! (copied from net)
@@ -91,27 +89,41 @@ class SettingsVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource
         }
     }
     
+    // Sets the userinterface:
+    func setUserInterface() {
+        // PRESELECT THE PICKER-VIEW:
+        let currentDesignColor = UserDefaults.standard.string(forKey: "mainColor")
+        for i in 0...pickerData.count-1 {
+            if currentDesignColor == pickerData[i] {
+                colorPicker.selectRow(i, inComponent: 0, animated: true)
+            }
+        }
+        
+        topView.backgroundColor = globColor.mainColor    // Set Colors
+        okButton.backgroundColor = globColor.mainColor    // Set Colors
+    }
+    
     func setGlobalColors(color: String) {
         if color.lowercased() == "green" {
-            globalColorSettings.mainColor = #colorLiteral(red: 0.3735761046, green: 0.7207441926, blue: 0.09675113112, alpha: 1)
+            globColor.mainColor = #colorLiteral(red: 0.3735761046, green: 0.7207441926, blue: 0.09675113112, alpha: 1)
             UserDefaults.standard.set(color, forKey: "mainColor")
         } else if color.lowercased() == "orange" {
-            globalColorSettings.mainColor = #colorLiteral(red: 0.914617703, green: 0.6187350153, blue: 0.1710565974, alpha: 1)
+            globColor.mainColor = #colorLiteral(red: 0.914617703, green: 0.6187350153, blue: 0.1710565974, alpha: 1)
             UserDefaults.standard.set(color, forKey: "mainColor")
         } else if color.lowercased() == "light blue" {
-            globalColorSettings.mainColor = #colorLiteral(red: 0.3009182322, green: 0.8358695099, blue: 0.8002899455, alpha: 1)
+            globColor.mainColor = #colorLiteral(red: 0.3009182322, green: 0.8358695099, blue: 0.8002899455, alpha: 1)
             UserDefaults.standard.set(color, forKey: "mainColor")
         } else if color.lowercased() == "dark blue" {
-            globalColorSettings.mainColor = #colorLiteral(red: 0.1921295051, green: 0.3386588719, blue: 1, alpha: 1)
+            globColor.mainColor = #colorLiteral(red: 0.1921295051, green: 0.3386588719, blue: 1, alpha: 1)
             UserDefaults.standard.set(color, forKey: "mainColor")
         } else if color.lowercased() == "yellow" {
-            globalColorSettings.mainColor = #colorLiteral(red: 0.914617703, green: 0.860400427, blue: 0.1053048009, alpha: 1)
+            globColor.mainColor = #colorLiteral(red: 0.914617703, green: 0.860400427, blue: 0.1053048009, alpha: 1)
             UserDefaults.standard.set(color, forKey: "mainColor")
         } else if color.lowercased() == "purple" {
-            globalColorSettings.mainColor = #colorLiteral(red: 0.6207566624, green: 0.2043031161, blue: 0.6195764682, alpha: 1)
+            globColor.mainColor = #colorLiteral(red: 0.6207566624, green: 0.2043031161, blue: 0.6195764682, alpha: 1)
             UserDefaults.standard.set(color, forKey: "mainColor")
         } else if color.lowercased() == "red" {
-            globalColorSettings.mainColor = #colorLiteral(red: 0.8239609772, green: 0.07829545355, blue: 0.1074117443, alpha: 1)
+            globColor.mainColor = #colorLiteral(red: 0.8239609772, green: 0.07829545355, blue: 0.1074117443, alpha: 1)
             UserDefaults.standard.set(color, forKey: "mainColor")
         }
     }
@@ -161,14 +173,24 @@ class SettingsVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource
         return myTitle
     }
     
-
-    
     // Sets selected pickerItem
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         // This method is triggered whenever the user makes a change to the picker selection.
         // The parameter named row and component represents what was selected.
         
         selectedColor = (pickerData[row])!
+    }
+    
+    @objc func handleSwipes(_ sender:UISwipeGestureRecognizer) {
+        
+        if (sender.direction == .left) {
+            print("[GESTURE] User-Gesture: Swipe Left")
+            performSegue(withIdentifier: "Settings2ViewController", sender: nil)
+        }
+        
+        if (sender.direction == .right) {
+            print("[GESTURE] User-Gesture: Swipe Right")
+        }
     }
     
 }

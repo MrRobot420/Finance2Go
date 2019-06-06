@@ -89,7 +89,7 @@ class CreateProfileVC: UIViewController, UITextFieldDelegate {
             if keychain.set(password_value!, forKey: Keys.password, withAccess: KeychainSwiftAccessOptions.accessibleAlways) {  // -> KeychainSwift
                 print("[+] Keychain Set!")
                 infoLabel.text = "Keychain set!"
-                infoLabel.textColor = globalColorSettings.successColor
+                infoLabel.textColor = globColor.successColor
             }
             //password.setValue(password_value, forKey: "password")        -> CoreData
         } else {
@@ -130,51 +130,51 @@ class CreateProfileVC: UIViewController, UITextFieldDelegate {
         
         // NAME:
         if name_value!.isEmpty || name_value == " " {
-            showInfo(info: "Name leer", color: globalColorSettings.errorColor)
+            showInfo(info: "Name leer", color: globColor.errorColor)
             return false
         } else {
             let taken = checkIfTaken(name: name_value!)
             if taken {
-                showInfo(info: "Name vergeben!", color: globalColorSettings.errorColor)
+                showInfo(info: "Name vergeben!", color: globColor.errorColor)
                 return false
             }
             
             // EMAIL:
             if email_value!.isEmpty || email_value == " " {
-                showInfo(info: "E-Mail leer", color: globalColorSettings.errorColor)
+                showInfo(info: "E-Mail leer", color: globColor.errorColor)
                 return false
             } else {
                 if isValidEmail(testStr: email_value!) {
                     
                     // AGE:
                     if age_value!.isEmpty || age_value == " " {
-                        showInfo(info: "Alter leer", color: globalColorSettings.errorColor)
+                        showInfo(info: "Alter leer", color: globColor.errorColor)
                         return false
                     } else if isValidAge(testStr: age_value!) {
                         
                         // PASSWORD:
                         if password_value!.isEmpty || password_value == " " {
-                            showInfo(info: "Passwort leer", color: globalColorSettings.errorColor)
+                            showInfo(info: "Passwort leer", color: globColor.errorColor)
                             return false
                         } else if isValidPassword(testStr: password_value!) {
                             if password_value == conf_passwordField.text {
                                 
                                 // LAST CHECK PASSED:
-                                showInfo(info: "Profil erstellt", color: globalColorSettings.successColor)                // <--- DESIRED OUTCOME!
+                                showInfo(info: "Profil erstellt", color: globColor.successColor)                // <--- DESIRED OUTCOME!
                                 return true
                             } else {
-                                showInfo(info: "untersch. Passwörter!", color: globalColorSettings.errorColor)
+                                showInfo(info: "untersch. Passwörter!", color: globColor.errorColor)
                                 return false
                             }
                         } else {
-                            showInfo(info: "Ungültig: (8)", color: globalColorSettings.errorColor)
+                            showInfo(info: "Ungültig: (8)", color: globColor.errorColor)
                             return false
                         }
                     } else {
                         return false
                     }
                 } else {
-                    showInfo(info: "E-Mail ungültig!", color: globalColorSettings.errorColor)
+                    showInfo(info: "E-Mail ungültig!", color: globColor.errorColor)
                     return false
                 }
             }
@@ -248,8 +248,8 @@ class CreateProfileVC: UIViewController, UITextFieldDelegate {
         setNeedsStatusBarAppearanceUpdate()
         // Do any additional setup after loading the view.
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "money.jpg")!)
-        topView.backgroundColor = globalColorSettings.mainColor    // Set Colors
-        okButton.backgroundColor = globalColorSettings.mainColor    // Set Colors
+        topView.backgroundColor = globColor.mainColor    // Set Colors
+        okButton.backgroundColor = globColor.mainColor    // Set Colors
         
         nameField.delegate = self
         mailField.delegate = self
@@ -261,6 +261,15 @@ class CreateProfileVC: UIViewController, UITextFieldDelegate {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange), name: UIResponder.keyboardWillHideNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange), name: UIResponder.keyboardWillChangeFrameNotification , object: nil)
+        
+        let leftSwipe = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipes(_:)))
+        let rightSwipe = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipes(_:)))
+        
+        leftSwipe.direction = .left
+        rightSwipe.direction = .right
+        
+        view.addGestureRecognizer(leftSwipe)
+        view.addGestureRecognizer(rightSwipe)
     }
     
     // Load before view appers:
@@ -357,5 +366,18 @@ class CreateProfileVC: UIViewController, UITextFieldDelegate {
     // FOR STATUS BAR "STATUS"
     override var prefersStatusBarHidden: Bool {
         return true
+    }
+    
+    // Handles Swipes:
+    @objc func handleSwipes(_ sender:UISwipeGestureRecognizer) {
+        
+        if (sender.direction == .left) {
+            print("[GESTURE] User-Gesture: Swipe Left")
+            performSegue(withIdentifier: "profileCreated", sender: nil)
+        }
+        
+        if (sender.direction == .right) {
+            print("[GESTURE] User-Gesture: Swipe Right")
+        }
     }
 }

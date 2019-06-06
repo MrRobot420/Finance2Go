@@ -82,23 +82,23 @@ class AddAssetsVC: UIViewController, UITextFieldDelegate {
         let value = valueField.text
         
         if name!.isEmpty || name == " " {
-            showInfo(info: "Name erforderlich!", color: globalColorSettings.errorColor)
+            showInfo(info: "Name erforderlich!", color: globColor.errorColor)
             return false
         } else {
             let taken = checkIfTaken(name: name!)
             if taken {
-                showInfo(info: "Name vergeben!", color: globalColorSettings.errorColor)
+                showInfo(info: "Name vergeben!", color: globColor.errorColor)
                 return false
             }
             if type!.isEmpty || type == " " {
-                showInfo(info: "Typ erforderlich!", color: globalColorSettings.errorColor)
+                showInfo(info: "Typ erforderlich!", color: globColor.errorColor)
                 return false
             } else {
                 if value!.isEmpty || value == " " {
-                    showInfo(info: "Wert erforderlich!", color: globalColorSettings.errorColor)
+                    showInfo(info: "Wert erforderlich!", color: globColor.errorColor)
                     return false
                 } else if isValidValue(testStr: value!) {
-                    showInfo(info: "Asset hinzufügen...", color: globalColorSettings.successColor)
+                    showInfo(info: "Asset hinzufügen...", color: globColor.successColor)
                     return true
                 } else {
                     return false
@@ -141,8 +141,8 @@ class AddAssetsVC: UIViewController, UITextFieldDelegate {
         typeField.delegate = self
         valueField.delegate = self
         configureTextFields()
-        topView.backgroundColor = globalColorSettings.mainColor    // Set Colors
-        addButton.backgroundColor = globalColorSettings.mainColor    // Set Colors
+        topView.backgroundColor = globColor.mainColor    // Set Colors
+        addButton.backgroundColor = globColor.mainColor    // Set Colors
         
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "money.jpg")!)
         
@@ -206,7 +206,7 @@ class AddAssetsVC: UIViewController, UITextFieldDelegate {
     
     // SHOW Info in selected color:
     func showInfo(info:String!, color: UIColor!) {
-        if color == globalColorSettings.successColor {
+        if color == globColor.successColor {
             print("[√] SUCCESS: \(info!) ")
             infoLabel.text = info
             infoLabel.textColor = color
@@ -285,10 +285,10 @@ class AddAssetsVC: UIViewController, UITextFieldDelegate {
             if Double(testStr)! >= 0 {
                 return true
             }
-            showInfo(info: "Must be >= 0.00", color: globalColorSettings.errorColor)
+            showInfo(info: "Must be >= 0.00", color: globColor.errorColor)
             return false
         } else {
-            showInfo(info: "Must be floating point number!", color: globalColorSettings.errorColor)
+            showInfo(info: "Must be floating point number!", color: globColor.errorColor)
             return false
         }
         

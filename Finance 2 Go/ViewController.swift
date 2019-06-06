@@ -10,12 +10,8 @@ import UIKit
 import CoreData
 import KeychainSwift
 
-struct globalColorSettings {
-    //     static var mainColor = #colorLiteral(red: 0.3735761046, green: 0.7207441926, blue: 0.09675113112, alpha: 1)          // ORIGINAL!
-    //    static var mainColor = #colorLiteral(red: 0.08819091485, green: 0.5358502538, blue: 0.05361597117, alpha: 1)              // Light
-//        static var mainColor = #colorLiteral(red: 0.3009182322, green: 0.8358695099, blue: 0.8002899455, alpha: 1)             // Light blue
-//    static var mainColor = #colorLiteral(red: 0.1921295051, green: 0.3386588719, blue: 1, alpha: 1)             // Dark Blue
-    static var mainColor = #colorLiteral(red: 0.914617703, green: 0.6187350153, blue: 0.1710565974, alpha: 1)              // Light Orange
+struct globColor {
+    static var mainColor = #colorLiteral(red: 0.3735761046, green: 0.7207441926, blue: 0.09675113112, alpha: 1)              // ORIGINAL!
     static var secondaryColor = #colorLiteral(red: 0.3330089152, green: 0.333286792, blue: 0.3330519199, alpha: 1)         // Dark
     static var errorColor = #colorLiteral(red: 0.7207441926, green: 0.02335692724, blue: 0.06600695687, alpha: 1)
     static var successColor = #colorLiteral(red: 0.3735761046, green: 0.7207441926, blue: 0.09675113112, alpha: 1)
@@ -27,7 +23,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
     let keychain = KeychainSwift(keyPrefix: Keys.keyPrefix)
     let context = (UIApplication.shared.delegate as? AppDelegate)!.persistentContainer.viewContext
     let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Profile")
-    
     
     @IBOutlet weak var topView: UILabel!
     @IBOutlet weak var infoLabel: UILabel!
@@ -50,27 +45,28 @@ class ViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
+    // Set the default color for the design (and save it):
     func setGlobalColors(color: String) {
         if color.lowercased() == "green" {
-            globalColorSettings.mainColor = #colorLiteral(red: 0.3735761046, green: 0.7207441926, blue: 0.09675113112, alpha: 1)
+            globColor.mainColor = #colorLiteral(red: 0.3735761046, green: 0.7207441926, blue: 0.09675113112, alpha: 1)
             UserDefaults.standard.set(color, forKey: "mainColor")
         } else if color.lowercased() == "orange" {
-            globalColorSettings.mainColor = #colorLiteral(red: 0.914617703, green: 0.6187350153, blue: 0.1710565974, alpha: 1)
+            globColor.mainColor = #colorLiteral(red: 0.914617703, green: 0.6187350153, blue: 0.1710565974, alpha: 1)
             UserDefaults.standard.set(color, forKey: "mainColor")
         } else if color.lowercased() == "light blue" {
-            globalColorSettings.mainColor = #colorLiteral(red: 0.3009182322, green: 0.8358695099, blue: 0.8002899455, alpha: 1)
+            globColor.mainColor = #colorLiteral(red: 0.3388600137, green: 0.8456007261, blue: 1, alpha: 1)
             UserDefaults.standard.set(color, forKey: "mainColor")
         } else if color.lowercased() == "dark blue" {
-            globalColorSettings.mainColor = #colorLiteral(red: 0.1921295051, green: 0.3386588719, blue: 1, alpha: 1)
+            globColor.mainColor = #colorLiteral(red: 0.2832911622, green: 0.5227466498, blue: 1, alpha: 1)
             UserDefaults.standard.set(color, forKey: "mainColor")
         } else if color.lowercased() == "yellow" {
-            globalColorSettings.mainColor = #colorLiteral(red: 0.914617703, green: 0.860400427, blue: 0.1053048009, alpha: 1)
+            globColor.mainColor = #colorLiteral(red: 0.914617703, green: 0.860400427, blue: 0.1053048009, alpha: 1)
             UserDefaults.standard.set(color, forKey: "mainColor")
         } else if color.lowercased() == "purple" {
-            globalColorSettings.mainColor = #colorLiteral(red: 0.6207566624, green: 0.2043031161, blue: 0.6195764682, alpha: 1)
+            globColor.mainColor = #colorLiteral(red: 0.6207566624, green: 0.2043031161, blue: 0.6195764682, alpha: 1)
             UserDefaults.standard.set(color, forKey: "mainColor")
         } else if color.lowercased() == "red" {
-            globalColorSettings.mainColor = #colorLiteral(red: 0.8239609772, green: 0.07829545355, blue: 0.1074117443, alpha: 1)
+            globColor.mainColor = #colorLiteral(red: 0.9249484455, green: 0.0898930601, blue: 0.1245416363, alpha: 1)
             UserDefaults.standard.set(color, forKey: "mainColor")
         }
     }
@@ -81,14 +77,14 @@ class ViewController: UIViewController, UITextFieldDelegate {
         let password_value = passwordField.text
         
         if shouldPerformSegueWithIdentifier(identifier: "OverviewSegue", sender: nil) {
-            showInfo(info: "Korrekte Daten 😎", color: #colorLiteral(red: 0.3735761046, green: 0.7207441926, blue: 0.09675113112, alpha: 1))
+            showInfo(info: "Korrekte Daten 😎", color: globColor.successColor)
             self.performSegue(withIdentifier: "OverviewSegue", sender: nil)
         } else if name_value!.isEmpty || name_value == " " {
-            showInfo(info: "Name eingeben", color: #colorLiteral(red: 0.7207441926, green: 0.02335692724, blue: 0.06600695687, alpha: 1))
+            showInfo(info: "Name eingeben", color: globColor.errorColor)
         } else if password_value!.isEmpty || password_value == " " {
-            showInfo(info: "Passwort eingeben", color: #colorLiteral(red: 0.7207441926, green: 0.02335692724, blue: 0.06600695687, alpha: 1))
+            showInfo(info: "Passwort eingeben", color: globColor.errorColor)
         } else {
-            showInfo(info: "Falsche Daten!", color: #colorLiteral(red: 0.7207441926, green: 0.02335692724, blue: 0.06600695687, alpha: 1))
+            showInfo(info: "Falsche Daten!", color: globColor.errorColor)
         }
     }
     
@@ -128,7 +124,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     // SHOW Info in selected color:
     func showInfo(info:String!, color: UIColor!) {
-        if color == #colorLiteral(red: 0.3735761046, green: 0.7207441926, blue: 0.09675113112, alpha: 1) {
+        if color == globColor.successColor {
             print("[√] SUCCESS: \(info!) ")
             infoLabel.text = info
             infoLabel.textColor = color
@@ -139,6 +135,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
+    // ADDs a profile:
     @IBAction func addProfile(_ sender: Any) {
         //self.unwindForSegue("addProfileSegue", towardsViewController: CreateProfileVC)
         //prepare(for: CreateProfileSegue, sender: ViewController)
@@ -167,33 +164,16 @@ class ViewController: UIViewController, UITextFieldDelegate {
         self.present(alert, animated: true)
     }
     
-    
-    @IBAction func settingsButton(_ sender: Any) {
-        //prepare(for: SettingsSegue, sender: ViewController)
-    }
+    // For transitioning?
+    @IBAction func settingsButton(_ sender: Any) {}
     
     // VIEW DID LOAD
     override func viewDidLoad() {
         super.viewDidLoad()
         setNeedsStatusBarAppearanceUpdate()
-        let currentColor = UserDefaults.standard.string(forKey: "mainColor")
-        
-        if currentColor != nil {
-            setGlobalColors(color: currentColor!)
-        } else {
-            setGlobalColors(color: "green")
-        }
-        
-        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "money.jpg")!)
-        topView.backgroundColor = globalColorSettings.mainColor    // Set Colors
-        goButton.backgroundColor = globalColorSettings.mainColor    // Set Colors
-        addButton.backgroundColor = globalColorSettings.mainColor    // Set Colors
-        
-        
-        
         self.nameField.delegate = self
         self.passwordField.delegate = self
-        configureTextFields()
+        configureUserInterface()
         print("\n###########   LOGIN SCREEN:   ###########\n")
         var loggedIn = UserDefaults.standard.string(forKey: "logged_in_profile")
         
@@ -202,7 +182,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
             print("[√] Logged out profile: \(loggedIn!) 🔒")
             loggedIn = ""
         }
-        
     }
     
     // DO BEFORE View will appear
@@ -224,17 +203,20 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     
     // Sets PLACEHOLDER for text-fields:
-    func configureTextFields() {
+    func configureUserInterface() {
+        let currentColor = UserDefaults.standard.string(forKey: "mainColor")
+        if currentColor != nil { setGlobalColors(color: currentColor!) } else { setGlobalColors(color: "green") }
         nameField.placeholder = "Name"
         passwordField.placeholder = "Passwort"
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "money.jpg")!)
+        topView.backgroundColor = globColor.mainColor    // Set Colors
+        goButton.backgroundColor = globColor.mainColor    // Set Colors
+        addButton.backgroundColor = globColor.mainColor    // Set Colors
     }
-    
     
     // FOR STATUS BAR "STATUS"
     override var prefersStatusBarHidden: Bool {
         return true
     }
-    
-    
 }
 

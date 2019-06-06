@@ -43,12 +43,11 @@ class AssetsVC: UIViewController, UITextFieldDelegate {
         // Do any additional setup after loading the view.
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "money.jpg")!)
         
-        topView.backgroundColor = globalColorSettings.mainColor    // Set Colors
+        topView.backgroundColor = globColor.mainColor    // Set Colors
         
         do {
             print("\n###########   ASSETS SCREEN:   ###########\n")
             assets = try context.fetch(fetchRequest) as! [Asset]
-            
         } catch let error as NSError {
             print("Could not fetch. \(error), \(error.userInfo)")
         }
@@ -63,8 +62,28 @@ class AssetsVC: UIViewController, UITextFieldDelegate {
                 scrollViewData.append(assetViewDataStruct.init(assetname: asset.assetname, profilename: asset.profilename, value: asset.value, type: asset.type))
             }
         }
-        
         fillScrollView(scroll_data: scrollViewData)
+        
+        let leftSwipe = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipes(_:)))
+        let rightSwipe = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipes(_:)))
+        
+        leftSwipe.direction = .left
+        rightSwipe.direction = .right
+        
+        view.addGestureRecognizer(leftSwipe)
+        view.addGestureRecognizer(rightSwipe)
+    }
+    
+    @objc func handleSwipes(_ sender:UISwipeGestureRecognizer) {
+        
+        if (sender.direction == .left) {
+            print("[GESTURE] User-Gesture: Swipe Left")
+        }
+        
+        if (sender.direction == .right) {
+            print("[GESTURE] User-Gesture: Swipe Right")
+            performSegue(withIdentifier: "Acc2OverviewSegue", sender: nil)
+        }
     }
     
     // Get assets from profile:
@@ -102,7 +121,7 @@ class AssetsVC: UIViewController, UITextFieldDelegate {
                                                width: subViewWidth,
                                                height: subViewHeight))
 //            view.backgroundColor = #colorLiteral(red: 0.3735761046, green: 0.7207441926, blue: 0.09675113112, alpha: 1)
-            view.backgroundColor = globalColorSettings.mainColor
+            view.backgroundColor = globColor.mainColor
             // CREATE new Label ASSETNAME:
             let nameView = UILabel(frame: CGRect(x: 0, y: ((subViewHeight + spacing) * i) + 10, width: label_length, height: 30))
             nameView.text = " 🏦 \(data.assetname!)"

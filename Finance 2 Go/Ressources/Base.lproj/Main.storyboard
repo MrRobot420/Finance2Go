@@ -168,6 +168,7 @@
                         <outlet property="deleteInfo" destination="Od0-eN-PfI" id="Swf-pB-nE4"/>
                         <outlet property="okButton" destination="mx3-po-u5N" id="rXL-dA-JFf"/>
                         <outlet property="topView" destination="yV9-Y8-Fqk" id="kbN-kO-fhc"/>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="Settings2ViewController" modalTransitionStyle="coverVertical" id="xlw-Hd-Rds"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RFg-iZ-QeT" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -966,7 +967,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="5jn-KV-D90"/>
-        <segue reference="hiL-5e-PvT"/>
-        <segue reference="xs5-ar-3gB"/>
+        <segue reference="yKZ-aU-fvm"/>
+        <segue reference="68r-YY-0bZ"/>
     </inferredMetricsTieBreakers>
 </document>
