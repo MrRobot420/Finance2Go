@@ -20,6 +20,7 @@ class OverviewVC: UIViewController, UITextFieldDelegate {
     var transactions:[Transaction] = []
     var transactionAmount:Int!
     var saldo:Double!
+    var formattedSaldo:String!
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     let profileFetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Profile")                    // What to fetch
@@ -77,8 +78,12 @@ class OverviewVC: UIViewController, UITextFieldDelegate {
         transactionAmount = countList(list: transactions)
         profileAmount = countList(list: profiles)
         
+        saldo = calculateSaldo()
+        formattedSaldo = formatMoney(value: saldo)
+        
         profileLabel.text = profile.name! + " 👤"
         accountLabel.text = String(assetAmount)
+        saldoLabel.text = formattedSaldo
         transxLabel.text = String(transactionAmount)
     }
     
@@ -97,6 +102,49 @@ class OverviewVC: UIViewController, UITextFieldDelegate {
     
     @IBAction func transxBtn(_ sender: Any) {
         
+    }
+    
+    // Calculates the value of all assets:
+    func calculateSaldo() -> Double? {
+        var value = 0.00
+        for asset in assets {
+            if asset.assetname != nil {
+                if asset.profilename == profile.name {
+                    value += asset.value
+                }
+            }
+        }
+        
+        return value
+    }
+    
+    // Euro-Formatting:
+    func formatMoney(value: Double!) -> String {
+        let result: String! = String(format: "%.2f", value)
+        var char_array = Array(result)
+        var end_string = ""
+        var num_counter = 0
+        
+        // Formatting:
+        for i in stride(from: char_array.count-1, to: -1, by: -1) {
+            if char_array[i] != "." {
+                num_counter += 1
+                if num_counter == 3 {
+                    num_counter = 0
+                    if i == 0 {
+                        end_string = String(char_array[i]) + end_string
+                    } else {
+                        end_string = "." + String(char_array[i]) + end_string
+                    }
+                } else {
+                    end_string = String(char_array[i]) + end_string
+                }
+            } else {
+                end_string = "," + end_string
+                num_counter = 0
+            }
+        }
+        return end_string + " €"
     }
     
     // Find selected profile:
@@ -154,7 +202,7 @@ class OverviewVC: UIViewController, UITextFieldDelegate {
         
         for asset in assets {
             if asset.assetname != nil {
-                if asset.assetname == name {
+                if asset.profilename == name {
                     corresponding_assets.append(asset)
                 }
             }

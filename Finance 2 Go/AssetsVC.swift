@@ -138,8 +138,7 @@ class AssetsVC: UIViewController, UITextFieldDelegate {
             
             // CREATE new Label VALUE:
             let valueView = UILabel(frame: CGRect(x: font_spacing, y: ((subViewHeight + spacing) * i) + 40, width: label_length, height: 30))
-            valueView.text = String(format: "%.2f € 💰" , data.value!)
-//            valueView.text = String(format: "%.2f € 💰" , formatValue(value: data.value!))
+            valueView.text = String(formatMoney(value: data.value!) + " 💰")
             valueView.textColor = #colorLiteral(red: 0.9967552883, green: 0.9521791773, blue: 1, alpha: 1)
             valueView.textAlignment = .right
             valueView.font = UIFont.boldSystemFont(ofSize: font_size)
@@ -165,6 +164,34 @@ class AssetsVC: UIViewController, UITextFieldDelegate {
             
             i += 1
         }
+    }
+    
+    func formatMoney(value: Double!) -> String {
+        let result: String! = String(format: "%.2f", value)
+        var char_array = Array(result)
+        var end_string = ""
+        var num_counter = 0
+        
+        // Formatting:
+        for i in stride(from: char_array.count-1, to: -1, by: -1) {
+            if char_array[i] != "." {
+                num_counter += 1
+                if num_counter == 3 {
+                    num_counter = 0
+                    if i == 0 {
+                        end_string = String(char_array[i]) + end_string
+                    } else {
+                        end_string = "." + String(char_array[i]) + end_string
+                    }
+                } else {
+                    end_string = String(char_array[i]) + end_string
+                }
+            } else {
+                end_string = "," + end_string
+                num_counter = 0
+            }
+        }
+        return end_string + " €"
     }
     
     // Checks if an object should be deleted or not

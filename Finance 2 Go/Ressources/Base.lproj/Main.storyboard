@@ -41,7 +41,7 @@
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mx3-po-u5N">
                                 <rect key="frame" x="50" y="503" width="220" height="50"/>
-                                <color key="backgroundColor" red="0.088190914852977198" green="0.5358502538071066" blue="0.053615971171781331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.37373429536819458" green="0.72125941514968872" blue="0.096108756959438324" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="64h-NX-THD"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="220" id="XvL-FC-SOT"/>
@@ -435,13 +435,13 @@
                                                     <action selector="saldoBtn:" destination="X4w-fE-o2i" eventType="touchUpInside" id="Skh-QV-0iv"/>
                                                 </connections>
                                             </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0,00€" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xyp-bW-sAZ">
-                                                <rect key="frame" x="7" y="106" width="110" height="34"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="0,00€" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xyp-bW-sAZ">
+                                                <rect key="frame" x="0.0" y="106" width="135" height="34"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="110" id="Nsg-Pg-erp"/>
                                                     <constraint firstAttribute="height" constant="34" id="PfW-Fh-2k0"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -468,7 +468,7 @@
                                                     <constraint firstAttribute="width" constant="110" id="FV7-OW-LJx"/>
                                                     <constraint firstAttribute="height" constant="34" id="pO6-eq-cMr"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -478,14 +478,14 @@
                                                     <constraint firstAttribute="width" constant="110" id="dTh-Qa-hgh"/>
                                                     <constraint firstAttribute="height" constant="34" id="ypm-MX-CAo"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                                 <size key="shadowOffset" width="2" height="2"/>
                                             </label>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstItem="bVX-kx-nAY" firstAttribute="leading" secondItem="Xyp-bW-sAZ" secondAttribute="trailing" constant="26" id="1VP-kM-DaM"/>
+                                            <constraint firstItem="bVX-kx-nAY" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Xyp-bW-sAZ" secondAttribute="trailing" constant="8" id="1VP-kM-DaM"/>
                                             <constraint firstItem="bVX-kx-nAY" firstAttribute="top" secondItem="FzM-50-Sh3" secondAttribute="bottom" constant="25" id="7xd-V7-ROp"/>
                                             <constraint firstItem="IBv-fh-FXo" firstAttribute="leading" secondItem="PCN-Eg-Dlo" secondAttribute="trailing" constant="26" id="AKQ-hF-uUy"/>
                                             <constraint firstAttribute="bottom" secondItem="PCN-Eg-Dlo" secondAttribute="bottom" constant="52" id="AlX-Bb-d6t"/>
@@ -501,7 +501,7 @@
                                             <constraint firstItem="IBv-fh-FXo" firstAttribute="top" secondItem="bVX-kx-nAY" secondAttribute="bottom" constant="25" id="nm0-bf-fBt"/>
                                             <constraint firstItem="PCN-Eg-Dlo" firstAttribute="leading" secondItem="L9d-1s-wZn" secondAttribute="leading" constant="7" id="q5Y-DC-AFp"/>
                                             <constraint firstItem="FzM-50-Sh3" firstAttribute="top" secondItem="L9d-1s-wZn" secondAttribute="top" constant="31" id="qfe-RI-5oN"/>
-                                            <constraint firstItem="Xyp-bW-sAZ" firstAttribute="leading" secondItem="L9d-1s-wZn" secondAttribute="leading" constant="7" id="uuz-pP-HBt"/>
+                                            <constraint firstItem="Xyp-bW-sAZ" firstAttribute="leading" secondItem="L9d-1s-wZn" secondAttribute="leading" id="uuz-pP-HBt"/>
                                             <constraint firstAttribute="height" constant="260" id="yMp-WW-0Ed"/>
                                         </constraints>
                                     </view>
@@ -968,6 +968,6 @@
     <inferredMetricsTieBreakers>
         <segue reference="5jn-KV-D90"/>
         <segue reference="yKZ-aU-fvm"/>
-        <segue reference="68r-YY-0bZ"/>
+        <segue reference="kH3-RN-OPs"/>
     </inferredMetricsTieBreakers>
 </document>
