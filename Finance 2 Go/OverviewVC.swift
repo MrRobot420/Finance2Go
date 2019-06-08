@@ -8,8 +8,11 @@
 
 import UIKit
 import CoreData
+import KeychainSwift
 
 class OverviewVC: UIViewController, UITextFieldDelegate {
+    
+    let keychain = KeychainSwift(keyPrefix: Keys.keyPrefix)
     
     var infoObject:String?
     var profile: Profile!
@@ -92,6 +95,35 @@ class OverviewVC: UIViewController, UITextFieldDelegate {
         super.viewWillAppear(animated)
     }
     
+    // Shows ALERT for "2-factor auth"
+    @IBAction func showAlert() {
+        let message = "Dies löscht das Profil ‼️"
+        let alert = UIAlertController(title: "⚠️ Profil löschen?", message: message, preferredStyle: .alert)
+        print("[i] Showing profile-deletion alert ❌")
+        alert.addAction(UIAlertAction(title: "NEIN ❌", style: .cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "Ja ✅", style: .default, handler: deleteProfileData(_:)))
+        self.present(alert, animated: true)
+    }
+    
+    // Shows ALERT for "2-factor auth"
+    @IBAction func showKeyAlert() {
+        let message = "Nutze Keychain zum Login 🔓"
+        let alert = UIAlertController(title: "🔐 Daten speichern?", message: message, preferredStyle: .alert)
+        print("[i] Showing keychain-save alert ❌")
+        alert.addAction(UIAlertAction(title: "NEIN ❌", style: .cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "Ja ✅", style: .default, handler: saveDataInKeychain(_:)))
+        self.present(alert, animated: true)
+    }
+    
+    // SAVES DATA to Keychain: (activates a user for keychain)
+    func saveDataInKeychain(_ entity: UIAlertAction) {
+        keychain.set(profile.name!, forKey: Keys.name, withAccess: .accessibleAlways)
+        
+        if keychain.set(profile.password!, forKey: Keys.password, withAccess: .accessibleAlways) {  // -> KeychainSwift
+            print("[+] Keychain Set!")
+        }
+    }
+    
     @IBAction func accountBtn(_ sender: Any) {
         
     }
@@ -161,6 +193,52 @@ class OverviewVC: UIViewController, UITextFieldDelegate {
                 
             }
         }
+    }
+    
+    // Deletes a profile and all asset / transaction - data:
+    func deleteProfileData(_ entity: UIAlertAction) {
+        
+        // Try deleting the ASSETS: (FIRST!! -> not available)
+        if let result = try? context.fetch(assetFetchRequest) as? [Asset] {
+            for object in result {
+                if object.profilename == profile.name {
+                    context.delete(object)
+                    print("[X] DELETED: \(object.assetname!)")
+                }
+            }
+        }
+        
+        
+        // Delete Profile
+        for user in profiles {
+            if user.name != nil {
+                if user.name == profile.name {
+                    print("[X] DELETED: \(user.name!)")
+                    context.delete(user)
+                    break
+                }
+            }
+        }
+        
+        // Remove from list (NOT NECESSARY!)
+        for i in 0...profiles.count-1 {
+            if profiles[i].name != nil {
+                if profiles[i].name == profile.name {
+                    print("[x] REMOVED Profile from internal list")
+                    profiles.remove(at: i)
+                    break
+                }
+            }
+        }
+        
+        do {
+            try context.save()
+            print("[√] Saved!")
+        } catch {
+            print("[X] Failed Saving!")
+        }
+        
+        performSegue(withIdentifier: "logoutSegue", sender: nil)
     }
     
     // Counts the elements of the list

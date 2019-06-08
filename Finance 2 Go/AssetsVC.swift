@@ -166,6 +166,7 @@ class AssetsVC: UIViewController, UITextFieldDelegate {
         }
     }
     
+    // Formats money (Euro):
     func formatMoney(value: Double!) -> String {
         let result: String! = String(format: "%.2f", value)
         var char_array = Array(result)

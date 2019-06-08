@@ -149,6 +149,29 @@ class AddAssetsVC: UIViewController, UITextFieldDelegate {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange), name: UIResponder.keyboardWillHideNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange), name: UIResponder.keyboardWillChangeFrameNotification , object: nil)
+    
+        // IMPORTANT (GESTURE RECOGNITION)
+        let leftSwipe = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipes(_:)))
+        let rightSwipe = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipes(_:)))
+        
+        leftSwipe.direction = .left
+        rightSwipe.direction = .right
+        
+        view.addGestureRecognizer(leftSwipe)
+        view.addGestureRecognizer(rightSwipe)
+    }
+    
+    // Handles swipes:
+    @objc func handleSwipes(_ sender:UISwipeGestureRecognizer) {
+        
+        if (sender.direction == .left) {
+            print("[GESTURE] User-Gesture: Swipe Left")
+        }
+        
+        if (sender.direction == .right) {
+            print("[GESTURE] User-Gesture: Swipe Right")
+            performSegue(withIdentifier: "addAssetSegue", sender: nil)
+        }
     }
     
     // VIEW WILL APPEAR:

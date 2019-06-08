@@ -46,6 +46,7 @@ class SettingsVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource
     // STANDARD
     override func viewDidLoad() {
         super.viewDidLoad()
+        setNeedsStatusBarAppearanceUpdate()
         
         self.colorPicker.delegate = self
         self.colorPicker.dataSource = self
@@ -191,6 +192,11 @@ class SettingsVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource
         if (sender.direction == .right) {
             print("[GESTURE] User-Gesture: Swipe Right")
         }
+    }
+    
+    // FOR STATUS BAR "STATUS"
+    override var prefersStatusBarHidden: Bool {
+        return true
     }
     
 }

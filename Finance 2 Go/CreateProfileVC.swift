@@ -86,7 +86,7 @@ class CreateProfileVC: UIViewController, UITextFieldDelegate {
             profile.setValue(password_value, forKey: Keys.password)
             keychain.set(name_value!, forKey: Keys.name, withAccess: .accessibleAlways)
             
-            if keychain.set(password_value!, forKey: Keys.password, withAccess: KeychainSwiftAccessOptions.accessibleAlways) {  // -> KeychainSwift
+            if keychain.set(password_value!, forKey: Keys.password, withAccess: .accessibleAlways) {  // -> KeychainSwift
                 print("[+] Keychain Set!")
                 infoLabel.text = "Keychain set!"
                 infoLabel.textColor = globColor.successColor
