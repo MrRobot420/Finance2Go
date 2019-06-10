@@ -9,6 +9,7 @@
 import UIKit
 import CoreData
 import KeychainSwift
+import PCLBlurEffectAlert
 
 class OverviewVC: UIViewController, UITextFieldDelegate {
     
@@ -98,25 +99,44 @@ class OverviewVC: UIViewController, UITextFieldDelegate {
     // Shows ALERT for "2-factor auth"
     @IBAction func showAlert() {
         let message = "Dies löscht das Profil ‼️"
-        let alert = UIAlertController(title: "⚠️ Profil löschen?", message: message, preferredStyle: .alert)
+        
+        let alert = PCLBlurEffectAlert.Controller(title: "🔐 Daten speichern?", message: message, effect: UIBlurEffect(style: .dark), style: .alert)
+        let no_button = PCLBlurEffectAlert.Action(title: "NEIN ❌", style: .default, handler: nil)
+        let yes_button = PCLBlurEffectAlert.Action(title: "Ja ✅", style: .default, handler: deleteProfileData(_:) as? ((PCLBlurEffectAlert.Action?) -> Void))
+        
+        alert.addAction(no_button)
+        alert.addAction(yes_button)
+        alert.configure(cornerRadius: 0)
+        alert.configure(messageColor: UIColor.white)
+        alert.configure(titleColor: UIColor.white)
+        alert.configure(overlayBackgroundColor: globColor.overlayColor)
+        
         print("[i] Showing profile-deletion alert ❌")
-        alert.addAction(UIAlertAction(title: "NEIN ❌", style: .cancel, handler: nil))
-        alert.addAction(UIAlertAction(title: "Ja ✅", style: .default, handler: deleteProfileData(_:)))
         self.present(alert, animated: true)
     }
     
     // Shows ALERT for "2-factor auth"
     @IBAction func showKeyAlert() {
         let message = "Nutze Keychain zum Login 🔓"
-        let alert = UIAlertController(title: "🔐 Daten speichern?", message: message, preferredStyle: .alert)
+        
+        let alert = PCLBlurEffectAlert.Controller(title: "🔐 Daten speichern?", message: message, effect: UIBlurEffect(style: .dark), style: .alert)
+        let no_button = PCLBlurEffectAlert.Action(title: "NEIN ❌", style: .default, handler: nil)
+        let yes_button = PCLBlurEffectAlert.Action(title: "Ja ✅", style: .default, handler: saveDataInKeychain(_:) as? ((PCLBlurEffectAlert.Action?) -> Void))
+//        let yes_button = PCLBlurEffectAlert.Action(title: "Ja ✅", style: .default, handler: saveDataInKeychain(_:))
+        
+        alert.addAction(no_button)
+        alert.addAction(yes_button)
+        alert.configure(cornerRadius: 0)
+        alert.configure(messageColor: UIColor.white)
+        alert.configure(titleColor: UIColor.white)
+        alert.configure(overlayBackgroundColor: globColor.overlayColor)
+        
         print("[i] Showing keychain-save alert ❌")
-        alert.addAction(UIAlertAction(title: "NEIN ❌", style: .cancel, handler: nil))
-        alert.addAction(UIAlertAction(title: "Ja ✅", style: .default, handler: saveDataInKeychain(_:)))
         self.present(alert, animated: true)
     }
     
     // SAVES DATA to Keychain: (activates a user for keychain)
-    func saveDataInKeychain(_ entity: UIAlertAction) {
+    func saveDataInKeychain(_ entity: PCLBlurEffectAlert.Action) {
         keychain.set(profile.name!, forKey: Keys.name, withAccess: .accessibleAlways)
         
         if keychain.set(profile.password!, forKey: Keys.password, withAccess: .accessibleAlways) {  // -> KeychainSwift
@@ -196,7 +216,7 @@ class OverviewVC: UIViewController, UITextFieldDelegate {
     }
     
     // Deletes a profile and all asset / transaction - data:
-    func deleteProfileData(_ entity: UIAlertAction) {
+    func deleteProfileData(_ entity: PCLBlurEffectAlert.Action) {
         
         // Try deleting the ASSETS: (FIRST!! -> not available)
         if let result = try? context.fetch(assetFetchRequest) as? [Asset] {

@@ -3,34 +3,50 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		09E897BE8E81B7C041CF39F9A78246A3 /* Pods-Finance 2 GoTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8339C5957782FA62CCB557F4C2F00435 /* Pods-Finance 2 GoTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0ACC87AC7851AF882337F10CA11821F5 /* Pods-Finance 2 Go-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 63423AE69E73C3448F21B1773CA32DB4 /* Pods-Finance 2 Go-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0C35F6BAB0820D03902D6DD0EB111275 /* Pods-Finance 2 Go-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 20241D68D8AC9817588B1D47902FEA3B /* Pods-Finance 2 Go-dummy.m */; };
 		10AC60F4838A899052F9CE3F8D81B683 /* Pods-Finance 2 GoUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C9963CACD2E81F5F2C05064F48378339 /* Pods-Finance 2 GoUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1FB78D097FCD86DA358311D8C892BC04 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 436BAA54A31999B53B3CC7115C55FE50 /* Foundation.framework */; };
 		2EBAE14713184DC038065363AF7D5226 /* Pods-Finance 2 GoUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D1F6D3706C557D6A6F064A02010C8BE0 /* Pods-Finance 2 GoUITests-dummy.m */; };
-		3F65920658F39FEF273AE506DB361D94 /* KeychainSwift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6A8C4B6BB594B2F334D01FE31EE9BAE0 /* KeychainSwift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		515E27523617349C4A44911AE0707933 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		3F65920658F39FEF273AE506DB361D94 /* KeychainSwift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = DF78D66461C0C31168B0B5299ADB0A68 /* KeychainSwift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		48F5B9C51371AC6C349FE5E519945179 /* PCLBlurEffectAlert-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 720DA6CFABC78CD8064BDE4135B19F0E /* PCLBlurEffectAlert-dummy.m */; };
+		49303731A6CFC9059324924C305790DE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 312B988EF117AE4DE76A268D970131FE /* UIKit.framework */; };
+		501103DB8A721BC1CEF6F5E5BCEAEAE3 /* PCLBlurEffectAlert.h in Headers */ = {isa = PBXBuildFile; fileRef = 288DBF159FF58B77C90427850EEA6D7A /* PCLBlurEffectAlert.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		515AFC7B65B4035B0E17C17C0A72F4CB /* PCLBlurEffectAlert+TransitionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CEC61D5DA2275939972A39EF4685F3A /* PCLBlurEffectAlert+TransitionAnimator.swift */; };
+		515E27523617349C4A44911AE0707933 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 436BAA54A31999B53B3CC7115C55FE50 /* Foundation.framework */; };
 		5CDCF0FEDFD909148B48D47B337CFD5B /* Pods-Finance 2 GoTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C32DEA1C53C15AEA5BE78452C6B34E0D /* Pods-Finance 2 GoTests-dummy.m */; };
-		66D2F096203E94CEAAF311E236F8BF27 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
-		72B5AC62E24A8AED8AF73E58D6AB0DAC /* KeychainSwift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E04E9939B13C55A5300E5E16708523A /* KeychainSwift-dummy.m */; };
-		803B837581926F6C5C84AB22A010CB2A /* Pods-Finance 2 Go-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 20241D68D8AC9817588B1D47902FEA3B /* Pods-Finance 2 Go-dummy.m */; };
-		836944E66F58858F1E48D9ACC9F9D5BC /* KeychainSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29CE7F90E151106CB127FA3CA3D68CCC /* KeychainSwift.swift */; };
-		D313578071CAADF57DE690C075DE33DE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
-		D4E86A4C7FEB9CD818A3FD50B31DE25D /* KeychainSwiftAccessOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECC0053600E592D4DCA1ABDE78D3CDB /* KeychainSwiftAccessOptions.swift */; };
-		DB9EFF0B905055772F849296A38577B4 /* Pods-Finance 2 Go-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 63423AE69E73C3448F21B1773CA32DB4 /* Pods-Finance 2 Go-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F0315DD93E2A7DF958FEBBBA31596393 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
-		FA9730EBAC08AE7A0A399E052DBA03F4 /* TegKeychainConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE17AA9E1E1CBAE26E1B413829D449A7 /* TegKeychainConstants.swift */; };
+		72B5AC62E24A8AED8AF73E58D6AB0DAC /* KeychainSwift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D045F3A69AE680772AF959936CEF46C6 /* KeychainSwift-dummy.m */; };
+		836944E66F58858F1E48D9ACC9F9D5BC /* KeychainSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AE67DA81FC2CEFBC615B0CF52134F5 /* KeychainSwift.swift */; };
+		87684FE154DF1FF5E6E002C7C19F3C18 /* PCLBlurEffectAlert-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B3D8AFB9000AA870EF52C298DAAE9641 /* PCLBlurEffectAlert-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9A99F6F1EE12BB3A4F0CA75A65EB4A66 /* PCLBlurEffectAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01CFD81A6F92CF14C1ED61794C39648 /* PCLBlurEffectAlert.swift */; };
+		A0443CE0C4DB3446670B08BB58618617 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 436BAA54A31999B53B3CC7115C55FE50 /* Foundation.framework */; };
+		AF4E316ECA6874931191D7B23DD152E6 /* PCLBlurEffectAlert+Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB51D3BE7299EF7E4E4FC6524301FE1 /* PCLBlurEffectAlert+Action.swift */; };
+		D313578071CAADF57DE690C075DE33DE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 436BAA54A31999B53B3CC7115C55FE50 /* Foundation.framework */; };
+		D4E86A4C7FEB9CD818A3FD50B31DE25D /* KeychainSwiftAccessOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D29AC4CE09EA40DA50AA53020632CF6 /* KeychainSwiftAccessOptions.swift */; };
+		E24F883F2146F6E3ACEDE77ACB107BD0 /* PCLBlurEffectAlert+Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714A1FFDD4B5EEBAEA08E99A82F44BE9 /* PCLBlurEffectAlert+Controller.swift */; };
+		F0315DD93E2A7DF958FEBBBA31596393 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 436BAA54A31999B53B3CC7115C55FE50 /* Foundation.framework */; };
+		FA9730EBAC08AE7A0A399E052DBA03F4 /* TegKeychainConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9FACDC507752FE9BC1FAA87436EA43 /* TegKeychainConstants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		458DB3A866047263D6B5C112C3D8AB48 /* PBXContainerItemProxy */ = {
+		3BB234417E3B95CC9792A916B840F2E2 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 07E54A78BCF82272E99319D7F7F5E8C1;
 			remoteInfo = KeychainSwift;
+		};
+		A5347DB9CD505EE1871F79B9CE84EC3F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 36D58465D68D0CC0403E5F78DBC0CCDB;
+			remoteInfo = PCLBlurEffectAlert;
 		};
 		AC143C1BD1228B0331FD6D74E6040CD2 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -51,60 +67,82 @@
 /* Begin PBXFileReference section */
 		095663434F8D873FDCED3A640787207D /* Pods-Finance 2 GoTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Finance 2 GoTests-Info.plist"; sourceTree = "<group>"; };
 		0D20DA196F7341A293962EE14A1105C2 /* Pods-Finance 2 GoUITests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Finance 2 GoUITests-Info.plist"; sourceTree = "<group>"; };
-		0E04E9939B13C55A5300E5E16708523A /* KeychainSwift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "KeychainSwift-dummy.m"; sourceTree = "<group>"; };
+		0D29AC4CE09EA40DA50AA53020632CF6 /* KeychainSwiftAccessOptions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KeychainSwiftAccessOptions.swift; path = Sources/KeychainSwiftAccessOptions.swift; sourceTree = "<group>"; };
 		152965DE3BDF89EE393EE6B05EE35D7D /* Pods-Finance 2 GoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Finance 2 GoTests.release.xcconfig"; sourceTree = "<group>"; };
-		15A178473B89C6481E60DA33EE7D1CEA /* KeychainSwift-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "KeychainSwift-Info.plist"; sourceTree = "<group>"; };
-		1CA3DD5D66A1D7C75F74BD66A83BA0F3 /* KeychainSwift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = KeychainSwift.modulemap; sourceTree = "<group>"; };
+		1970BD44E884C4F749E214C8112B9CC6 /* Pods_Finance_2_Go.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Finance_2_Go.framework; path = "Pods-Finance 2 Go.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1CEC61D5DA2275939972A39EF4685F3A /* PCLBlurEffectAlert+TransitionAnimator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "PCLBlurEffectAlert+TransitionAnimator.swift"; path = "Sources/PCLBlurEffectAlert+TransitionAnimator.swift"; sourceTree = "<group>"; };
 		20241D68D8AC9817588B1D47902FEA3B /* Pods-Finance 2 Go-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Finance 2 Go-dummy.m"; sourceTree = "<group>"; };
-		29CE7F90E151106CB127FA3CA3D68CCC /* KeychainSwift.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KeychainSwift.swift; path = Sources/KeychainSwift.swift; sourceTree = "<group>"; };
-		2ECC0053600E592D4DCA1ABDE78D3CDB /* KeychainSwiftAccessOptions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KeychainSwiftAccessOptions.swift; path = Sources/KeychainSwiftAccessOptions.swift; sourceTree = "<group>"; };
-		3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		288DBF159FF58B77C90427850EEA6D7A /* PCLBlurEffectAlert.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PCLBlurEffectAlert.h; path = Sources/PCLBlurEffectAlert.h; sourceTree = "<group>"; };
+		2AB51D3BE7299EF7E4E4FC6524301FE1 /* PCLBlurEffectAlert+Action.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "PCLBlurEffectAlert+Action.swift"; path = "Sources/PCLBlurEffectAlert+Action.swift"; sourceTree = "<group>"; };
+		312B988EF117AE4DE76A268D970131FE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		3387DF92EE4E94A0B7B2A8A4FCE25569 /* PCLBlurEffectAlert-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PCLBlurEffectAlert-prefix.pch"; sourceTree = "<group>"; };
 		35082E5A39C33DA5F5FF3E64A29F212D /* Pods-Finance 2 Go-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Finance 2 Go-acknowledgements.plist"; sourceTree = "<group>"; };
-		3FFB7ED55407FDDAC98C4FA9A691BCAF /* KeychainSwift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "KeychainSwift-prefix.pch"; sourceTree = "<group>"; };
-		443853E4EB1EAB4177C6D48420491B67 /* KeychainSwift.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = KeychainSwift.xcconfig; sourceTree = "<group>"; };
+		40518CEF29A4C12C2429E479DC8FB234 /* KeychainSwift.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = KeychainSwift.xcconfig; sourceTree = "<group>"; };
+		436BAA54A31999B53B3CC7115C55FE50 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		45D95E0DE65F9408ED6087DFA9AC2D8B /* Pods-Finance 2 GoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Finance 2 GoUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		46FBD0A7D62416D9C72F852F74B46C54 /* PCLBlurEffectAlert-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "PCLBlurEffectAlert-Info.plist"; sourceTree = "<group>"; };
 		474D4F64E14EF3F20D0ECA810BC653C6 /* Pods-Finance 2 Go.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Finance 2 Go.debug.xcconfig"; sourceTree = "<group>"; };
-		4CA3BDD364F924498C3A2EB29575243E /* Pods_Finance_2_Go.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Finance_2_Go.framework; path = "Pods-Finance 2 Go.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		51DD6CA396C3A038C369E45247DFEA92 /* KeychainSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = KeychainSwift.framework; path = KeychainSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5475AB0B58BD0EAA3EE4DB48EB7D7D7D /* PCLBlurEffectAlert.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = PCLBlurEffectAlert.framework; path = PCLBlurEffectAlert.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5647120FA5FB5D09DD7D91D4D24ADDF9 /* Pods_Finance_2_GoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Finance_2_GoUITests.framework; path = "Pods-Finance 2 GoUITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5711B2EBC023169C510B19245A447AF1 /* Pods-Finance 2 GoUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Finance 2 GoUITests.modulemap"; sourceTree = "<group>"; };
 		63423AE69E73C3448F21B1773CA32DB4 /* Pods-Finance 2 Go-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Finance 2 Go-umbrella.h"; sourceTree = "<group>"; };
 		63675032C2C7BE436EA951696B7B6D92 /* Pods-Finance 2 Go-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Finance 2 Go-Info.plist"; sourceTree = "<group>"; };
 		68E6BFE8BE5A8A8F1C121E2B37FA2CCF /* Pods-Finance 2 GoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Finance 2 GoTests.debug.xcconfig"; sourceTree = "<group>"; };
-		6A8C4B6BB594B2F334D01FE31EE9BAE0 /* KeychainSwift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "KeychainSwift-umbrella.h"; sourceTree = "<group>"; };
+		714A1FFDD4B5EEBAEA08E99A82F44BE9 /* PCLBlurEffectAlert+Controller.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "PCLBlurEffectAlert+Controller.swift"; path = "Sources/PCLBlurEffectAlert+Controller.swift"; sourceTree = "<group>"; };
+		720DA6CFABC78CD8064BDE4135B19F0E /* PCLBlurEffectAlert-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "PCLBlurEffectAlert-dummy.m"; sourceTree = "<group>"; };
+		7F6C3CA7504D920599EF3A07ACF25FFE /* KeychainSwift-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "KeychainSwift-Info.plist"; sourceTree = "<group>"; };
 		8339C5957782FA62CCB557F4C2F00435 /* Pods-Finance 2 GoTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Finance 2 GoTests-umbrella.h"; sourceTree = "<group>"; };
+		8D5A774CCAE75FEFE0D3B104B8F19ADF /* PCLBlurEffectAlert.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = PCLBlurEffectAlert.xcconfig; sourceTree = "<group>"; };
+		9988990686CD2F63B06F5D7FCEC40DE5 /* KeychainSwift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "KeychainSwift-prefix.pch"; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D9FACDC507752FE9BC1FAA87436EA43 /* TegKeychainConstants.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TegKeychainConstants.swift; path = Sources/TegKeychainConstants.swift; sourceTree = "<group>"; };
+		A01CFD81A6F92CF14C1ED61794C39648 /* PCLBlurEffectAlert.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PCLBlurEffectAlert.swift; path = Sources/PCLBlurEffectAlert.swift; sourceTree = "<group>"; };
+		A231DB0852FA485959958FA27DF74369 /* KeychainSwift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = KeychainSwift.modulemap; sourceTree = "<group>"; };
 		B10770966D0B870952E2BFAA4B0F6B49 /* Pods-Finance 2 Go-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Finance 2 Go-frameworks.sh"; sourceTree = "<group>"; };
+		B3D8AFB9000AA870EF52C298DAAE9641 /* PCLBlurEffectAlert-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PCLBlurEffectAlert-umbrella.h"; sourceTree = "<group>"; };
+		B6AE67DA81FC2CEFBC615B0CF52134F5 /* KeychainSwift.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KeychainSwift.swift; path = Sources/KeychainSwift.swift; sourceTree = "<group>"; };
 		B7B2D401009701E7760E896A234EAAA4 /* Pods-Finance 2 GoUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Finance 2 GoUITests-acknowledgements.plist"; sourceTree = "<group>"; };
+		BCC215454979AEF7B7F7E09D27606286 /* PCLBlurEffectAlert.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = PCLBlurEffectAlert.modulemap; sourceTree = "<group>"; };
 		C2EE10B2B3E52D29A760B82BB0F8620E /* Pods-Finance 2 Go.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Finance 2 Go.release.xcconfig"; sourceTree = "<group>"; };
 		C32DEA1C53C15AEA5BE78452C6B34E0D /* Pods-Finance 2 GoTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Finance 2 GoTests-dummy.m"; sourceTree = "<group>"; };
-		C45F36D970C5BD7A0EDE7B8FB9E97BB6 /* Pods_Finance_2_GoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Finance_2_GoUITests.framework; path = "Pods-Finance 2 GoUITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C66944620A3C6D3EBCA77E8E2303A654 /* Pods-Finance 2 Go-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Finance 2 Go-acknowledgements.markdown"; sourceTree = "<group>"; };
-		C801FC1126FF0D9AFC20EBE5CB02A484 /* Pods_Finance_2_GoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Finance_2_GoTests.framework; path = "Pods-Finance 2 GoTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C6EFE541F67BECDAD83AAAC719184032 /* Pods_Finance_2_GoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Finance_2_GoTests.framework; path = "Pods-Finance 2 GoTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9963CACD2E81F5F2C05064F48378339 /* Pods-Finance 2 GoUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Finance 2 GoUITests-umbrella.h"; sourceTree = "<group>"; };
+		D045F3A69AE680772AF959936CEF46C6 /* KeychainSwift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "KeychainSwift-dummy.m"; sourceTree = "<group>"; };
 		D1F6D3706C557D6A6F064A02010C8BE0 /* Pods-Finance 2 GoUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Finance 2 GoUITests-dummy.m"; sourceTree = "<group>"; };
 		D61AD231318F2EBEF4C4386153ADD628 /* Pods-Finance 2 GoUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Finance 2 GoUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		DEFCB9E5FD15FD449821052146884F4C /* Pods-Finance 2 Go.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Finance 2 Go.modulemap"; sourceTree = "<group>"; };
+		DF78D66461C0C31168B0B5299ADB0A68 /* KeychainSwift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "KeychainSwift-umbrella.h"; sourceTree = "<group>"; };
+		E15F1162B381400F94FCE9D29803BFEF /* KeychainSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = KeychainSwift.framework; path = KeychainSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3154872F2D93962C9FB6903BA61BD58 /* Pods-Finance 2 GoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Finance 2 GoUITests.release.xcconfig"; sourceTree = "<group>"; };
 		E9AC4EC810EECACDFA14897505DFC2F4 /* Pods-Finance 2 GoTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Finance 2 GoTests-acknowledgements.plist"; sourceTree = "<group>"; };
 		EE11C5C41663A7D1C60EBF240FDB62CA /* Pods-Finance 2 GoTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Finance 2 GoTests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		FC0C3C961700BF4279AA5E247992CB66 /* Pods-Finance 2 GoTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Finance 2 GoTests.modulemap"; sourceTree = "<group>"; };
-		FE17AA9E1E1CBAE26E1B413829D449A7 /* TegKeychainConstants.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TegKeychainConstants.swift; path = Sources/TegKeychainConstants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		301B16AAB3DFD0E4B35F8A7052EC890B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1FB78D097FCD86DA358311D8C892BC04 /* Foundation.framework in Frameworks */,
+				49303731A6CFC9059324924C305790DE /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3F06668F7C91FB59CED107F270EC056A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A0443CE0C4DB3446670B08BB58618617 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		72F66F39CF8BBC87171ABD451D0ABAA7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				F0315DD93E2A7DF958FEBBBA31596393 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		8FE25C2032B43075246740623B67DA72 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				66D2F096203E94CEAAF311E236F8BF27 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -127,16 +165,38 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1B6284C64706F9B91FBCFF6E5A118379 /* KeychainSwift */ = {
+		05BB30A32BE2450DA73C8844121CED3B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				29CE7F90E151106CB127FA3CA3D68CCC /* KeychainSwift.swift */,
-				2ECC0053600E592D4DCA1ABDE78D3CDB /* KeychainSwiftAccessOptions.swift */,
-				FE17AA9E1E1CBAE26E1B413829D449A7 /* TegKeychainConstants.swift */,
-				50DB3767746FCFB9AF83014145EC4C58 /* Support Files */,
+				E15F1162B381400F94FCE9D29803BFEF /* KeychainSwift.framework */,
+				5475AB0B58BD0EAA3EE4DB48EB7D7D7D /* PCLBlurEffectAlert.framework */,
+				1970BD44E884C4F749E214C8112B9CC6 /* Pods_Finance_2_Go.framework */,
+				C6EFE541F67BECDAD83AAAC719184032 /* Pods_Finance_2_GoTests.framework */,
+				5647120FA5FB5D09DD7D91D4D24ADDF9 /* Pods_Finance_2_GoUITests.framework */,
 			);
-			name = KeychainSwift;
-			path = KeychainSwift;
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0E51F627BC7309BF72B0186D30BA4E65 /* PCLBlurEffectAlert */ = {
+			isa = PBXGroup;
+			children = (
+				288DBF159FF58B77C90427850EEA6D7A /* PCLBlurEffectAlert.h */,
+				A01CFD81A6F92CF14C1ED61794C39648 /* PCLBlurEffectAlert.swift */,
+				2AB51D3BE7299EF7E4E4FC6524301FE1 /* PCLBlurEffectAlert+Action.swift */,
+				714A1FFDD4B5EEBAEA08E99A82F44BE9 /* PCLBlurEffectAlert+Controller.swift */,
+				1CEC61D5DA2275939972A39EF4685F3A /* PCLBlurEffectAlert+TransitionAnimator.swift */,
+				D5FC6D6D93362E4329AF4C505BF8B97E /* Support Files */,
+			);
+			name = PCLBlurEffectAlert;
+			path = PCLBlurEffectAlert;
+			sourceTree = "<group>";
+		};
+		1628BF05B4CAFDCC3549A101F5A10A17 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E2983683FD097A93297E2F5D4E382B36 /* iOS */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		28B00756256F11F0E54C11598B7358D7 /* Pods-Finance 2 GoTests */ = {
@@ -155,64 +215,64 @@
 			path = "Target Support Files/Pods-Finance 2 GoTests";
 			sourceTree = "<group>";
 		};
-		50DB3767746FCFB9AF83014145EC4C58 /* Support Files */ = {
+		35AA72D349DAC213853715A19F7B3B8B /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				1CA3DD5D66A1D7C75F74BD66A83BA0F3 /* KeychainSwift.modulemap */,
-				443853E4EB1EAB4177C6D48420491B67 /* KeychainSwift.xcconfig */,
-				0E04E9939B13C55A5300E5E16708523A /* KeychainSwift-dummy.m */,
-				15A178473B89C6481E60DA33EE7D1CEA /* KeychainSwift-Info.plist */,
-				3FFB7ED55407FDDAC98C4FA9A691BCAF /* KeychainSwift-prefix.pch */,
-				6A8C4B6BB594B2F334D01FE31EE9BAE0 /* KeychainSwift-umbrella.h */,
+				A231DB0852FA485959958FA27DF74369 /* KeychainSwift.modulemap */,
+				40518CEF29A4C12C2429E479DC8FB234 /* KeychainSwift.xcconfig */,
+				D045F3A69AE680772AF959936CEF46C6 /* KeychainSwift-dummy.m */,
+				7F6C3CA7504D920599EF3A07ACF25FFE /* KeychainSwift-Info.plist */,
+				9988990686CD2F63B06F5D7FCEC40DE5 /* KeychainSwift-prefix.pch */,
+				DF78D66461C0C31168B0B5299ADB0A68 /* KeychainSwift-umbrella.h */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/KeychainSwift";
 			sourceTree = "<group>";
 		};
-		6914C866BAE31BFBA9841BEDCD93C6A6 /* Pods */ = {
+		79131E4F4DB0874CCB24143A1F2EC49C /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				1B6284C64706F9B91FBCFF6E5A118379 /* KeychainSwift */,
+				AE845526647B6A0664BB7D03A66D3717 /* KeychainSwift */,
+				0E51F627BC7309BF72B0186D30BA4E65 /* PCLBlurEffectAlert */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		96BEF3FF94AB08B41F777CEEE007A28E /* Products */ = {
+		AE845526647B6A0664BB7D03A66D3717 /* KeychainSwift */ = {
 			isa = PBXGroup;
 			children = (
-				51DD6CA396C3A038C369E45247DFEA92 /* KeychainSwift.framework */,
-				4CA3BDD364F924498C3A2EB29575243E /* Pods_Finance_2_Go.framework */,
-				C801FC1126FF0D9AFC20EBE5CB02A484 /* Pods_Finance_2_GoTests.framework */,
-				C45F36D970C5BD7A0EDE7B8FB9E97BB6 /* Pods_Finance_2_GoUITests.framework */,
+				B6AE67DA81FC2CEFBC615B0CF52134F5 /* KeychainSwift.swift */,
+				0D29AC4CE09EA40DA50AA53020632CF6 /* KeychainSwiftAccessOptions.swift */,
+				9D9FACDC507752FE9BC1FAA87436EA43 /* TegKeychainConstants.swift */,
+				35AA72D349DAC213853715A19F7B3B8B /* Support Files */,
 			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		C0834CEBB1379A84116EF29F93051C60 /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */,
-			);
-			name = iOS;
+			name = KeychainSwift;
+			path = KeychainSwift;
 			sourceTree = "<group>";
 		};
 		CF1408CF629C7361332E53B88F7BD30C = {
 			isa = PBXGroup;
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
-				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
-				6914C866BAE31BFBA9841BEDCD93C6A6 /* Pods */,
-				96BEF3FF94AB08B41F777CEEE007A28E /* Products */,
+				1628BF05B4CAFDCC3549A101F5A10A17 /* Frameworks */,
+				79131E4F4DB0874CCB24143A1F2EC49C /* Pods */,
+				05BB30A32BE2450DA73C8844121CED3B /* Products */,
 				E553970BC8B394DDF44222ACD5AD2EEC /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */ = {
+		D5FC6D6D93362E4329AF4C505BF8B97E /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				C0834CEBB1379A84116EF29F93051C60 /* iOS */,
+				BCC215454979AEF7B7F7E09D27606286 /* PCLBlurEffectAlert.modulemap */,
+				8D5A774CCAE75FEFE0D3B104B8F19ADF /* PCLBlurEffectAlert.xcconfig */,
+				720DA6CFABC78CD8064BDE4135B19F0E /* PCLBlurEffectAlert-dummy.m */,
+				46FBD0A7D62416D9C72F852F74B46C54 /* PCLBlurEffectAlert-Info.plist */,
+				3387DF92EE4E94A0B7B2A8A4FCE25569 /* PCLBlurEffectAlert-prefix.pch */,
+				B3D8AFB9000AA870EF52C298DAAE9641 /* PCLBlurEffectAlert-umbrella.h */,
 			);
-			name = Frameworks;
+			name = "Support Files";
+			path = "../Target Support Files/PCLBlurEffectAlert";
 			sourceTree = "<group>";
 		};
 		D9E031A4ED31308D108246B5AC979AB9 /* Pods-Finance 2 GoUITests */ = {
@@ -229,6 +289,15 @@
 			);
 			name = "Pods-Finance 2 GoUITests";
 			path = "Target Support Files/Pods-Finance 2 GoUITests";
+			sourceTree = "<group>";
+		};
+		E2983683FD097A93297E2F5D4E382B36 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				436BAA54A31999B53B3CC7115C55FE50 /* Foundation.framework */,
+				312B988EF117AE4DE76A268D970131FE /* UIKit.framework */,
+			);
+			name = iOS;
 			sourceTree = "<group>";
 		};
 		E36F08E5C15B7BEA423A0B0293124C39 /* Pods-Finance 2 Go */ = {
@@ -277,11 +346,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		6C334039E8DEC295E146FCCBF9EB9E35 /* Headers */ = {
+		8C3B6EB4E3CC515FEA84A6572628BA6F /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DB9EFF0B905055772F849296A38577B4 /* Pods-Finance 2 Go-umbrella.h in Headers */,
+				0ACC87AC7851AF882337F10CA11821F5 /* Pods-Finance 2 Go-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -290,6 +359,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				10AC60F4838A899052F9CE3F8D81B683 /* Pods-Finance 2 GoUITests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DABCEB98C845B5BBF4205CB2EF26E0C7 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				87684FE154DF1FF5E6E002C7C19F3C18 /* PCLBlurEffectAlert-umbrella.h in Headers */,
+				501103DB8A721BC1CEF6F5E5BCEAEAE3 /* PCLBlurEffectAlert.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -311,7 +389,25 @@
 			);
 			name = KeychainSwift;
 			productName = KeychainSwift;
-			productReference = 51DD6CA396C3A038C369E45247DFEA92 /* KeychainSwift.framework */;
+			productReference = E15F1162B381400F94FCE9D29803BFEF /* KeychainSwift.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		36D58465D68D0CC0403E5F78DBC0CCDB /* PCLBlurEffectAlert */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 471483A9910C9BB4464B2C29EC38776B /* Build configuration list for PBXNativeTarget "PCLBlurEffectAlert" */;
+			buildPhases = (
+				DABCEB98C845B5BBF4205CB2EF26E0C7 /* Headers */,
+				8D506731E43207BA722A76FC63CC1E5B /* Sources */,
+				301B16AAB3DFD0E4B35F8A7052EC890B /* Frameworks */,
+				546F8F582C0F0E022C653C8CB3616BAF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PCLBlurEffectAlert;
+			productName = PCLBlurEffectAlert;
+			productReference = 5475AB0B58BD0EAA3EE4DB48EB7D7D7D /* PCLBlurEffectAlert.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		572B2FB9F1D5D5DB6E19FAB5538D2FC6 /* Pods-Finance 2 GoTests */ = {
@@ -330,7 +426,7 @@
 			);
 			name = "Pods-Finance 2 GoTests";
 			productName = "Pods-Finance 2 GoTests";
-			productReference = C801FC1126FF0D9AFC20EBE5CB02A484 /* Pods_Finance_2_GoTests.framework */;
+			productReference = C6EFE541F67BECDAD83AAAC719184032 /* Pods_Finance_2_GoTests.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		9F9D07248AFA172C55D8A832A077C21A /* Pods-Finance 2 GoUITests */ = {
@@ -349,26 +445,27 @@
 			);
 			name = "Pods-Finance 2 GoUITests";
 			productName = "Pods-Finance 2 GoUITests";
-			productReference = C45F36D970C5BD7A0EDE7B8FB9E97BB6 /* Pods_Finance_2_GoUITests.framework */;
+			productReference = 5647120FA5FB5D09DD7D91D4D24ADDF9 /* Pods_Finance_2_GoUITests.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		CA0FCE8D5B80E797EC17B378AD3C49AE /* Pods-Finance 2 Go */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 459AC7443D095A849405B33343BA22B7 /* Build configuration list for PBXNativeTarget "Pods-Finance 2 Go" */;
+			buildConfigurationList = B74CB04D37C1D87327F8242A02BDAFC0 /* Build configuration list for PBXNativeTarget "Pods-Finance 2 Go" */;
 			buildPhases = (
-				6C334039E8DEC295E146FCCBF9EB9E35 /* Headers */,
-				794246AA50B163A4018A30787832CAC7 /* Sources */,
-				8FE25C2032B43075246740623B67DA72 /* Frameworks */,
-				143AF74807FB7BD4745F1A373A75A5EF /* Resources */,
+				8C3B6EB4E3CC515FEA84A6572628BA6F /* Headers */,
+				C3DCA99F533481DB71EF415067636298 /* Sources */,
+				3F06668F7C91FB59CED107F270EC056A /* Frameworks */,
+				4309A927E25A70EA38FE10D8B3D02496 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				AA75FBF3A9226C1CA4CA211C9941932B /* PBXTargetDependency */,
+				013A99D9F9A70B2A297629D98E59B14D /* PBXTargetDependency */,
+				D1D5A8FF5D6E759D16F303234CD1D60F /* PBXTargetDependency */,
 			);
 			name = "Pods-Finance 2 Go";
 			productName = "Pods-Finance 2 Go";
-			productReference = 4CA3BDD364F924498C3A2EB29575243E /* Pods_Finance_2_Go.framework */;
+			productReference = 1970BD44E884C4F749E214C8112B9CC6 /* Pods_Finance_2_Go.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -381,18 +478,19 @@
 				LastUpgradeCheck = 1020;
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 10.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			productRefGroup = 96BEF3FF94AB08B41F777CEEE007A28E /* Products */;
+			productRefGroup = 05BB30A32BE2450DA73C8844121CED3B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				07E54A78BCF82272E99319D7F7F5E8C1 /* KeychainSwift */,
+				36D58465D68D0CC0403E5F78DBC0CCDB /* PCLBlurEffectAlert */,
 				CA0FCE8D5B80E797EC17B378AD3C49AE /* Pods-Finance 2 Go */,
 				572B2FB9F1D5D5DB6E19FAB5538D2FC6 /* Pods-Finance 2 GoTests */,
 				9F9D07248AFA172C55D8A832A077C21A /* Pods-Finance 2 GoUITests */,
@@ -401,7 +499,14 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		143AF74807FB7BD4745F1A373A75A5EF /* Resources */ = {
+		4309A927E25A70EA38FE10D8B3D02496 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		546F8F582C0F0E022C653C8CB3616BAF /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -448,14 +553,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		794246AA50B163A4018A30787832CAC7 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				803B837581926F6C5C84AB22A010CB2A /* Pods-Finance 2 Go-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		8403F10B9EAAEB694D515B91F388F19F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -467,20 +564,46 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8D506731E43207BA722A76FC63CC1E5B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF4E316ECA6874931191D7B23DD152E6 /* PCLBlurEffectAlert+Action.swift in Sources */,
+				E24F883F2146F6E3ACEDE77ACB107BD0 /* PCLBlurEffectAlert+Controller.swift in Sources */,
+				515AFC7B65B4035B0E17C17C0A72F4CB /* PCLBlurEffectAlert+TransitionAnimator.swift in Sources */,
+				48F5B9C51371AC6C349FE5E519945179 /* PCLBlurEffectAlert-dummy.m in Sources */,
+				9A99F6F1EE12BB3A4F0CA75A65EB4A66 /* PCLBlurEffectAlert.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C3DCA99F533481DB71EF415067636298 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0C35F6BAB0820D03902D6DD0EB111275 /* Pods-Finance 2 Go-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		013A99D9F9A70B2A297629D98E59B14D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = KeychainSwift;
+			target = 07E54A78BCF82272E99319D7F7F5E8C1 /* KeychainSwift */;
+			targetProxy = 3BB234417E3B95CC9792A916B840F2E2 /* PBXContainerItemProxy */;
+		};
 		1CBFB5F8B4D45B8CDB58F0DEBC830ED1 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-Finance 2 Go";
 			target = CA0FCE8D5B80E797EC17B378AD3C49AE /* Pods-Finance 2 Go */;
 			targetProxy = CA0B097D339F3BA914E1A0B9DED445F8 /* PBXContainerItemProxy */;
 		};
-		AA75FBF3A9226C1CA4CA211C9941932B /* PBXTargetDependency */ = {
+		D1D5A8FF5D6E759D16F303234CD1D60F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = KeychainSwift;
-			target = 07E54A78BCF82272E99319D7F7F5E8C1 /* KeychainSwift */;
-			targetProxy = 458DB3A866047263D6B5C112C3D8AB48 /* PBXContainerItemProxy */;
+			name = PCLBlurEffectAlert;
+			target = 36D58465D68D0CC0403E5F78DBC0CCDB /* PCLBlurEffectAlert */;
+			targetProxy = A5347DB9CD505EE1871F79B9CE84EC3F /* PBXContainerItemProxy */;
 		};
 		D504EE217F4B843F4D16B056838A35C5 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -491,9 +614,47 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		086F06EF8A96BA94FA2AC5FEDABD2F02 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 474D4F64E14EF3F20D0ECA810BC653C6 /* Pods-Finance 2 Go.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Finance 2 Go/Pods-Finance 2 Go-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Finance 2 Go/Pods-Finance 2 Go.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 		094BDD8310CC8C5B34EEB1CE50B04718 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 443853E4EB1EAB4177C6D48420491B67 /* KeychainSwift.xcconfig */;
+			baseConfigurationReference = 40518CEF29A4C12C2429E479DC8FB234 /* KeychainSwift.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -629,6 +790,45 @@
 			};
 			name = Debug;
 		};
+		33DC454D070EDA5A20235616960093AF /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C2EE10B2B3E52D29A760B82BB0F8620E /* Pods-Finance 2 Go.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Finance 2 Go/Pods-Finance 2 Go-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Finance 2 Go/Pods-Finance 2 Go.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		585ECC986B47E7AAD164924A2AC0F0FA /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E3154872F2D93962C9FB6903BA61BD58 /* Pods-Finance 2 GoUITests.release.xcconfig */;
@@ -668,12 +868,10 @@
 			};
 			name = Release;
 		};
-		71BA438AA2A4A0FE7F7223E674499CE9 /* Debug */ = {
+		7CF65A4D9E5C440296D8CA3CDCA01471 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 474D4F64E14EF3F20D0ECA810BC653C6 /* Pods-Finance 2 Go.debug.xcconfig */;
+			baseConfigurationReference = 8D5A774CCAE75FEFE0D3B104B8F19ADF /* PCLBlurEffectAlert.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -683,23 +881,22 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-Finance 2 Go/Pods-Finance 2 Go-Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/PCLBlurEffectAlert/PCLBlurEffectAlert-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/PCLBlurEffectAlert/PCLBlurEffectAlert-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Finance 2 Go/Pods-Finance 2 Go.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				MODULEMAP_FILE = "Target Support Files/PCLBlurEffectAlert/PCLBlurEffectAlert.modulemap";
+				PRODUCT_MODULE_NAME = PCLBlurEffectAlert;
+				PRODUCT_NAME = PCLBlurEffectAlert;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -746,7 +943,7 @@
 		};
 		8774A54E1AA2BD66E8CD54F2757676BD /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 443853E4EB1EAB4177C6D48420491B67 /* KeychainSwift.xcconfig */;
+			baseConfigurationReference = 40518CEF29A4C12C2429E479DC8FB234 /* KeychainSwift.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -818,12 +1015,10 @@
 			};
 			name = Release;
 		};
-		AF9A720FE1A75021F73898CD25A13751 /* Release */ = {
+		96FB4CED05EEC9D1A99ADC4B1A67E47C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C2EE10B2B3E52D29A760B82BB0F8620E /* Pods-Finance 2 Go.release.xcconfig */;
+			baseConfigurationReference = 8D5A774CCAE75FEFE0D3B104B8F19ADF /* PCLBlurEffectAlert.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -833,23 +1028,22 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-Finance 2 Go/Pods-Finance 2 Go-Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/PCLBlurEffectAlert/PCLBlurEffectAlert-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/PCLBlurEffectAlert/PCLBlurEffectAlert-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Finance 2 Go/Pods-Finance 2 Go.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				MODULEMAP_FILE = "Target Support Files/PCLBlurEffectAlert/PCLBlurEffectAlert.modulemap";
+				PRODUCT_MODULE_NAME = PCLBlurEffectAlert;
+				PRODUCT_NAME = PCLBlurEffectAlert;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -920,11 +1114,11 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		459AC7443D095A849405B33343BA22B7 /* Build configuration list for PBXNativeTarget "Pods-Finance 2 Go" */ = {
+		471483A9910C9BB4464B2C29EC38776B /* Build configuration list for PBXNativeTarget "PCLBlurEffectAlert" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				71BA438AA2A4A0FE7F7223E674499CE9 /* Debug */,
-				AF9A720FE1A75021F73898CD25A13751 /* Release */,
+				7CF65A4D9E5C440296D8CA3CDCA01471 /* Debug */,
+				96FB4CED05EEC9D1A99ADC4B1A67E47C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -943,6 +1137,15 @@
 			buildConfigurations = (
 				859E635E79CBDF1DB6FEFFA3ADE10567 /* Debug */,
 				585ECC986B47E7AAD164924A2AC0F0FA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B74CB04D37C1D87327F8242A02BDAFC0 /* Build configuration list for PBXNativeTarget "Pods-Finance 2 Go" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				086F06EF8A96BA94FA2AC5FEDABD2F02 /* Debug */,
+				33DC454D070EDA5A20235616960093AF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

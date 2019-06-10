@@ -9,12 +9,15 @@
 import UIKit
 import CoreData
 import KeychainSwift
+import PCLBlurEffectAlert
 
 struct globColor {
     static var mainColor = #colorLiteral(red: 0.3735761046, green: 0.7207441926, blue: 0.09675113112, alpha: 1)              // ORIGINAL!
     static var secondaryColor = #colorLiteral(red: 0.3330089152, green: 0.333286792, blue: 0.3330519199, alpha: 1)         // Dark
     static var errorColor = #colorLiteral(red: 0.7207441926, green: 0.02335692724, blue: 0.06600695687, alpha: 1)
     static var successColor = #colorLiteral(red: 0.3735761046, green: 0.7207441926, blue: 0.09675113112, alpha: 1)
+//    static var overlayColor = UIColor(red: 60, green: 60, blue: 60, alpha: 0.3)
+    static var overlayColor = #colorLiteral(red: 0.537865889, green: 0.5735637275, blue: 0.598588198, alpha: 0.7506688784)
 }
 
 class ViewController: UIViewController, UITextFieldDelegate {
@@ -159,9 +162,14 @@ class ViewController: UIViewController, UITextFieldDelegate {
             }
         }
         
-        let alert = UIAlertController(title: "Profile 👤", message: message, preferredStyle: .alert)
+        let alert = PCLBlurEffectAlert.Controller(title: "Profile 👤", message: message, effect: UIBlurEffect(style: .dark), style: .alert)
+        let ok_button = PCLBlurEffectAlert.Action(title: "✅ VERSTANDEN 😎", style: .default, handler: nil)
         
-        alert.addAction(UIAlertAction(title: "✅ VERSTANDEN 😎", style: .default, handler: nil))
+        alert.addAction(ok_button)
+        alert.configure(cornerRadius: 0)
+        alert.configure(messageColor: UIColor.white)
+        alert.configure(titleColor: UIColor.white)
+        alert.configure(overlayBackgroundColor: globColor.overlayColor)
         self.present(alert, animated: true)
     }
     

@@ -8,6 +8,7 @@ target 'Finance 2 Go' do
   # Pods for Finance 2 Go
     # pod 'TinyConstraints', '~> 3.3.3'
     pod 'KeychainSwift', '~> 15.0'
+    pod "PCLBlurEffectAlert"
 
   target 'Finance 2 GoTests' do
     inherit! :search_paths

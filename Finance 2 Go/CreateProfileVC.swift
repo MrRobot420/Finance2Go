@@ -9,6 +9,7 @@
 import UIKit
 import CoreData
 import KeychainSwift
+import PCLBlurEffectAlert
 
 struct Keys {
     static let name = "name"
@@ -54,9 +55,16 @@ class CreateProfileVC: UIViewController, UITextFieldDelegate {
     // Shows ALERT to password guidelines / criteria (alert)
     @IBAction func passwordInfo(_ sender: Any) {
         let message = "8 Zeichen\n2 Großbuchstaben\n3 Buchstaben\n2 Zahlen\n1 Sonderzeichen"
-        let alert = UIAlertController(title: "🔐 Passwort Kriterien:", message: message, preferredStyle: .alert)
+        let alert = PCLBlurEffectAlert.Controller(title: "🔐 Passwort Kriterien:", message: message, effect: UIBlurEffect(style: .dark), style: .alert)
+        let ok_button = PCLBlurEffectAlert.Action(title: "✅ VERSTANDEN 😎", style: .default, handler: nil)
+        
+        alert.addAction(ok_button)
+        alert.configure(cornerRadius: 0)
+        alert.configure(messageColor: UIColor.white)
+        alert.configure(titleColor: UIColor.white)
+        alert.configure(overlayBackgroundColor: globColor.overlayColor)
+        
         print("[i] Showing password-info alert 🔐:")
-        alert.addAction(UIAlertAction(title: "✅ VERSTANDEN 😎", style: .default, handler: nil))
         self.present(alert, animated: true)
     }
     

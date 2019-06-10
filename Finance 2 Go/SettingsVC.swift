@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import PCLBlurEffectAlert
 
 class SettingsVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
@@ -29,10 +30,19 @@ class SettingsVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource
     // Shows ALERT for "2-factor auth"
     @IBAction func showAlert() {
         let message = "Dies löscht ALLE Profile ‼️"
-        let alert = UIAlertController(title: "⚠️ Profile löschen?", message: message, preferredStyle: .alert)
+        
+        let alert = PCLBlurEffectAlert.Controller(title: "🔐 Passwort Kriterien:", message: message, effect: UIBlurEffect(style: .dark), style: .alert)
+        let no_button = PCLBlurEffectAlert.Action(title: "NEIN ❌", style: .default, handler: nil)
+        let yes_button = PCLBlurEffectAlert.Action(title: "Ja ✅", style: .default, handler: deleteAllData(_:))
+        
+        alert.addAction(no_button)
+        alert.addAction(yes_button)
+        alert.configure(cornerRadius: 0)
+        alert.configure(messageColor: UIColor.white)
+        alert.configure(titleColor: UIColor.white)
+        alert.configure(overlayBackgroundColor: globColor.overlayColor)
+        
         print("[i] Showing profile-deletion alert ❌")
-        alert.addAction(UIAlertAction(title: "NEIN ❌", style: .cancel, handler: nil))
-        alert.addAction(UIAlertAction(title: "Ja ✅", style: .default, handler: deleteAllData(_:)))
         self.present(alert, animated: true)
     }
     
