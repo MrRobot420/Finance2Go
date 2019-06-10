@@ -114,8 +114,8 @@ class AssetsVC: UIViewController, UITextFieldDelegate {
         
         
         var i = 0
-        for data in scroll_data {
-            print(data.value!)
+        for data in assets.sorted(by: { $0.type! < $1.type! }) {
+            print(data.value)
             let view = AssetView(frame: CGRect(x: 0,
                                                y: ((subViewHeight + spacing) * i),
                                                width: subViewWidth,
@@ -138,7 +138,7 @@ class AssetsVC: UIViewController, UITextFieldDelegate {
             
             // CREATE new Label VALUE:
             let valueView = UILabel(frame: CGRect(x: font_spacing, y: ((subViewHeight + spacing) * i) + 40, width: label_length, height: 30))
-            valueView.text = String(formatMoney(value: data.value!) + " 💰")
+            valueView.text = String(formatMoney(value: data.value) + " 💰")
             valueView.textColor = #colorLiteral(red: 0.9967552883, green: 0.9521791773, blue: 1, alpha: 1)
             valueView.textAlignment = .right
             valueView.font = UIFont.boldSystemFont(ofSize: font_size)

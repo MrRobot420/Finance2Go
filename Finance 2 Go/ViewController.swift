@@ -160,6 +160,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         }
         
         let alert = UIAlertController(title: "Profile 👤", message: message, preferredStyle: .alert)
+        
         alert.addAction(UIAlertAction(title: "✅ VERSTANDEN 😎", style: .default, handler: nil))
         self.present(alert, animated: true)
     }
