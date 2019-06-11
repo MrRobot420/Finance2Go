@@ -100,9 +100,10 @@ class OverviewVC: UIViewController, UITextFieldDelegate {
     @IBAction func showAlert() {
         let message = "Dies löscht das Profil ‼️"
         
-        let alert = PCLBlurEffectAlert.Controller(title: "🔐 Daten speichern?", message: message, effect: UIBlurEffect(style: .dark), style: .alert)
+        let alert = PCLBlurEffectAlert.Controller(title: "❌ Profil löschen?", message: message, effect: UIBlurEffect(style: .dark), style: .alert)
         let no_button = PCLBlurEffectAlert.Action(title: "NEIN ❌", style: .default, handler: nil)
-        let yes_button = PCLBlurEffectAlert.Action(title: "Ja ✅", style: .default, handler: deleteProfileData(_:) as? ((PCLBlurEffectAlert.Action?) -> Void))
+//        let yes_button = PCLBlurEffectAlert.Action(title: "Ja ✅", style: .default, handler: deleteProfileData(_:) as? ((PCLBlurEffectAlert.Action?) -> Void))
+        let yes_button = PCLBlurEffectAlert.Action(title: "Ja ✅", style: .default, handler: deleteProfileData(_:))
         
         alert.addAction(no_button)
         alert.addAction(yes_button)
@@ -121,8 +122,8 @@ class OverviewVC: UIViewController, UITextFieldDelegate {
         
         let alert = PCLBlurEffectAlert.Controller(title: "🔐 Daten speichern?", message: message, effect: UIBlurEffect(style: .dark), style: .alert)
         let no_button = PCLBlurEffectAlert.Action(title: "NEIN ❌", style: .default, handler: nil)
-        let yes_button = PCLBlurEffectAlert.Action(title: "Ja ✅", style: .default, handler: saveDataInKeychain(_:) as? ((PCLBlurEffectAlert.Action?) -> Void))
-//        let yes_button = PCLBlurEffectAlert.Action(title: "Ja ✅", style: .default, handler: saveDataInKeychain(_:))
+//        let yes_button = PCLBlurEffectAlert.Action(title: "Ja ✅", style: .default, handler: saveDataInKeychain(_:) as? ((PCLBlurEffectAlert.Action?) -> Void))
+        let yes_button = PCLBlurEffectAlert.Action(title: "Ja ✅", style: .default, handler: saveDataInKeychain(_:))
         
         alert.addAction(no_button)
         alert.addAction(yes_button)
@@ -136,7 +137,7 @@ class OverviewVC: UIViewController, UITextFieldDelegate {
     }
     
     // SAVES DATA to Keychain: (activates a user for keychain)
-    func saveDataInKeychain(_ entity: PCLBlurEffectAlert.Action) {
+    func saveDataInKeychain(_ entity: Any) {
         keychain.set(profile.name!, forKey: Keys.name, withAccess: .accessibleAlways)
         
         if keychain.set(profile.password!, forKey: Keys.password, withAccess: .accessibleAlways) {  // -> KeychainSwift
@@ -216,12 +217,14 @@ class OverviewVC: UIViewController, UITextFieldDelegate {
     }
     
     // Deletes a profile and all asset / transaction - data:
-    func deleteProfileData(_ entity: PCLBlurEffectAlert.Action) {
+    func deleteProfileData(_ entity: Any) {
+        var deletedID = 0
         
         // Try deleting the ASSETS: (FIRST!! -> not available)
         if let result = try? context.fetch(assetFetchRequest) as? [Asset] {
             for object in result {
                 if object.profilename == profile.name {
+                    deletedID = Int(object.id)
                     context.delete(object)
                     print("[X] DELETED: \(object.assetname!)")
                 }
@@ -258,7 +261,26 @@ class OverviewVC: UIViewController, UITextFieldDelegate {
             print("[X] Failed Saving!")
         }
         
+        updateIDs(id: deletedID)
         performSegue(withIdentifier: "logoutSegue", sender: nil)
+    }
+    
+    // Deletes OLD IDs and replaces them with new ones:
+    func updateIDs(id: Int) {
+        if let result = try? context.fetch(assetFetchRequest) as? [Asset] {
+            for object in result {
+                if object.id > id {
+                    profile.setValue(Int(object.id) - 1, forKey: Keys.id)
+                }
+            }
+        }
+        
+        do {
+            try context.save()
+            print("[√] Updated IDs!")
+        } catch {
+            print("Error while updating IDs!")
+        }
     }
     
     // Counts the elements of the list
