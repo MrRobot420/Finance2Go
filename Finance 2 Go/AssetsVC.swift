@@ -28,8 +28,10 @@ class AssetsVC: UIViewController, UITextFieldDelegate {
     var profiles: [Profile] = []
     var assets: [Asset] = []
     var button_keys: [String?] = []
+    var update_keys: [String?] = []
     var asset_keys: [String?] = []
     var tapped_button: String! = ""
+    var toUpdate = ""
     
     @IBOutlet weak var scrollView: UIScrollView!
     
@@ -150,10 +152,22 @@ class AssetsVC: UIViewController, UITextFieldDelegate {
             deleteButton.backgroundColor = #colorLiteral(red: 0.7207441926, green: 0.02335692724, blue: 0.06600695687, alpha: 1)
             deleteButton.setTitle("X", for: UIControl.State.normal)
             deleteButton.isEnabled = true
-//            deleteButton.isHighlighted = true
             deleteButton.showsTouchWhenHighlighted = true
             deleteButton.addTarget(self, action: #selector(deleteAction), for: .touchUpInside)
+            
+            
+            // CREATE new Button UPDATE:
+            let updateButton = UIButton(frame: CGRect(x: 60, y: ((subViewHeight + spacing) * i) + 50, width: label_length / 2 - 60, height: 30))
+            updateButton.tintColor = UIColor.black
+            updateButton.backgroundColor = #colorLiteral(red: 0.9529411793, green: 0.6862745285, blue: 0.1333333403, alpha: 1)
+            updateButton.setTitle("🖋", for: UIControl.State.normal)
+            updateButton.isEnabled = true
+            updateButton.showsTouchWhenHighlighted = true
+            updateButton.addTarget(self, action: #selector(updateAsset), for: .touchUpInside)
+            
+            
             button_keys.insert(deleteButton.description, at: i)
+            update_keys.insert(updateButton.description, at: i)
             asset_keys.insert(data.assetname, at: i)
             
             // Add the views:
@@ -162,6 +176,7 @@ class AssetsVC: UIViewController, UITextFieldDelegate {
             self.scrollView.addSubview(typeView)
             self.scrollView.addSubview(valueView)
             self.scrollView.addSubview(deleteButton)
+            self.scrollView.addSubview(updateButton)
             
             i += 1
         }
@@ -196,6 +211,42 @@ class AssetsVC: UIViewController, UITextFieldDelegate {
         return end_string + " €"
     }
     
+    
+    // Checks if an object should be deleted or not
+    @objc func updateAsset(_ sender: UIButton) {
+        toUpdate = ""
+        tapped_button = sender.description              // SEHR WICHTIG!
+        
+        for i in 0...button_keys.count-1 {
+            if tapped_button == update_keys[i] {
+                toUpdate = asset_keys[i]!
+                break
+            }
+        }
+        
+        let message = "Asset '\(toUpdate)' aktualisieren?"
+        print("[i] Showing update-asset alert ❌")
+        
+        let alert = PCLBlurEffectAlert.Controller(title: "⚠️ Asset wirklich updaten?", message: message, effect: UIBlurEffect(style: .dark), style: .alert)
+        let no_button = PCLBlurEffectAlert.Action(title: "NEIN ❌", style: .default, handler: nil)
+        let yes_button = PCLBlurEffectAlert.Action(title: "Ja ✅", style: .default, handler: updateData(_:))
+        
+        alert.addAction(no_button)
+        alert.addAction(yes_button)
+        alert.configure(cornerRadius: 0)
+        alert.configure(messageColor: UIColor.white)
+        alert.configure(titleColor: UIColor.white)
+        alert.configure(overlayBackgroundColor: globColor.overlayColor)
+        
+        self.present(alert, animated: true)
+    }
+    
+    // GO to UPDATE-Asset VC:
+    func updateData(_ entity: Any) {
+        UserDefaults.standard.set(toUpdate, forKey: "asset_to_update")      // Set asset to update
+        performSegue(withIdentifier: "UpdateAssetSegue", sender: nil)
+    }
+    
     // Checks if an object should be deleted or not
     @objc func deleteAction(_ sender: UIButton) {
         var toDelete = ""
@@ -209,7 +260,7 @@ class AssetsVC: UIViewController, UITextFieldDelegate {
         }
         
         let message = "Asset '\(toDelete)' wirklich löschen?"
-        print("[i] Showing keychain-save alert ❌")
+        print("[i] Showing Asset delete alert ❌")
         
         let alert = PCLBlurEffectAlert.Controller(title: "⚠️ Asset löschen?", message: message, effect: UIBlurEffect(style: .dark), style: .alert)
         let no_button = PCLBlurEffectAlert.Action(title: "NEIN ❌", style: .default, handler: nil)
