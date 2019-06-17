@@ -9,6 +9,7 @@
 import Foundation
 import CoreData
 import KeychainSwift
+import PCLBlurEffectAlert
 
 struct assetViewDataStruct {
     let assetname: String?
@@ -206,16 +207,26 @@ class AssetsVC: UIViewController, UITextFieldDelegate {
                 break
             }
         }
+        
         let message = "Asset '\(toDelete)' wirklich löschen?"
-        let alert = UIAlertController(title: "⚠️ Asset löschen?", message: message, preferredStyle: .alert)
-        print("[i] Showing delete-asset alert ⚠️:")
-        alert.addAction(UIAlertAction(title: "NEIN ❌", style: .cancel, handler: nil))
-        alert.addAction(UIAlertAction(title: "Ja ✅", style: .default, handler: deleteData(_:)))
+        print("[i] Showing keychain-save alert ❌")
+        
+        let alert = PCLBlurEffectAlert.Controller(title: "⚠️ Asset löschen?", message: message, effect: UIBlurEffect(style: .dark), style: .alert)
+        let no_button = PCLBlurEffectAlert.Action(title: "NEIN ❌", style: .default, handler: nil)
+        let yes_button = PCLBlurEffectAlert.Action(title: "Ja ✅", style: .default, handler: deleteData(_:))
+        
+        alert.addAction(no_button)
+        alert.addAction(yes_button)
+        alert.configure(cornerRadius: 0)
+        alert.configure(messageColor: UIColor.white)
+        alert.configure(titleColor: UIColor.white)
+        alert.configure(overlayBackgroundColor: globColor.overlayColor)
+        
         self.present(alert, animated: true)
     }
     
     // Takes care of DELETING the last clicked asset:
-    func deleteData(_ entity: UIAlertAction) {
+    func deleteData(_ entity: Any) {
         var toDelete = ""
         
         for i in 0...button_keys.count-1 {
