@@ -216,26 +216,28 @@ class OverviewVC: UIViewController, UITextFieldDelegate {
         }
     }
     
-    // Deletes a profile and all asset / transaction - data:
+    // Deletes a PROFILE and all ASSETS / transaction - data:                // DELETE ASSET:
     func deleteProfileData(_ entity: Any) {
         var deletedID = 0
         
-        // Try deleting the ASSETS: (FIRST!! -> not available)
+        // Try deleting the   A S S E T S:   (FIRST!! -> not available)
         if let result = try? context.fetch(assetFetchRequest) as? [Asset] {
             for object in result {
-                if object.profilename == profile.name {
-                    deletedID = Int(object.id)
-                    context.delete(object)
-                    print("[X] DELETED: \(object.assetname!)")
+                if object.profilename != nil {
+                    if object.profilename == profile.name {
+                        context.delete(object)
+                        print("[X] DELETED: \(object.assetname!)")
+                    }
                 }
             }
         }
         
         
-        // Delete Profile
+        // Delete   P R O F I L E:
         for user in profiles {
             if user.name != nil {
                 if user.name == profile.name {
+                    deletedID = Int(user.id)
                     print("[X] DELETED: \(user.name!)")
                     context.delete(user)
                     break
@@ -243,7 +245,7 @@ class OverviewVC: UIViewController, UITextFieldDelegate {
             }
         }
         
-        // Remove from list (NOT NECESSARY!)
+        // Remove from list (NECESSARY because of UPDATE of IDs!)
         for i in 0...profiles.count-1 {
             if profiles[i].name != nil {
                 if profiles[i].name == profile.name {
@@ -261,20 +263,20 @@ class OverviewVC: UIViewController, UITextFieldDelegate {
             print("[X] Failed Saving!")
         }
         
-        updateIDs(id: deletedID)
+        updateIDs(id: deletedID)                        // UPDATE IDs!
         performSegue(withIdentifier: "logoutSegue", sender: nil)
     }
     
     // Deletes OLD IDs and replaces them with new ones:
     func updateIDs(id: Int) {
-        if let result = try? context.fetch(assetFetchRequest) as? [Asset] {
-            for object in result {
-                if object.id > id {
-                    profile.setValue(Int(object.id) - 1, forKey: Keys.id)
+        for user in profiles {
+            if user.name != nil {
+                if user.id > id {
+                    user.setValue(Int(user.id) - 1, forKey: Keys.id)
+                    print("[!] Changed ID to \(user.id - 1)")
                 }
             }
         }
-        
         do {
             try context.save()
             print("[√] Updated IDs!")
